@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'LogoFont';
+    src:url('../fonts/NicoMoji-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+footer {
+    background-color: #ececec;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    font-family: LogoFont', sans-serif;
+}
+
+.footerlogo-text {
+    font-family: 'LogoFont';
+    font-size: 30px;
+    color: #000;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-nav ul li {
+    margin: 0 20px;
+}
+
+.footer-nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+}

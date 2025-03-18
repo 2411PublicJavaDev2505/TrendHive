@@ -1,0 +1,27 @@
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 48%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.image-container h2 {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
