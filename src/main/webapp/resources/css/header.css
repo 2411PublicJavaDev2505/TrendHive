@@ -19,24 +19,15 @@ header {
     padding: 10px 20px;
     border-bottom: 1px solid #fff;
     position: relative;
+    margin: 0 auto;
 }
 
 .logo-text {
     font-family: 'LogoFont';
     font-size: 50px;
     color: #fff;
-}
-
-.nav .loginbtn {
-    position: absolute;
-    justify-content: right;
-    right: 20px;
-}
-
-.nav .loginbtn a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
+    display: flex;
+    margin: 0 auto;
 }
 
 .nav {
