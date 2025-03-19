@@ -11,24 +11,7 @@
     <link rel="stylesheet" href="../resources/css/footer.css">
 </head>
 <body>
-    <header>
-        <div class="top">
-            <div class="logo">
-                <span class="logo-text">TrendHive</span>
-            </div>
-        </div>
-
-        <nav class="nav">
-            <ul>
-                <li><a href="#about">What about Us</a></li>
-                <li><a href="#company">For Company</a></li>
-                <li><a href="#creator">For Creator</a></li>
-                <li><a href="#notice">Notice</a></li>
-                <li><a href="#login">로그인</a></li>
-                <li><a href="#signup">회원가입</a></li>
-            </ul>
-        </nav>
-    </header>
+    <jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<main class="main-container">
         <div class="image-container">
             <h2>For Company</h2>
@@ -39,19 +22,6 @@
             <img src="../resources/images/maincreater031204.jpg" alt="Creator Image">
         </div>
     </main>
-    <footer>
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="#intro">TrendHive 소개</a></li>
-                <li><a href="#terms">이용약관</a></li>
-                <li><a href="#information">개인정보처리방침</a></li>
-                <li><a href="#policy">운영・관리방침</a></li>
-            </ul>
-        </nav>
-        <div class="footer-logo">
-            <span class="footerlogo-text">TrendHive</span>
-        </div>
-        <p>&copy; 2025 TrendHive. All rights reserved.</p>
-    </footer>
+    <jsp:include page="/WEB-INF/views/include/footer.jsp" />
 </body>
 </html>
