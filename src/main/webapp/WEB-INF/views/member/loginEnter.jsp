@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,7 +8,7 @@
     <title>TrendHive 로그인</title>
     <link rel="stylesheet" href="../resources/css/header.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/login.css">
+    <link rel="stylesheet" href="../resources/css/loginEnter.css">
 </head>
 <body>
     <header>
@@ -21,6 +22,7 @@
             </div>
             <div class="login-form">
                 <h1>로그인</h1>
+                <form action="" method="post">
                 <button class="login-btn company-login">기업 로그인</button>
                 <button class="login-btn creator-login">크리에이터 로그인</button>
                 <p>계정이 없으신가요? 
@@ -30,6 +32,7 @@
                 <p>비밀번호를 잊으셨나요? 
                     <a href="#reset-password">비밀번호 재설정</a>
                 </p>
+                </form>
             </div>
         </div>
     </main>
