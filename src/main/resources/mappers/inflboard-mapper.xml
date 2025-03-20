@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="InflBoardMapper">
+	<resultMap type="InflBoard" id="InflBoardResultMap">
+		<id     property = "inflPRNo" column = "INFL_PR_NO"/>
+		<result property = "inflConcept" column = "INFL_CONCEPT"/>
+		<result property = "inflPlatform" column = "INFL_PLATFORM"/>
+		<result property = "inflUrl" column = "INFL_URL"/>
+		<result property = "inflFollower" column = "INFL_FOLLOWER"/>
+		<result property = "inflIntro" column = "INFL_INTRO"/>
+		<result property = "insertDate" column = "INSERT_DATE"/>
+		<result property = "fileName" column = "FILE_NAME"/>
+		<result property = "fileRename" column = "FILE_RENAME"/>
+		<result property = "filePath" column = "FILE_PATH"/>
+		<result property = "inflId" column = "INFL_ID"/>
+	</resultMap>
+	<select id="selectList" resultMap="InflBoardResultMap">
+		SELECT * FROM INFL_PR ORDER BY INFL_PR_NO
+	</select>
+	
+	<select id="getTotalCount" resultType="_int">
+  		SELECT COUNT(*) FROM INFL_PR
+  	</select>
+	
+</mapper>

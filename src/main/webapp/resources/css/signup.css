@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../resources/images/이미지031206.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .header h2 {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e0f7fa;
+    margin-bottom: 10px;
+  }
+  
+  .agreements label {
+    display: block;
+    font-size: 14px;
+  }
+  
+  .agreements a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    flex-basis: 30%;
+  }
+  
+  .form-group input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .form-group select {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .form-group button {
+    width: 100px;
+    background-color: #e0f7fa;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    margin-left: auto;
+  }
+  .form-group button:hover {
+    background-color: #4682B4;
+  }
+  
+  .address-group input {
+    width: calc(100% - 120px);
+  }
+  
+  .join-btn {
+    width: calc(100%);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e0f7fa;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .join-btn:hover {
+    background-color: #4682B4;
+  }
+  

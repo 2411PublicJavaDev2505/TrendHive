@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'LogoFont';
-    src:url('../resources/fonts/NicoMoji-Regular.ttf');
+    font-family: 'Tenada';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -8,7 +8,7 @@
 header {
     background-color: #000;
     color: #fff;
-    font-family: Arial, 'LogoFont';
+    font-family: Arial, 'Tenada';
 }
 
 
@@ -19,27 +19,20 @@ header {
     padding: 10px 20px;
     border-bottom: 1px solid #fff;
     position: relative;
+    margin: 0 auto;
 }
 
 .logo-text {
-    font-family: 'LogoFont';
-    font-size: 50px;
+    font-family: 'Tenada';
+    font-size: 70px;
+    font-weight: bold;
     color: #fff;
-}
-
-.nav .loginbtn {
-    position: absolute;
-    justify-content: right;
-    right: 20px;
-}
-
-.nav .loginbtn a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
+    display: flex;
+    margin: 0 auto;
 }
 
 .nav {
+	font-family: 'Tenada';
     display: flex;
     justify-content: center;
     padding: 10px 0;

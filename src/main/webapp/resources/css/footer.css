@@ -1,21 +1,21 @@
 @font-face {
-    font-family: 'LogoFont';
-    src:url('../fonts/NicoMoji-Regular.ttf') format('ttf');
+    font-family: 'Tenada';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 footer {
     background-color: #ececec;
-    color: #000000;
     text-align: center;
-    padding: 20px;
-    font-family: LogoFont', sans-serif;
+    margin: 0 auto;
+    font-family: 'Tenada', sans-serif;
 }
 
 .footerlogo-text {
-    font-family: 'LogoFont';
+    font-family: 'Tenada';
     font-size: 30px;
+    font-weight: bold;
     color: #000;
 }
 
@@ -39,5 +39,11 @@ footer {
 .footer-nav ul li a {
     color: #000;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
+}
+
+p {
+	color: #000;
+    text-decoration: none;
+    font-size: 16px;
 }
