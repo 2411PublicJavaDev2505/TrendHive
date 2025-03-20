@@ -1,1 +1,106 @@
-@charset "UTF-8";
+.dmContainer {
+	width: 650px;
+	height: 700px;
+	display: flex;
+	align-items: flex-start;
+	border: 1px solid black;
+	margin: left;
+	float: left;
+}
+
+#contentSearch {
+	width: 600px;
+	height: 40px;
+	padding-left: 10px;
+	margin-top: 10px;
+	display: flex;
+	align-items: flex-start;
+}
+#magnifierBtn {
+	border: none;
+	--height: 10px;
+	padding: 0;
+	--margin-top: 5px;
+}
+
+#magnifierBtn > img {
+	height: 20px;
+}
+
+.button-group {
+	display: flex;
+	padding-top: 5px;
+}
+
+#button1 button{
+	display: flex;
+	background-color: #dbdedf;
+	border: 1px solid black;
+	margin-left: 30px;
+	padding-left: center;
+	text-align: center;
+	
+}
+
+#button2 button{
+	display: flex;
+	background-color: red;
+	padding-right: 50px;
+	border: 1px solid black;
+}
+
+#selectBtn {
+	margin-left: 30px;
+	padding: 10px;
+	text-align: center;
+	width: 610px;
+}
+
+#daytag {
+	margin-left: 30px;
+}
+
+.dmChang {
+	width: 1240px;
+	height: 700px;
+	float: right;
+	align-items: center;
+	padding-left: 8px;
+	background-color: #f4f4f4;
+}
+
+.mainContainer {
+	justify-content: flex-start;
+	display: flex;
+	padding-left: 5px;
+}
+
+#naljja {
+	width:200px;
+	height: 20px;
+	font-size: 13px;
+	border-radius: 30px;
+	border: 1px solid black;
+	--padding: 10px;
+	text-align: center;
+}
+
+#sysdateTag {
+	--padding: 42px;
+	--padding-bottom: 45px;
+	--margin-left: auto;
+	
+}
+
+#fileUplode button {
+	background-color: #dbdedf;
+	border: 1px solid black;
+}
+
+.myMessageBox {
+	float: right;
+}
+
+.yourMessageBox {
+	float: left;
+}
