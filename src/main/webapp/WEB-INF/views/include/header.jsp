@@ -12,7 +12,7 @@
 		<ul>
 			<li><a href="#about">What about Us</a></li>
             <li><a href="#company">For Company</a></li>
-            <li><a href="#creator">For Creator</a></li>
+            <li><a href="/inflboard/list">For Creator</a></li>
             <li><a href="#notice">Notice</a></li>
             <li><a href="/member/loginEnterC">기업 로그인</a></li>
             <li><a href="/member/loginEnterInfl">크리에이터 로그인</a></li>

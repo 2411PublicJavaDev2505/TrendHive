@@ -19,7 +19,7 @@
             <img src="../resources/images/maincompany031203.jpg" alt="Company Image">
         </div>
         <div class="image-container">
-            <h2>For Creator</h2>
+            <h2><a href="/inflboard/list">For Creator</h2>
             <img src="../resources/images/maincreater031204.jpg" alt="Creator Image">
         </div>
     </main>
