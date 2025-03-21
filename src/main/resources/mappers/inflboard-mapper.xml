@@ -17,6 +17,7 @@
 		<result property = "filePath" column = "FILE_PATH"/>
 		<result property = "inflId" column = "INFL_ID"/>
 	</resultMap>
+	
 	<select id="selectList" resultMap="InflBoardResultMap">
 		SELECT * FROM INFL_PR ORDER BY INFL_PR_NO
 	</select>
@@ -24,5 +25,40 @@
 	<select id="getTotalCount" resultType="_int">
   		SELECT COUNT(*) FROM INFL_PR
   	</select>
+  	
+  	<select id="selectSearchList" resultMap="InflBoardResultMap">
+		SELECT * FROM INFL_PR 
+<!-- 			WHERE INFL_PR_NO = #{searchKeyword} -->
+			<where>
+				<if test="searchCondition == 'inflPlatform'">
+					INFL_PLATFORM LIKE '%'||#{searchKeyword}||'%'
+				</if>
+				<if test="searchCondition == 'inflConcept'">
+					INFL_CONCEPT LIKE '%'||#{searchKeyword}||'%'
+				</if>
+			</where>
+	</select>
+	
+	<insert id="addInflBoard">
+		INSERT INTO INFL_PR
+		VALUES(SEQ_INFL_PR_NO.NEXTVAL, #{inflConcept}, #{inflPlatform}, #{inflUrl}, 
+		#{inflFollower}, #{inflIntro}, default, #{fileName}, #{fileRename}, #{filePath}, #{inflId})
+	</insert>
+	
+	<select id="selectOneByNo" resultMap = "InflBoardResultMap">
+		SELECT * FROM INFL_PR WHERE INFL_PR_NO = #{inflPRNo}
+	</select>
+
+	<insert id="deleteInflBoard">
+		DELETE FROM INFL_PR WHERE INFL_PR_NO = #{inflPRNo}
+	</insert>
+	
+	<update id="updateBoard">
+		UPDATE INFL_PR SET INFL_CONCEPT=#{inflConcept}, INFL_PLATFORM=#{inflPlatform}
+		, INFL_URL=#{inflUrl}, INFL_FOLLOWER=#{inflFollower}
+		, INFL_INTRO=#{inflIntro}, FILE_NAME=#{fileName}, FILE_RENAME=#{fileRename}
+		, FILE_PATH = #{filePath}, INFL_ID=#{inflId}
+		WHERE INFL_PR_NO = #{inflPRNo}
+	</update>
 	
 </mapper>

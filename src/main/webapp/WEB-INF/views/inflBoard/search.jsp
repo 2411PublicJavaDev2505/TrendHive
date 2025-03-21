@@ -19,11 +19,11 @@
 			<div class = "search" action = "/inflboard/search" method="get">
 				<form action="/inflboard/search" method="get">
 					<select class = "search-select" name = "searchCondition">
-						<option value = "inflPlatfoam">플랫폼명</option>
-						<option value = "inflConcept">활동주제</option>
+						<option value = "inflPlatfoam" <c:if test="${searchCondition eq 'inflPlatfoam' }">selected</c:if>>플랫폼명</option>
+						<option value = "inflConcept"<c:if test="${searchCondition eq 'inflConcept' }"></c:if>>활동주제</option>
 					</select>
 						<input type = "text" class="search-input" name="searchKeyword" placeholder="검색어 입력">
-						<button type = "submit" class="search-button">검색</button>
+						<button type = "submit" class="search-button"><a href="/inflboard/search">검색</button>
 				</form>
 					<button type = "submit" class="add-button"><a href="/inflboard/add">글쓰기</a></button>
 			</div>
@@ -38,7 +38,7 @@
 			
 			<section class="board-content">
 				<div class="list-container">
-					<c:forEach items="${nList }" var="inflBoard">
+					<c:forEach items="${searchList }" var="inflBoard">
 						<div class="list">
 							<div id="img">
 								<a href="/inflboard/detail?inflPRNo=${inflBoard.inflPRNo }">
@@ -51,7 +51,7 @@
 				</div>
 			</section>
 			<br>
-		
+				 
 		<div class="pagination">
 			<c:if test="${startNavi ne 1 }">
 				<a href="/inflboard/list?currentPage=${startNavi -1}" class="prev">&lt;</a>
@@ -64,7 +64,6 @@
 				<a href="/inflboard/list?currentPage=${endNavi +1 }" class="next">&gt;</a>
 			</c:if>
 		</div>
-		
 				 
        <jsp:include page = "/WEB-INF/views/include/footer.jsp"></jsp:include>
     </main>
