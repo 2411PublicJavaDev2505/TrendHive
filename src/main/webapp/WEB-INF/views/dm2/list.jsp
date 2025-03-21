@@ -34,15 +34,19 @@
 				</div>
 			</span>
 		</div>
-		<select name="dayorder">
-			<option value="latestCv">최신대화순</option>
-			<option value="oldCv">오래된대화순</option>
-		</select>
-		<div id= "dayTag">
-		<select name="day">
-			<option value="sendMessage">보낸메시지</option>
-			<option value="clearMessage">안읽은메시지</option>
-		</select>
+		<div class="dayTag">
+			<div id= "dayTag1">
+				<select name="dayorder">
+					<option value="latestCv">최신대화순</option>
+					<option value="oldCv">오래된대화순</option>
+				</select>
+			</div>
+			<div id= "dayTag2">
+				<select name="day">
+					<option value="sendMessage">보낸메시지</option>
+					<option value="clearMessage">안읽은메시지</option>
+				</select>
+			</div>
 		</div>
 		<table>
 			<tr id="dmTag1">
