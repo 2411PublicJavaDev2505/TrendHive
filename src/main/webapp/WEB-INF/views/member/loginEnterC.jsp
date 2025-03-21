@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,21 +17,22 @@
     <main class="login-main">
         <div class="login-container">
             <div class="login-image">
-                <img src="../resources/images/loginEnter.jpg" alt="로그인 이미지">
+                <img src="../resources/imagesloginEnter.jpg" alt="로그인 이미지">
             </div>
+            
             <div class="login-form">
                 <h1>로그인</h1>
-                <form action="" method="post">
-                <button class="login-btn company-login">기업 로그인</button>
-                <button class="login-btn creator-login">크리에이터 로그인</button>
+                <form class="login-form" action="/member/loginEnterC" method="post">
+                    <div class="form-group">
+                        <button class="login-btn">로그인</button>
+                    </div>
+                </form>
                 <p>계정이 없으신가요? 
-                    <a href="#signup-company">기업 회원가입</a> /
-                    <a href="#signup-creator">크리에이터 회원가입</a>
+                    <a href="#signup-creator">기업 회원가입</a>
                 </p>
                 <p>비밀번호를 잊으셨나요? 
                     <a href="#reset-password">비밀번호 재설정</a>
                 </p>
-                </form>
             </div>
         </div>
     </main>

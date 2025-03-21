@@ -4,7 +4,7 @@
 <header>
 	<div class="top">
 		<div class="logo">
-			<span class="logo-text">TrendHive</span>
+			<span class="logo-text" href="index">TrendHive</span>
         </div>
 	</div>
 
@@ -14,8 +14,10 @@
             <li><a href="#company">For Company</a></li>
             <li><a href="#creator">For Creator</a></li>
             <li><a href="#notice">Notice</a></li>
-            <li><a href="/member/loginEnter">로그인</a></li>
-            <li><a href="/member/signUp">회원가입</a></li>
+            <li><a href="/member/loginEnterC">기업 로그인</a></li>
+            <li><a href="/member/loginEnterInfl">크리에이터 로그인</a></li>
+            <li><a href="/member/signUp">기업 회원가입</a></li>
+            <li><a href="/member/signUp">크리에이터 회원가입</a></li>
         </ul>
 	</nav>
 </header>
