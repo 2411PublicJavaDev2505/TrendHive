@@ -24,7 +24,7 @@
       	</div>
     	</div>
     
-	    <form class="form" action="/member/signupC" method="POST">
+	    <form class="form" action="/company/insert" method="POST">
 	      <div class="form-group">
 	        <label for="id">아이디</label>
 	        <input type="text" name="companyId" placeholder="아이디">
@@ -33,14 +33,13 @@
 	
 	      <div class="form-group">
 	        <label for="business-number">사업자 번호 입력</label>
-	        <input type="text" name="companyTaxId" placeholder="사업자 번호 - 제외">
+	        <input type="text" name="companyTax" placeholder="사업자 번호 - 제외">
 	        <button type="button">조회하기</button>
 	      </div>
 	
 	      <div class="form-group">
 	        <label for="business-doc">사업자등록증 첨부</label>
-	        <input type="text" name="companyTaxIdDoc" placeholder="사업자등록증 첨부">
-	        <button type="button">첨부</button>
+	        <input type="file" name="uploadFile" placeholder="사업자등록증 첨부">
 	      </div>
 	
 	      <div class="form-group">

@@ -1,12 +1,17 @@
 package com.hive.trend.company.service.impl;
 
+import org.apache.ibatis.session.SqlSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hive.trend.company.controller.dto.CompanyLoginRequest;
+import com.hive.trend.company.controller.dto.CompanyModifyRequest;
 import com.hive.trend.company.domain.CompanyVO;
 import com.hive.trend.company.service.CompanyService;
 import com.hive.trend.company.store.CompanyStore;
 
+@Service
 public class CompanyServiceImpl implements CompanyService{
 	
 	@Autowired
@@ -22,7 +27,26 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Override
 	public CompanyVO selectOneByLogin(CompanyLoginRequest company) {
-		return null;
+		CompanyVO result = cStore.selectOneByLogin(session, company);
+		return result;
+	}
+
+	@Override
+	public int deleteCompany(String companyId) {
+		int result = cStore.deleteCompany(session, companyId);
+		return result;
+	}
+
+	@Override
+	public int updateCompany(CompanyModifyRequest company) {
+		int result = cStore.updateCompany(session, company);
+		return result;
+	}
+
+	@Override
+	public CompanyVO selectOneById(String companyId) {
+		CompanyVO result = cStore.selectOneById(session, companyId);
+		return result;
 	}
 
 }

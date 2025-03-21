@@ -14,8 +14,8 @@
             <li><a href="#company">For Company</a></li>
             <li><a href="#creator">For Creator</a></li>
             <li><a href="#notice">Notice</a></li>
-            <li><a href="/member/loginEnter">로그인</a></li>
-            <li><a href="/member/signUp">회원가입</a></li>
+            <li><a href="/member/login">로그인</a></li>
+            <li><a href="/member/insert">회원가입</a></li>
         </ul>
 	</nav>
 </header>
