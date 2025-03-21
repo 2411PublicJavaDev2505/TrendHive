@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CompanyMapper">
+	<resultMap type="Company" id="loginResultMap">
+		<id		property="memberId"		column="COMPANY_ID"/>
+		<result property="memberName" 	column="COMPANY_NAME"/>
+	</resultMap>
+	
+	<resultMap type="Company" id="companyResultMap">
+		<id		property="companyId"	column="COMPANY_ID"/>
+		<result property="companyPw"	column="COMPANY_PW"/>
+		<result property="companyName"	column="COMPANY_PW"/>
+		<result property="companyTax"	column="COMPANY_TAX_ID"/>
+		<result property="ceoName"		column="CEO_NAME"/>
+		<result property="companyAddress"	column="COMPANY_ADDRESS"/>
+		<result property="companyEmail"	column="COMPANY_EMAIL"/>
+		<result property="companyPhone"	column="COMPANY_PHONE"/>
+		<result property="type"	column="TYPE"/>
+	</resultMap>
+	<insert id="insertCompany">
+		INSERT INTO COMPANY
+		VALUES(#{companyId}, #{companyPw}, #{companyName}, #{companyTax}, #{ceoName}
+		, #{companyAddress}, #{companyEmail}, #{companyPhone}, DEFAULT)
+		
+	</insert>
+	<select id="selectOneByLogin" resultMap="loginResultMap">
+		SELECT * FROM COMPANY WHERE COMPANY_ID = #{companyId} AND COMPANY_PW =#{companyPw}
+	</select>
+</mapper>
