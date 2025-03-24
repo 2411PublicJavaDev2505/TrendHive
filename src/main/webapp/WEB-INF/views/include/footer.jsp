@@ -7,7 +7,6 @@
 			<li><a href="#intro">TrendHive 소개</a></li>
             <li><a href="#terms">이용약관</a></li>
             <li><a href="#information">개인정보처리방침</a></li>
-            <li><a href="#policy">운영・관리방침</a></li>
 		</ul>
 	</nav>
         <div class="footer-logo">
