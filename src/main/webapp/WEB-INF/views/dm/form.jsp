@@ -2,20 +2,30 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
- <body>
-	<div class="wrap">
-		<div class="chat ch1">
-			<div class="icon"><i class="fa-solid fa-user"></i></div>
-			<div class="textbox">안녕하세요~ </div>
+	<head>
+		<meta charset="UTF-8">
+		<title>메시지</title>
+	</head>
+	<body>
+		<div id="dmContainer">
+		<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+			<main>
+				<div id="date">
+					<input type="text" name="sysdate">
+				</div>
+				<div id="viewMessage">
+					<input type="text" name="viewDm">
+				</div>
+				<div id="getMessage">
+					받은메시지
+				</div>
+				<div id="inputMessage">
+					<input type="text" name="inputDM">
+					<span>
+						<button class="send">전송</button>
+					</span>					
+				</div>
+			</main>
 		</div>
-		<div class="chat ch2">
-			<div class="icon"><i class="fa-solid fa-user"></i></div>
-			<div class="textbox">안녕하세요! 제품 잘 받으셨나요? </div>
-		</div>
-	</div>
- </body>
+	</body>
 </html>

@@ -13,11 +13,16 @@ public class TrendHive {
 	private String filePath;
 	private String dmContents;
 	private String userId;
+	private String companyName;
+	private String sendId;
+	private String receiveId;
+	private Date sendTime;
+	private String dmSubject;
 	
 	public TrendHive() {}
 
 	public TrendHive(int dmNo, Date insertDmdate, Timestamp insertDmtime, String fileName, String fileRename,
-			String filePath, String dmContents, String userId) {
+			String filePath, String dmContents, String userId, String companyName, String sendId, String receiveId, Date sendTime, String dmSubject) {
 		super();
 		this.dmNo = dmNo;
 		this.insertDmdate = insertDmdate;
@@ -27,6 +32,11 @@ public class TrendHive {
 		this.filePath = filePath;
 		this.dmContents = dmContents;
 		this.userId = userId;
+		this.companyName = companyName;
+		this.sendId = sendId;
+		this.receiveId = receiveId;
+		this.sendTime = sendTime;
+		this.dmSubject = dmSubject;
 	}
 
 	public int getDmNo() {
@@ -60,13 +70,34 @@ public class TrendHive {
 	public String getUserId() {
 		return userId;
 	}
+	
+	public String companyName() {
+		return companyName;
+	}
+	
+	public String sendId() {
+		return sendId;
+	}
+	
+	public String receiveId() {
+		return receiveId;
+	}
+	
+	public Date sendTime() {
+		return sendTime;
+	}
+	
+	public String dmSubject() {
+		return dmSubject;
+	}
 
 	@Override
 	public String toString() {
 		return "TrendHive [dmNo=" + dmNo + ", insertDmdate=" + insertDmdate + ", insertDmtime=" + insertDmtime
 				+ ", fileName=" + fileName + ", fileRename=" + fileRename + ", filePath=" + filePath + ", dmContents="
-				+ dmContents + ", userId=" + userId + "]";
+				+ dmContents + ", userId=" + userId + companyName + sendId + receiveId + sendTime + dmSubject + "]";
 	}
-	
+
+
 	
 }
