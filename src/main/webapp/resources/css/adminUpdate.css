@@ -1,0 +1,148 @@
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.containerL {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.chat-section {
+    flex: 9;
+    margin-top: 90px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-bar .search-btn {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar .search-btn:hover {
+    background-color: #ccc;
+}
+
+.containerR {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.containerR h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    flex-basis: 15%;
+}
+
+.form-group input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-group select {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-group button {
+    width: 115px;
+    background-color: #e0f7fa;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    margin-left: auto;
+}
+.form-group button:hover {
+    background-color: #4682B4;
+}
+
+
+.update-btn {
+    width: calc(100%);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e0f7fa;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+.withdraw-btn {
+    background-color: #ff6b6b;
+    width: calc(100%);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+.zipcode-btn:hover {
+    background-color: #4682B4;
+}
+
+.update-btn:hover {
+    background-color: #4682B4;
+}
+
+.withdraw-btn:hover {
+    background-color: #770216;
+}

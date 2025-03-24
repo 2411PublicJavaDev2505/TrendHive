@@ -87,7 +87,7 @@
 		
 		      <div class="form-group">
 		        <label for="address">주소</label>
-		        <input type="text" name="inflAddress" placeholder="회사주소">
+		        <input type="text" name="inflAddress" placeholder="주소">
 		        <button type="button">우편번호찾기</button>
 		      </div>
 		

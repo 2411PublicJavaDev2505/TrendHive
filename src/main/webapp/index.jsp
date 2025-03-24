@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../resources/css/footer.css">
 </head>
 <body>
+    
     <jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<main class="main-container">
         <div class="image-container">
@@ -24,5 +25,6 @@
         </div>
     </main>
     <jsp:include page="/WEB-INF/views/include/footer.jsp" />
+    
 </body>
 </html>
