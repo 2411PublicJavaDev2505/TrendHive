@@ -16,7 +16,7 @@
         <jsp:include page="/WEB-INF/views/include/header.jsp" />
     </header>
     <div class="container">
-            <h1 id="subject">다양한 크리에이터들을 만나보세요</h1>
+        <h1 id="subject">다양한 크리에이터들을 만나보세요</h1>
         <div class="search-bar">
                 <div class="search-filter">
                     <select class="filter-dropdown">
@@ -27,21 +27,18 @@
                     <button class="search-btn">🔍</button>
                 </div>
         </div>
-
-            <div class="board-list">
-                <c:forEach items="${nList }" var="inflBoard">
-                    <div class="list">
-                        <div class="img" onclick="location.href='/detail-page'">
-                            <div class="product-img">${inflBoard.inflId }</div>
-                            <div class="img-text">${inflBoard.inflId }</div>
-                        </div>
+        <div class="board-list">
+            <c:forEach items="${nList }" var="inflBoard">
+                <div class="list">
+                    <div class="img" onclick="location.href='/detail-page'">
+                        <div class="product-img">${inflBoard.inflId }</div>
+                        <div class="img-text">${inflBoard.inflId }</div>
                     </div>
-                </c:forEach>
-            </div>       
-    </div>
-
-        <div class="pagination">
-            <c:if test="${startNavi ne 1 }">
+                </div>
+            </c:forEach>
+        </div>       
+		<div class="pagination">
+			<c:if test="${startNavi ne 1 }">
 				<a href="/inflboard/list?currentPage=${startNavi -1}" class="prev">&lt;</a>
 			</c:if>
 				<c:forEach begin="${startNavi }" end="${endNavi }" var="p" >

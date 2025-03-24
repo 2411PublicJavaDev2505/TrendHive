@@ -19,7 +19,7 @@
 	</resultMap>
 	
 	<select id="selectList" resultMap="InflBoardResultMap">
-		SELECT * FROM INFL_PR ORDER BY INFL_PR_NO
+		SELECT * FROM INFL_PR ORDER BY INFL_PR_NO DESC
 	</select>
 	
 	<select id="getTotalCount" resultType="_int">
@@ -42,7 +42,7 @@
 	<insert id="addInflBoard">
 		INSERT INTO INFL_PR
 		VALUES(SEQ_INFL_PR_NO.NEXTVAL, #{inflConcept}, #{inflPlatform}, #{inflUrl}, 
-		#{inflFollower}, #{inflIntro}, default, #{fileName}, #{fileRename}, #{filePath}, #{inflId})
+		#{inflFollower}, #{inflIntro}, default, #{inflId}, #{fileName}, #{fileRename}, #{filePath})
 	</insert>
 	
 	<select id="selectOneByNo" resultMap = "InflBoardResultMap">
