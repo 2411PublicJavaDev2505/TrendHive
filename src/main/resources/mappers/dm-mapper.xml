@@ -2,7 +2,6 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
  <mapper namespace="DmMapper">
  	<resultMap type="TrendHive" id="TrendHiveDm">
 	 	<id property="dmNo" column="DM_NO" />
@@ -13,6 +12,46 @@
 	 	<result property="filePath" column="FILE_PATH" />
 	 	<result property="dmContents" column="DM_CONTENTS" />
 	 	<result property="userId" column="USER_ID" />
+	 	<result property="companyName" column="COMPANY_NAME" />
  	</resultMap>
- 	<select id="" resultMap=""></select>
+ 	<insert id="insertDm">
+ 		INSERT INTO TrendHive
+ 		VALUES(#{insertDmdate}, #{insertDmtime}, #{fileName}, #{fileRename}, #{filePath}, #{dmContents}, #{userId}, #{companyName})
+ 	</insert>
+ 	<select id="getDmList" resultMap="TrendHiveDm">
+	    SELECT * FROM DM_TBL 
+	    ORDER BY INSERT_DMDATE ${orderType} <!-- DESC 또는 ASC 중 선택 -->
+	</select>
+ 	<select id="getDmDetail" resultMap="TrendHiveDm">
+ 		SELECT * FROM DM_TBL WHERE USER_ID = #{userId}
+ 	</select>
+ 	<select id="searchListByKeyword" resultMap="TrendHiveDm">
+ 		SELECT * FROM NOTICE_TBL
+ 		<where>
+	 		<!-- 작성자로 검색하는 쿼리문 -->
+	 		<if test="searchCondition == 'writer'">
+	 			USER_ID LIKE '%'||#{searchKeyword}||'%
+	 		</if>
+	 		<!-- 제목으로 검색하는 쿼리문 -->
+	 		<if test="searchCondition == 'title'">
+	 			DM__SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	 		</if>
+	 		<!-- 내용으로 검색하는 쿼리문 -->
+	 		<if test="seacrhCondition == 'content'">
+	 			DM_CONTENTS LIKE '%||#{searchKeyword}||%'
+	 		</if>
+	 		<!-- 전체에서 검색하는 쿼리문 -->
+	 		<if test="seacrhCondition == 'all'">
+	 			USER_ID LIKE '%'||#{searchKeyword}||'%
+	 			DM__SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	 			DM_CONTENTS LIKE '%||#{searchKeyword}||%'
+	 		</if>	
+	 		AND DM_YN = 'Y'
+ 		</where>
+ 		ORDER BY DM_NO DESC
+ 	</select>
+ 	<!-- 최신대화순, 오래된대화순 정렬 select 추가 --> 
+ 	<select id="selectDmDetail" resultMap="TrendHiveDm">
+ 		SELECT * FROM DM_TBL ORDER BY INSERT_DMTIME DESC
+ 	</select>
  </mapper>

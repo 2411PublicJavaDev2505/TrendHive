@@ -9,18 +9,27 @@
 		<link rel="stylesheet" type="text/css" href="../resources/css/list.css">
 	</head>
 	<body>
-<div class="mainContainer">
+	<div class="mainContainer">
 	<aside class="dmContainer">
 		<div class="container">
+			<!-- 검색 영역  -->
 			<div class="contentSearch">
-			<input type="search" name="dmsearch" placeholder="대화내용, 작성자 검색">
-			<span id= "buttonBox">
-				<button type = "submit" id="magnifierBtn">
-					<img src="../resources/images/icons8-돋보기-30.png" alt="send">
-				</button>
-			</span>
-		
-		</div>
+				<form action="/dm/search" method="get">
+					<select name="searchCondition">
+						<option value="content">대화내용</option>
+						<option value="writer">작성자</option>
+					</select>
+				<input type="search" name="searchKeyword" placeholder="대화내용, 작성자 검색">
+				<input type="submit" value="검색">
+				<span id= "buttonBox">
+					<button type = "submit" id="magnifierBtn">
+						<img src="../resources/images/icons8-돋보기-30.png" alt="send">
+					</button>
+				</span>
+				</form>
+			</div>
+			
+			<!-- 버튼 -->
 		<div class = "button-container">
 			<span class="button-group">
 				<div class="button1">
@@ -32,6 +41,8 @@
 				</div>
 			</span>
 		</div>
+		
+		<!-- 정렬 영역 -->
 		<div class="selectBtn">
 			<select name="dayorder">
 				<option value="latestCv">최신대화순</option>
@@ -44,6 +55,20 @@
 		</div>
 		
 		<table>
+		
+		<!-- 테스트중 지우세요 -->
+			<c:forEach var="dm" items="${dmList}">
+				<tr id="${dm.dmNo}">
+					<td><input type="checkbox" checked></td>
+					<td><img src="" alt=""></td>
+					<td>
+						<div>${dm.companyName}</div>
+						<div>${dm.dmContents}</div>
+					</td>
+					<td>${dm.insertDmdate}</td>
+				</tr>	 
+			</c:forEach>
+		<!-- 테스트중 지우세요 -->
 			<tr id="dmTag1">
 				<td><input type="checkbox" checked></td>
 				<td><img src="" alt=""></td>
@@ -87,44 +112,55 @@
 		</div>
 	</aside>
 	
-	<main>
+	<!-- 오른쪽 dm창 -->
+	<main > 
 		<article class="dmChang">
-			<div id = naljja > <!-- 여기에다가 달러{0000년00월00일 } 넣기.  --> 
-				<span id= "sysdateTag">0000년00월00일</span>
-			</div>
+			<c:if test="false"></c:if> <!-- 없는 화면/ false 자리에 달러{ } 넣기. -->
 			
-			<div class="wrap">
-	           	<div class="chat ch1">
-				<!--  	<ul>
-							<li>현재시간 메시지내용</li>
-						</ul>-->
-					<div class="icon"><i class="fa-solid fa-user"></i></div>
-	                <div class="textbox">안녕하세요. 겸둥이입니다. 제품 언제쯤 도착할까요?</div>
-	            </div>
-	
-	            <div class="chat ch2">
-	                <div class="icon"><i class="fa-solid fa-user"></i></div>
-	                <div class="textbox">네 안녕하세요. 트렌드하이브입니다. 확인해보겠습니다. </div>
-	            </div>
-	
-	            <div class="chat ch1">
-	                <div class="icon"><i class="fa-solid fa-user"></i></div>
-	                <div class="textbox">넵 확인 후 말씀 주세요!</div>
-	            </div>
+			 <!-- 있는 화면/ true 자리에 달러{ } 넣기. -->
+			<c:if test="true">
+				<div id=naljja > 
+					<!-- 여기에다가 달러{0000년00월00일 } 넣기.  --> 
+					<span id="sysdateTag">0000년00월00일</span>
+				</div>
+				<div class="wrap">
+		           	<div class="chat ch1">
+					<!--  	<ul>
+								<li>현재시간 메시지내용</li>
+							</ul>-->
+						<div class="icon"><i class="fa-solid fa-user"></i></div>
+		                <div class="textbox">안녕하세요. 겸둥이입니다. 제품 언제쯤 도착할까요?</div>
+		            </div>
+		
+		            <div class="chat ch2">
+		                <div class="icon"><i class="fa-solid fa-user"></i></div>
+		                <div class="textbox">네 안녕하세요. 트렌드하이브입니다. 확인해보겠습니다. </div>
+		            </div>
+		
+		            <div class="chat ch1">
+		                <div class="icon"><i class="fa-solid fa-user"></i></div>
+		                <div class="textbox">넵 확인 후 말씀 주세요!</div>
+		            </div>
 
-        	</div>
-        	<div class="wrap-bottom">
-				<div id="fileUplode">
-					<button>파일업로드</button>
-<!-- 					<input type="file" value="파일업로드"> -->
-				</div>
-				<div id= "inputmessage">
-					<!-- <textarea id="message" placeholder="메시지를 입력하세요"></textarea> -->
-					<textarea rows="1180px" cols="150px" id="message" placeholder="메시지를 입력하세요"></textarea> 
-					<!-- <input type="text" id="message" placeholder="메시지를 입력하세요" > -->
-					<button type="submit" id="sendBtn">전송</button>
-				</div>
-        	</div>
+        		</div>
+	        	<div class="wrap-bottom">
+					<div id="fileUplode">
+						<button>파일업로드</button>
+	<!-- 					<input type="file" value="파일업로드"> -->
+					</div>
+					<div id= "inputmessage">
+						<!-- <textarea id="message" placeholder="메시지를 입력하세요"></textarea> -->
+						<textarea rows="1180px" cols="150px" id="message" placeholder="메시지를 입력하세요"></textarea> 
+						<!-- <input type="text" id="message" placeholder="메시지를 입력하세요" > -->
+						<button type="submit" id="sendBtn">전송</button>
+					</div>
+	        	</div>
+			</c:if>
+			
+			
+			
+			
+			
 		</article>
 	</main>
 </div>
