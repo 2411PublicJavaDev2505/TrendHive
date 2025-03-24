@@ -40,8 +40,9 @@
             </div>       
     </div>
 
-        <div class="pagination">
-            <c:if test="${startNavi ne 1 }">
+
+		<div class="pagination">
+			<c:if test="${startNavi ne 1 }">
 				<a href="/inflboard/list?currentPage=${startNavi -1}" class="prev">&lt;</a>
 			</c:if>
 				<c:forEach begin="${startNavi }" end="${endNavi }" var="p" >
@@ -51,8 +52,12 @@
 			<c:if test="${endNavi ne maxPage}">
 				<a href="/inflboard/list?currentPage=${endNavi +1 }" class="next">&gt;</a>
 			</c:if>
+
         </div>
-    </div>
+
+
+
+
     <footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>

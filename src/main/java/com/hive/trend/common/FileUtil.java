@@ -18,7 +18,7 @@ public class FileUtil {
 	public Map<String,String> saveFile(MultipartFile uploadFile, HttpSession session, String type) throws IllegalStateException, IOException {
 			
 		Map<String, String> result = new HashMap<String, String>();
-			String folderName = type.equals("notice") ? "nUploadFiles" : "bUploadFiles";
+			String folderName = type.equals("inflBoard") ? "iUploadFiles" : "bUploadFiles";
 			String prefix = type.toLowerCase().substring(0,1);
 			//NoticeController에서 가져옴
 			String noticeFilename = uploadFile.getOriginalFilename();
