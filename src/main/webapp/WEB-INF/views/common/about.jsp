@@ -8,7 +8,7 @@
 <title>이용약관</title>
 	<link rel="stylesheet" href="../resources/css/header.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/acount.css">
+    <link rel="stylesheet" href="../resources/css/about.css">
 </head>
 <body>
 	<header>
@@ -17,7 +17,7 @@
     <div class="container">
         <div class="top">
             <div class="logo">
-                <span class="logo-text" href="index">TrendHive</span>
+                <span class="logo-trend">TrendHive</span>
             </div>
         </div>
     
@@ -25,7 +25,7 @@
             <div class="form-group">
                 <div class="agree">
                     <p>
-                        <strong>TrendHive는?</strong> <br/>
+                        <strong>TrendHive는?</strong> <br/><br/>
                         트렌드하이브 사이트는 인지도를 높이고자 하는 크리에이터와 홍보를 하고자 하는 중소기업 간의 매칭을 돕는 사이트입니다. <br/><br/>
                         트렌드하이브 사이트는 회원제로 운영되고, 홍보글을 통해 서로 매칭할 기회를 갖습니다.<br/><br/> 
                         각 분야에서 인정할 만한 권위나 이력이 있거나, 트렌드하이브 사이트에서의 신뢰할 만하고 꾸준한 활동을 하는 크리에이터 및 지속적인 후원을 하는 기업회원의 경우, 프리미엄마크를 부여받아 노출이 더 유리해질 수 있습니다.<br/><br/>

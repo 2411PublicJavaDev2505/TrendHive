@@ -22,7 +22,7 @@
 			</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="dm" item="${dmList }">
+				<c:forEach var="dm" items="${dmList }">
 				<tr>
 					<td>${dm.sendId }</td>
 					<td>${dm.dmContents }</td>

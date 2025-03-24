@@ -21,12 +21,12 @@ import com.hive.trend.dm.model.vo.TrendHive;
 
 @Controller
 @RequestMapping("/dm")
-public class DmController {
+public class Dm2Controller {
 
 	private final DmService dmService;
 	
 	@Autowired
-	public DmController(DmService dmService) {
+	public Dm2Controller(DmService dmService) {
 		this.dmService = dmService;
 	}
 	

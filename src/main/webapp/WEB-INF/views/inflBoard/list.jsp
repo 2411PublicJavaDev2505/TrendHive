@@ -6,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판 페이지</title>
-    <link rel="stylesheet" href="../resources/css/footer.css">
+    <title>크리에이터 게시판 페이지</title>
     <link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/boarder.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
                         <option value="content">플랫폼명</option>
                         <option value="company">활동주제</option>
                     </select>
-                    <input type="text" class="search-input" placeholder="검색어 입력">
+                    <input type="text" class="search-input" placeholder="검색어를 입력하세요">
                     <button class="search-btn">🔍</button>
                 </div>
         </div>
@@ -40,9 +40,8 @@
             </div>       
     </div>
 
-
-		<div class="pagination">
-			<c:if test="${startNavi ne 1 }">
+        <div class="pagination">
+            <c:if test="${startNavi ne 1 }">
 				<a href="/inflboard/list?currentPage=${startNavi -1}" class="prev">&lt;</a>
 			</c:if>
 				<c:forEach begin="${startNavi }" end="${endNavi }" var="p" >
@@ -52,12 +51,8 @@
 			<c:if test="${endNavi ne maxPage}">
 				<a href="/inflboard/list?currentPage=${endNavi +1 }" class="next">&gt;</a>
 			</c:if>
-
         </div>
-
-
-
-
+    </div>
     <footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>

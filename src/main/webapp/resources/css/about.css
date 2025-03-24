@@ -17,11 +17,12 @@ body {
     align-items: center;
     padding: 10px 20px;
     position: relative;
+    border-bottom: 1px solid #000;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo-text {
+.logo-trend {
     font-family: 'Tenada';
     font-size: 70px;
     font-weight: bold;

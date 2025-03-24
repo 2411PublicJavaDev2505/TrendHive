@@ -6,9 +6,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>이용약관</title>
-<link rel="stylesheet" href="terms.css">
+	<link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/personalInfo.css">
 </head>
 <body>
+	<header>
+        <jsp:include page="/WEB-INF/views/include/header.jsp" />
+    </header>
     <div class="container">
         <p class="date ">시행일 : 2024-06-04</p>
         <div class="header">
@@ -40,5 +45,8 @@
             </div>
         </form>
         </div>
+        <footer>
+        <jsp:include page="/WEB-INF/views/include/footer.jsp" />
+    	</footer>
 </body>
 </html>
