@@ -2,56 +2,47 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>인플루언서 홍보 게시판 - 목록</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 페이지</title>
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/header.css">
-    <link rel="stylesheet" href="../resources/css/semimain.css">
+    <link rel="stylesheet" href="../resources/css/boarder.css">
 </head>
-<body>   	
-	<main>
-		<jsp:include page = "/WEB-INF/views/include/header.jsp"></jsp:include>
-		<h1 id="subject">다양한 크리에이터들을 만나보세요</h1>
-		
-		<div class = "search-div">
-			<div class = "search" action = "/inflboard/search" method="get">
-				<form action="/inflboard/search" method="get">
-					<select class = "search-select" name = "searchCondition">
-						<option value = "inflPlatfoam">플랫폼명</option>
-						<option value = "inflConcept">활동주제</option>
-					</select>
-						<input type = "text" class="search-input" name="searchKeyword" placeholder="검색어 입력">
-						<button type = "submit" class="search-button">검색</button>
-				</form>
-					<button type = "submit" class="add-button"><a href="/inflboard/add">글쓰기</a></button>
-			</div>
-		</div>
-		
-		 <!-- <nav id="nav">
-           <ul class = "topMenu">
-                <li><a href="/inflboard/add">글쓰기</a></li>
-            </ul>
-         </nav> -->
-		<hr>
-			
-			<section class="board-content">
-				<div class="list-container">
-					<c:forEach items="${nList }" var="inflBoard">
-						<div class="list">
-							<div id="img">
-								<a href="/inflboard/detail?inflPRNo=${inflBoard.inflPRNo }">
-								<div id="image">${inflBoard.inflId }</div>
-								<div id="img-text">${inflBoard.inflId }</div>
-								</a>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
-			</section>
-			<br>
-		
+<body>
+    <header>
+        <jsp:include page="/WEB-INF/views/include/header.jsp" />
+    </header>
+    <div class="container">
+            <h1 id="subject">다양한 크리에이터들을 만나보세요</h1>
+        <div class="search-bar">
+                <div class="search-filter">
+                    <select class="filter-dropdown">
+                        <option value="content">플랫폼명</option>
+                        <option value="company">활동주제</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="검색어 입력">
+                    <button class="search-btn">🔍</button>
+                </div>
+        </div>
+
+            <div class="board-list">
+                <c:forEach items="${nList }" var="inflBoard">
+                    <div class="list">
+                        <div class="img" onclick="location.href='/detail-page'">
+                            <a href="/inflboard/detail?inflPRNo=${inflBoard.inflPRNo }">
+	                            <div class="product-img">
+	                            <img src="..${inflBoard.filePath }">${InflBoardVO.filePath }</div>
+	                            <div class="img-text">${inflBoard.inflId }</div>
+                            </a>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>       
+    </div>
+
 		<div class="pagination">
 			<c:if test="${startNavi ne 1 }">
 				<a href="/inflboard/list?currentPage=${startNavi -1}" class="prev">&lt;</a>
@@ -64,10 +55,9 @@
 				<a href="/inflboard/list?currentPage=${endNavi +1 }" class="next">&gt;</a>
 			</c:if>
 		</div>
-		
-				 
-       <jsp:include page = "/WEB-INF/views/include/footer.jsp"></jsp:include>
-    </main>
-  	
+
+    <footer>
+        <jsp:include page="/WEB-INF/views/include/footer.jsp" />
+    </footer>
 </body>
 </html>

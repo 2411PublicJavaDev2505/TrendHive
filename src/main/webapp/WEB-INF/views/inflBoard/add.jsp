@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>인플루언서 홍보 게시판 - 게시글 등록</title>
+<title>인플루언서 홍보 게시판 - 등록</title>
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/header.css">
     <link rel="stylesheet" href="../resources/css/inflBoardAdd.css">
@@ -13,9 +13,12 @@
 <jsp:include page = "/WEB-INF/views/include/header.jsp"></jsp:include>
 <div id="contrainer">
 	<main>
-	 <div id="img-side">
+	<form action ="/inflboard/add" method="post" enctype="multipart/form-data">
+		<div id="img-side">
             <div id="img-box">
-                <img src="">
+			    <img id="preview" src="..${InflBoardVO.filePath }">
+                첨부파일 : <span><a href="..${InflBoardVO.filePath }">${inflboard.fileName }</a></span>
+				<input type="file" name="uploadFile" onchange="readURL(this)">
             </div>
         </div>
         <div id="intro-side">
@@ -23,7 +26,7 @@
 
                 <div id="name-box">
                 	<%--${infl.inflNickname}--%>
-                    <input id="company-name" type="text" name="companyName" placeholder="크리에이터명 입력"> 
+                    <input id="infl-name" type="text" name="inflNickname" placeholder="크리에이터명 입력"> 
                 </div>
                 
                 <div id="inflConcept">
@@ -65,31 +68,41 @@
                 </div>
                 <div id="bottom-detail">
 
+        
                     <div id="d1">
-                        모집 공고
+                        이메일
                     </div>
+                    <%--<input text="${infl.inflEmail}"--%>
                     <div id="d2">
-                        <input type="text" id="" name="companyPosting" placeholder="모집 공고">
+                        <input type="text" id="" name="inflEmail" placeholder="이메일">
                     </div>
 
                     <div id="inflIntro">
                         자기 소개
                     </div>
                     <div id="inflIntro-detail">
-                        <textarea id="real-product-detail" name="inflIntro" rows="20" cols="100" placeholder="자기소개 입력란"></textarea>
+                        <textarea id="real-product-detail" name="inflIntro" rows="10" cols="50" placeholder="자기소개 입력란"></textarea>
                     </div>
                    
-                    <div id="d1">
-                        이메일
-                    </div>
-                    <div id="d2">
-                    <%--<input text="${infl.inflEmail}"--%>
-                        <input type="text" id="" name="inflEmail" placeholder="이메일">
-                    </div>
+            	<button type="submit" class="add-button">등록하기</button>
                 </div>
         </div>
+        </form>
 	</main>
-<jsp:include page = "/WEB-INF/views/include/footer.jsp"></jsp:include>
+	<jsp:include page = "/WEB-INF/views/include/footer.jsp"></jsp:include>
+	<script>
+		function readURL(input) {
+		  if (input.files && input.files[0]) {
+		    var reader = new FileReader();
+		    reader.onload = function(e) {
+		      document.getElementById('preview').src = e.target.result;
+		    };
+		    reader.readAsDataURL(input.files[0]);
+		  } else {
+		    document.getElementById('preview').src = "";
+		  }
+		}
+	</script>
 </div>
 </body>
 </html>
