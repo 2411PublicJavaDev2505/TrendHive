@@ -38,10 +38,10 @@
                     <button type="submit" class="btn loginbtn">기업 로그인</button><br/>
                 </form>
                 <p>계정이 없으신가요? 
-                    <a href="#signup-company">기업 회원가입</a>
+                    <a href="/member/signupC">기업 회원가입</a>
                 </p>
                 <p>비밀번호를 잊으셨나요? 
-                    <a href="#reset-password">비밀번호 재설정</a>
+                    <a href="/member/password">비밀번호 재설정</a>
                 </p>
             </div>
         </div>

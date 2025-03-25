@@ -19,8 +19,8 @@
 		    <div class="header">
 		      <h2>크리에이터 가입</h2>
 		      <div class="agreements">
-		        <label><input type="checkbox"> 약관에 동의합니다. <a href="#">내용보기</a></label>
-		        <label><input type="checkbox"> 개인정보 수집에 동의합니다. <a href="#">내용보기</a></label>
+		        <label><input type="checkbox"> 약관에 동의합니다. <a href="/common/terms">내용보기</a></label>
+		        <label><input type="checkbox"> 개인정보 수집에 동의합니다. <a href="/common/personalInfo">내용보기</a></label>
 		      </div>
 		    </div>
 		    

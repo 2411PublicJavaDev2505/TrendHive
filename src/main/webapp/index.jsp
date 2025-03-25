@@ -43,7 +43,6 @@
         </div>
     </main>
     <jsp:include page="/WEB-INF/views/include/footer.jsp" />
-    <!-- JavaScript 연결 -->
     <script>
     const modal = document.getElementById("modal");
     const closeModalBtn = document.querySelector(".close-btn");

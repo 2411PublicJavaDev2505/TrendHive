@@ -19,8 +19,8 @@
     	<div class="header">
       		<h2>기업회원 가입</h2>
       		<div class="agreements">
-        		<label><input type="checkbox"> 약관에 동의합니다. <a href="#">내용보기</a></label>
-        		<label><input type="checkbox"> 개인정보 수집에 동의합니다. <a href="#">내용보기</a></label>
+        		<label><input type="checkbox"> 약관에 동의합니다. <a href="/common/terms">내용보기</a></label>
+        		<label><input type="checkbox"> 개인정보 수집에 동의합니다. <a href="/common/personalInfo">내용보기</a></label>
       	</div>
     	</div>
     
@@ -35,11 +35,6 @@
 	        <label for="business-number">사업자 번호 입력</label>
 	        <input type="text" name="companyTax" placeholder="사업자 번호 - 제외">
 	        <button type="button">조회하기</button>
-	      </div>
-	
-	      <div class="form-group">
-	        <label for="business-doc">사업자등록증 첨부</label>
-	        <input type="file" name="uploadFile" placeholder="사업자등록증 첨부">
 	      </div>
 	
 	      <div class="form-group">

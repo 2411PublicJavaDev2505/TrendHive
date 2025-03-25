@@ -53,7 +53,7 @@ public class CompanyController {
 		}
 	}
 	//기업 회원 로그인
-	@PostMapping("/login")
+	@PostMapping("/loginC")
 	public String companyLogin(
 			@RequestParam("companyId") String companyId
 			,@RequestParam("companyPw") String companyPw
@@ -154,7 +154,6 @@ public class CompanyController {
 			return "common/error";
 		}
 	}
-	
-	
+
 	
 }
