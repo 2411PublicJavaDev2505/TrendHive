@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Tenada';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    border-bottom: 1px solid #000;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-trend {
+    font-family: 'Tenada';
+    font-size: 70px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 5% auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.header h2 {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e0f7fa;
+    float: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+

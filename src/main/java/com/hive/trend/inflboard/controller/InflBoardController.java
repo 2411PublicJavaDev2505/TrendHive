@@ -33,7 +33,7 @@ public class InflBoardController {
 	private PageUtil pageUtil;
 	
 	@Autowired
-	public InflBoardController(InflBoardService nService, PageUtil pageUtil) {
+	public InflBoardController(InflBoardService nService, FileUtil fileUtil, PageUtil pageUtil) {
 		this.nService=nService;
 		this.fileUtil=fileUtil;
 		this.pageUtil=pageUtil;
@@ -111,9 +111,16 @@ public class InflBoardController {
 	@PostMapping("/add")
 	public String inflBoardAdd(
 			@ModelAttribute inflBoardAddRequest inflBoard
-			, HttpSession session
-			, Model model) {
+			, @RequestParam("uploadFile") MultipartFile uploadFile
+			, HttpSession session, Model model) {
 		try {
+			if(uploadFile != null && !uploadFile.getOriginalFilename().isBlank()) {
+				//비즈니스로직
+					Map<String, String> fileInfo = fileUtil.saveFile(uploadFile, session, "inflBoard");
+					inflBoard.setFileName(fileInfo.get("iFilename"));//saveFile의 리턴부분
+					inflBoard.setFileRename(fileInfo.get("iFileRename"));
+					inflBoard.setFilePath(fileInfo.get("iFilepath"));
+			}
 			int result = nService.addInflBoard(inflBoard);
 			return "redirect:/inflboard/list";//리다이렉트 url
 		} catch (Exception e) {
@@ -173,16 +180,16 @@ public class InflBoardController {
 			, @RequestParam("reloadFile") MultipartFile reloadFile
 			, HttpSession session, Model model) {
 		try {
-			if(session.getAttribute("inflId") == null) {
-				model.addAttribute("errorMsg", "로그인이 필요합니다..!");
-				return "common/error";
-			}
-			String inflId = (String)session.getAttribute("inflId");
+//			if(session.getAttribute("inflId") == null) {
+//				model.addAttribute("errorMsg", "로그인이 필요합니다..!");
+//				return "common/error";
+//			}
+//			String inflId = (String)session.getAttribute("inflId");
 			
-			if(!inflId.equals(inflBoard.getInflId())){
-				model.addAttribute("errorMsg", "자신이 작성한 글만 수정할 수 있습니다.");
-				return "common/error";
-			}
+//			if(!inflId.equals(inflBoard.getInflId())){
+//				model.addAttribute("errorMsg", "자신이 작성한 글만 수정할 수 있습니다.");
+//				return "common/error";
+//			}
 			if(reloadFile != null && !reloadFile.getOriginalFilename().isBlank()) {
 				Map<String, String> fileInfo = fileUtil.saveFile(reloadFile, session, "board");
 				inflBoard.setFileName(fileInfo.get("Filename"));

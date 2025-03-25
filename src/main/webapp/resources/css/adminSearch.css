@@ -1,0 +1,121 @@
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.containerL {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.chat-section {
+    flex: 9;
+    margin-top: 90px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-bar .search-btn {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar .search-btn:hover {
+    background-color: #ccc;
+}
+
+.containerR {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.containerR h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 600px;
+    overflow-y: auto;
+}
+
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.member-table thead th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.member-table tbody td {
+    text-align: center;
+    padding: 10px;
+}
+
+.member-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.type {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.type.creator {
+    background-color: #d5f5d5;
+}
+
+.type.company {
+    background-color: #d5eaf5;
+}
+
+.member-table th,
+.member-table td {
+    border: 1px solid #ddd;
+}

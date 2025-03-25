@@ -4,14 +4,14 @@
 <header>
 	<div class="top">
 		<div class="logo">
-			<span class="logo-text" href="index">TrendHive</span>
+			<span class="logo-text" ><a href="index.jsp">TrendHive</a> </span>
         </div>
 	</div>
 
     <nav class="nav">
 		<ul>
-			<li><a href="#about">What about Us</a></li>
-            <li><a href="#company">For Company</a></li>
+			<li><a href="/about">What about Us</a></li>
+            <li><a href="/companyboard/companylist">For Company</a></li>
             <li><a href="/inflboard/list">For Creator</a></li>
             <li><a href="#notice">Notice</a></li>
             <li><a href="/company/login">기업 로그인</a></li>

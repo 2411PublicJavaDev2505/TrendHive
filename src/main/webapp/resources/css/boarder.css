@@ -1,0 +1,105 @@
+/* 전체 컨테이너 스타일 */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container h1 {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.search-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-dropdown {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.search-bar input {
+    width: 980px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.search-bar .search-btn {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.board-content{
+	width:2117px;
+    height: 700px;
+    display: grid;
+    align-items: center;
+}
+
+.board-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.img {
+    background-color: #fffbea;
+    width:380px;
+    height:450px;
+    float:left;
+    margin: 10px;
+}
+
+.product-img {
+    width:380px;
+    height:360px;
+    text-align: center;
+}
+
+.img-text {
+    margin-top:10px;
+    width:380px;
+    height:80px;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f9f9f9;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}

@@ -221,3 +221,12 @@ main div{
     width: 700px;
     border: 1px solid black;
 }
+
+.add-button{
+    margin-top: 30px;
+    margin-right: 5px;
+    width:100px;
+    height:45px;
+    border-radius: 7px;
+	
+}
