@@ -44,4 +44,10 @@ public class DmStoreLogic implements DmStore{
 		List<TrendHive> searchList = session.selectList("DmMapper.selectSearchDmList", paramMap);
 		return null;
 	}
+
+	@Override
+	public List<TrendHive> selectDmDetail(SqlSession session, String sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
