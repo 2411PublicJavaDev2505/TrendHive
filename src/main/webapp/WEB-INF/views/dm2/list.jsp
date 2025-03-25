@@ -10,20 +10,19 @@
 	</head>
 	<link rel="stylesheet" href="../resources/css/header.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="dm2.css">
+    <link rel="stylesheet" href="../resources/css/dmlist2.css">
 </head>
 <body>
     <jsp:include page="/WEB-INF/views/include/header.jsp" />
     <div class="DajangContainer">
-        <header>
-    
-        </header>
-    
         <nav>
             <div Class="navContainer">
-            <div class="listContents" onclick="location.href='/dm/write'">
-                <button>DM</button>
-                <a href="dmWrite.do"></a> <!--쪽지보내기-->
+	            <div class="listContents">
+	         <!-- <a href='/dm/write'"> -->   
+		            <a href="<%= request.getContextPath() %>/dm/write">
+		                <button>DM</button>
+		            </a> <!--쪽지보내기-->
+	            </div> 
             </div>
         </nav>
     
@@ -31,24 +30,25 @@
             <div class="mainContainer">
                 <h3>받은DM</h3>
             
-                <span>  
                     <div class="search-group">
                         <form action="/dm2/search" method="get">
-                            <select name="totalDmSelect">
+                            <select name="totalDmSelect" id="inputSelect">
                                 <option value="totalDm">DM전체</option>
                                 <option value="sendDm">보낸DM</option>
-                                <option value="block1Tag">차단DM</option> <!--차단 진행할 경우 선택진행-->
+                             <!-- <option value="block1Tag">차단DM</option> <!--차단 진행할 경우 선택진행--> -->   
                             </select>
                         </form>    
+                        
                             <span id="inputBox">
                                 <input type="search" name="searchKeyword" placeholder="대화내용, 작성자 검색">
-                                <input type="submit" value="검색">
+                                <input type="submit" value="검색" id="serachInput">
                             </span>
+                            
                             <span id= "buttonBox">
                                 <button type = "submit" id="magnifierBtn">
-                                    <img src="../resources/images/icons8-돋보기-30.png" alt="send">
+                                    <img src="../resources/images/icons8-돋보기-30.png" alt="send" id="magnifierBtnIcon">
                                 </button>
-                            </span>
+                        	</span>
                     </div>    
                     <div class="action-group">
                         <span id="action">
@@ -59,9 +59,8 @@
                     </div>
     
                     <div class="list-group">
-                        <table>
+                        <table class="dm-table">
                             <thead>
-                                <div class="listTitle">
                                 <tr>
                                     <td><input type="checkbox" checked></td>
                                     <th class="table listNo">No</th>
@@ -100,7 +99,6 @@
                         </c:if>
                     </div>
 	                    
-	                </span>
 	            </div>
 	        </main>
 	    </div>

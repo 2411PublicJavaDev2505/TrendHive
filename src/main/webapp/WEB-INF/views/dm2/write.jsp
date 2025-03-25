@@ -13,27 +13,29 @@
     <div class="hDM">
 		<h2>DM보내기</h2>
 	</div>
-    <div class="sendler">
-        <form action="dmSend.do" method="post">
+      <form action="dmSend.do" method="post">
+	    <div class="sendler">
             <label for="receiverId">받는 사람:</label>
             <input type="text" id="receiverId" name="receiverId" required><br>
-        </form>
-    </div>
-
-    <div class="wrap-bottom">
-        <div id="fileUplode">
-            <button>파일업로드</button>
-<!-- 					<input type="file" value="파일업로드"> -->
-        </div>
-    <div class="dmContents">
-        <label for="content">내용:</label>
-        <textarea id="content" name="content" required></textarea><br>
-        
-        <div id="sendBtn">
-            <button type="submit">전송</button>
-        </div>
-    </div>    
-    
+	    </div>
+		
+	    <div class="wrap-bottom">
+	        <div id="fileUplode">
+	            <button>파일업로드</button>
+	<!-- 					<input type="file" value="파일업로드"> -->
+	        </div>
+		        
+		    <div class="dmContents">
+		        <label for="content">내용:</label>
+		        <textarea id="content" name="content" required></textarea><br>
+		    </div>
+		    
+		    <div id="sendBtn">
+		        <button type="submit">전송</button>
+		    </div>
+		</div>    
+	</form>    
+	
     <div class="dmList">
         <a href="dmList.do">목록</a> <!-- 목록으로 -->
     </div>
