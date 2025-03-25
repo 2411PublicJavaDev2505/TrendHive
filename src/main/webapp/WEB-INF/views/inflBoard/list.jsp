@@ -18,21 +18,28 @@
     <div class="container">
         <h1 id="subject">다양한 크리에이터들을 만나보세요</h1>
         <div class="search-bar">
-                <div class="search-filter">
-                    <select class="filter-dropdown">
-                        <option value="content">플랫폼명</option>
-                        <option value="company">활동주제</option>
-                    </select>
-                    <input type="text" class="search-input" placeholder="검색어를 입력하세요">
-                    <button class="search-btn">🔍</button>
-                </div>
+            <div class="search-filter">
+            	<form action="/inflboard/search" method="get">
+	                <select class="filter-dropdown"  name = "searchCondition">
+	                    <option value="inflPlatform">플랫폼명</option>
+	                    <option value="inflConcept">활동주제</option>	                        
+	                </select>
+	                <input type="text" class="search-input" name="searchKeyword" placeholder="검색어를 입력하세요">
+	                <button  type = "submit" class="search-btn">🔍</button>
+	                <button  type = "submit" class="search-btn"><a href="/inflboard/add">등록하기</button>
+	            </form>
+            </div>
         </div>
             <div class="board-list">
                 <c:forEach items="${nList }" var="inflBoard">
                     <div class="list">
                         <div class="img" onclick="location.href='/detail-page'">
-                            <div class="product-img">${inflBoard.inflId }</div>
-                            <div class="img-text">${inflBoard.inflId }</div>
+                            <a href="/inflboard/detail?inflPRNo=${inflBoard.inflPRNo }">
+	                            <div class="product-img">
+	                            <img src="..${inflBoard.filePath }">${InflBoardVO.filePath }</div>
+<!-- 	                            회원정보 연결되면 ${infl.inflNickname}으로 바꿀것 -->
+	                            <div class="img-text">${inflBoard.inflConcept }</div>
+                            </a>
                         </div>
                     </div>
                 </c:forEach>

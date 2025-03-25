@@ -14,6 +14,7 @@
 		<typeAlias type="com.hive.trend.infl.domain.InflVO" alias = "Infl"/>
 		<typeAlias type="com.hive.trend.company.domain.CompanyVO" alias = "Company"/>
 		<typeAlias type="com.hive.trend.dm.model.vo.TrendHive" alias = "TrendHive"/>
+		<typeAlias type="com.hive.trend.companyboard.model.vo.CompanyBoardVO" alias = "CompanyBoard"/>
 	</typeAliases>
 	
 	<!-- mapper.xml 만들어질 때마다 추가 -->
@@ -22,5 +23,6 @@
 		<mapper resource="mappers/infl-mapper.xml"/>
 		<mapper resource="mappers/company-mapper.xml"/>
 		<mapper resource="mappers/dm-mapper.xml"/>
+		<mapper resource ="mappers/companyboard-mapper.xml"/>
 	</mappers>
 </configuration>

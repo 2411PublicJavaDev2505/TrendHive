@@ -30,4 +30,10 @@ body {
     font-size: 36px;
     font-weight: bold;
     padding: 5px 10px;
+    text-decoration: none;
+}
+
+.image-container h2 a {
+	color: black; 
+    text-decoration: none;	
 }

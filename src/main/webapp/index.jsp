@@ -33,17 +33,22 @@
     </div>
     <jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<main class="main-container">
-        <div class="image-container">
-            <h2>For Company</h2>
-            <img src="../resources/images/maincompany031203.jpg" alt="Company Image">
-        </div>
-        <div class="image-container">
-            <h2><a href="/inflboard/list">For Creator</h2>
-            <img src="../resources/images/maincreater031204.jpg" alt="Creator Image">
-        </div>
+		
+	        <div class="image-container">
+	        	<a href="/companyboard/list">
+	            <h2>For Company</h2>
+	            <img src="../resources/images/maincompany031203.jpg" alt="Company Image">
+	            </a>
+	        </div>
+
+	        <div class="image-container">
+	            <a href="/inflboard/list">
+	            <h2>For Creator</h2>
+	            <img src="../resources/images/maincreater031204.jpg" alt="Creator Image">
+		        </a>
+	        </div>
     </main>
     <jsp:include page="/WEB-INF/views/include/footer.jsp" />
-    <!-- JavaScript 연결 -->
     <script>
     const modal = document.getElementById("modal");
     const closeModalBtn = document.querySelector(".close-btn");

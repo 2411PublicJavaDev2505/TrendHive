@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="CompanyBoardMapper">
+	<resultMap type="CompanyBoard" id="CompanyBoardResultMap">
+		<id     property = "companyPRNo" column = "COMPANY_PR_NO"/>
+		<result property = "productName" column = "PRODUCT_NAME"/>
+		<result property = "productPrice" column = "PRODUCT_PRICE"/>
+		<result property = "brandName" column = "BRAND_NAME"/>
+		<result property = "companyUrl" column = "COMPANY_URL"/>
+		<result property = "insertDate" column = "INSERT_DATE"/>
+		<result property = "companyIntro" column = "COMPANY_INTRO"/>
+		<result property = "companyPosting" column = "COMPANY_POSTING"/>
+		<result property = "productInfo" column = "PRODUCT_INFO"/>
+		<result property = "forCreator" column = "FOR_CREATOR"/>
+		<result property = "companyEmail" column = "COMPANY_EMAIL"/>
+		<result property = "companyPhone" column = "COMPANY_PHONE"/>
+		<result property = "fileName" column = "FILE_NAME"/>
+		<result property = "fileRename" column = "FILE_RENAME"/>
+		<result property = "filePath" column = "FILE_PATH"/>
+		<result property = "companyId" column = "COMPANY_ID"/>
+	</resultMap>
+	
+	<select id="selectList" resultMap="CompanyBoardResultMap">
+		SELECT * FROM COMPANY_PR ORDER BY COMPANY_PR_NO DESC
+	</select>
+	
+	<select id="getTotalCount" resultType="_int">
+  		SELECT COUNT(*) FROM COMPANY_PR
+  	</select>
+  	
+  	<insert id="addCompanyBoard">
+		INSERT INTO COMPANY_PR
+		VALUES(SEQ_INFL_PR_NO.NEXTVAL, #{productName}, #{productPrice}, #{brandName}, 
+		#{companyUrl}, default, #{companyIntro}, #{companyPosting}, #{productInfo}
+		, #{forCreator}, #{companyEmail}, #{companyPhone}, #{fileName}, #{fileRename}, #{filePath}, #{companyId})
+	</insert>
+	
+</mapper>
