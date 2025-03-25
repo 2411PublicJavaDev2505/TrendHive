@@ -11,7 +11,7 @@
     <nav class="nav">
 		<ul>
 			<li><a href="/about">What about Us</a></li>
-            <li><a href="/companyboard/companylist">For Company</a></li>
+            <li><a href="/companyboard/list">For Company</a></li>
             <li><a href="/inflboard/list">For Creator</a></li>
             <li><a href="#notice">Notice</a></li>
             <li><a href="/member/loginEnterC">기업 로그인</a></li>
