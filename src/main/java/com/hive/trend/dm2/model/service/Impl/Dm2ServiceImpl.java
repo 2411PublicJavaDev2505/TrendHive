@@ -1,5 +1,29 @@
 package com.hive.trend.dm2.model.service.Impl;
 
-public class Dm2ServiceImpl {
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hive.trend.dm2.model.service.Dm2Service;
+import com.hive.trend.dm2.model.store.Dm2Store;
+import com.hive.trend.dm2.model.vo.TrendHive;
+@Service
+public class Dm2ServiceImpl implements Dm2Service{
+	@Autowired
+	private Dm2Store dStore;
+	@Autowired
+	private SqlSession session;
+	
+	@Override
+	public List<TrendHive> getTrendHive(String userId) {
+		List<TrendHive> list = dStore.getTrendHive(session, userId);
+		return list;
+	}
+	@Override
+	public void sendDm(String sendId, String receiverId, String dmContents) {
+		dStore.sendDm(session, sendId, receiverId, dmContents);
+	}
 
 }

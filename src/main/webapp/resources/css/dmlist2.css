@@ -1,2 +1,73 @@
 @charset "UTF-8";
 
+.DajangContainer {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 5% auto;
+}
+
+.navContainer {
+    flex: 1;
+    background-color: #b85656;
+    border-radius: 10px;
+	width: 10%;
+    max-width: 1200px;
+	height: 1200px;
+	float: left;
+    
+}
+
+.mainContainer {
+    flex: 1;
+    background-color: #f9f9f9;
+	width: 90%;
+    max-width: 1200px;
+	height: 1200px;
+	float: left;
+    border-radius: 10px;
+}
+
+.listTitle {
+    
+
+}
+
+#table {
+    
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	line-height: 32px;
+}
+
+.pagination a {
+	font-size: 20px;
+	text-decoration: none;
+	color: #2d336a;
+	text-align: center;
+	width: 30px;
+	border-radius: 7px;
+	transition-duration: 1.0s;
+}
+
+.pagination a:hover {
+	background-color: #8089dd;
+}
+
+.list .table {
+	padding: 10px;
+	border-radius: 3px;
+	margin-right: 10px;
+	border-bottom: 1px solid #ddd;
+}

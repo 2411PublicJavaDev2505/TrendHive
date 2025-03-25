@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메시지 상세페이지</title>
+<title>메시지 전송</title>
 </head>
 <body>
-	<div class="dmContainer">
-		<div id="search">
-			<h3>메시지 상세</h3>
-		</div>
-	</div>
+
 </body>
 </html>
