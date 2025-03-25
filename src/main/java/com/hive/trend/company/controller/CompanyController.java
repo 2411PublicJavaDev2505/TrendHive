@@ -27,7 +27,7 @@ public class CompanyController {
 	private CompanyService cService; // 필드 의존성 주입
 	private FileUtil fileUtil;
 	private PageUtil pageUtil;
-	// 회원가입 페이지 이동
+	
 	@Autowired
 	public CompanyController(CompanyService cService, FileUtil fileUtil
 			, PageUtil pageUtil) {
@@ -35,6 +35,12 @@ public class CompanyController {
 		this.fileUtil = fileUtil;
 		this.pageUtil = pageUtil;
 	}
+	// 로그인 페이지 이동
+	@GetMapping("/login")
+	public String companyLoginForm() {
+		return "company/login";
+	}
+	// 회원가입 페이지 이동
 	@GetMapping("/insert")
 	public String companyInsertForm() {
 		return "company/insert";

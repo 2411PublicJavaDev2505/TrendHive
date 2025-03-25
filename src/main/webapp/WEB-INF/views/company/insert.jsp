@@ -37,10 +37,10 @@
 	        <button type="button">조회하기</button>
 	      </div>
 	
-	      <div class="form-group">
+	      <!-- <div class="form-group">
 	        <label for="business-doc">사업자등록증 첨부</label>
 	        <input type="file" name="uploadFile" placeholder="사업자등록증 첨부">
-	      </div>
+	      </div> -->
 	
 	      <div class="form-group">
 	        <label for="company-name">회사명</label>
@@ -57,11 +57,11 @@
 	        <input type="password" name="companyPw" placeholder="비밀번호">
 	      </div>
 	
-	      <div class="form-group">
+	     <!-- <div class="form-group">
 	        <label for="confirm-password">비밀번호 확인</label>
 	        <input type="password" name="companyPwCheck" placeholder="비밀번호 확인">
 	      </div>
-	
+			 -->	
 	      <div class="form-group">
 	        <label for="email">이메일</label>
 	        <input type="email" name="companyEmail" placeholder="이메일">
@@ -72,11 +72,6 @@
 	        <label for="company-address">회사주소</label>
 	        <input type="text" name="companyAddress" placeholder="회사주소">
 	        <button type="button">우편번호찾기</button>
-	      </div>
-	
-	      <div class="form-group">
-	        <label for="detailed-address">상세주소</label>
-	        <input type="text" name="companyDetailAddress" placeholder="상세주소">
 	      </div>
 	
 	      <div class="form-group">

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="InflMapper">
+	<resultMap type="Infl" id="loginResultMap">
+		<id		property="inflId"	column="INFL_ID"/>
+		<result	property="inflName"	column="INFL_NAME"/>
+	</resultMap>
+	
+	<resultMap type="Infl" id="inflResultMap">
+		<id			property="inflId"		column="INFL_ID"/>
+		<result		property="inflPw"		column="INFL_PW"/>
+		<result		property="inflName"		column="INFL_NAME"/>
+		<result		property="inflNickname"	column="INFL_NICKNAME"/>
+		<result		property="inflAge"		column="INFL_AGE"/>
+		<result		property="inflGender"	column="INFL_GENDER"/>
+		<result		property="inflPhone"	column="INFL_PHONE"/>
+		<result		property="inflAddress"	column="INFL_ADDRESS"/>
+		<result		property="inflEmail"	column="INFL_EMAIL"/>
+		<result		property="inflPlatform"	column="INFL_PLATFORM"/>
+		<result		property="inflUrl"		column="INFL_URL"/>
+		<result		property="type"			column="TYPE"/>
+	</resultMap>
+	<insert id="insertInfl">
+		INSERT INTO INFL VALUES
+		(#{inflId}, #{inflPw}, #{inflName}, #{inflNickname}, #{inflAge}, #{inflGender}, 
+		#{inflPhone}, #{inflAddress}, #{inflEmail}, #{inflPlatform}, #{inflUrl}, DEFAULT )
+	</insert>
+	<update id="updateInfl">
+		UPDATE INFL_TBL SET INFL_PW=#{inflPw}, INFL_NAME=#{inflName}, INFL_EMAIL=#{inflEmail}
+		, INFL_PHONE=#{inflPhone}, INFL_ADDRESS=#{inflAddress}, INFL_PLATFORM=#{inflPlatform}, INFL_URL=#{inflUrl}
+	</update>
+	<delete id="deleteMember">
+		DELETE FROM INFL WHERE INFL_ID = #{inflId}
+	</delete>
+	<select id="selectOneByLogin" resultMap="loginResultMap">
+		SELECT * FROM INFL WHERE INFL_ID = #{inflId} AND INFL_PW = #{inflPw}
+	</select>
+	<select id="selectOneById" resultMap="inflResultMap">
+		SELECT * FROM INFL WHERE INFL_ID = #{inflId}
+	</select>
+</mapper>

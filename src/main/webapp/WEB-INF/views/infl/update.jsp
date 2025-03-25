@@ -47,7 +47,7 @@
 		        <input type="text" name="inflplaform" placeholder="대표 채널명">
 		      </div>
 		
-		      <div class="form-group">
+		  <!--    <div class="form-group">
 		        <label for="plaform">플랫폼</label>
 		        <select id="inflPlaformDetail" name="plaform">
 		          <option value="">선택하세요</option>
@@ -58,7 +58,7 @@
 		          <option value="fetc">그외(직접입력)</option>
 		        </select>
 		      </div>
-		
+		-->
 		      <div class="form-group">
 		        <label for="name">이름</label>
 		        <input type="text" name="inflName" placeholder="이름">

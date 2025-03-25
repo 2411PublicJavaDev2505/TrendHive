@@ -11,10 +11,14 @@
 	<!-- VO 만들어질 때마다 추가 -->
 	<typeAliases>
 		<typeAlias type="com.hive.trend.inflboard.model.vo.InflBoardVO" alias = "InflBoard"/>
+		<typeAlias type="com.hive.trend.infl.domain.InflVO" alias = "Infl"/>
+		<typeAlias type="com.hive.trend.company.domain.CompanyVO" alias = "Company"/>
 	</typeAliases>
 	
 	<!-- mapper.xml 만들어질 때마다 추가 -->
 	<mappers>
 		<mapper resource ="mappers/inflboard-mapper.xml"/>
+		<mapper resource = "mappers/infl-mapper.xml"/>
+		<mapper resource = "mappers/company-mapper.xml"/>
 	</mappers>
 </configuration>

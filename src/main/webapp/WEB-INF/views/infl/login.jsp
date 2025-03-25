@@ -21,24 +21,24 @@
             </div>
 
             <div class="login-form">
-                <h1>기업 로그인</h1>
-                <form class="login-form" action="/member/loginC" method="post">
+                <h1>크리에이터 로그인</h1>
+                <form class="login-form" action="/infl/login" method="post">
                     <div class="form-group">
                         <label for=>아이디: </label>
-                        <input type="text" name="memberId" placeholder="아이디">
+                        <input type="text" name="inflId" placeholder="아이디">
                     </div>
                     <div class="form-group">
                         <label for=>비밀번호: </label>
-                        <input type="password" name="memberPw" placeholder="비밀번호">
+                        <input type="password" name="inflPw" placeholder="비밀번호">
                     </div>
                     <div class="checkbox-container">
                         <input type="checkbox" id="save-id">
                         <label for="save-id">아이디 저장</label><br/>
                     </div>
-                    <button type="submit" class="btn loginbtn">기업 로그인</button><br/>
+                    <button type="submit" class="btn loginbtn">크리에이터 로그인</button>
                 </form>
                 <p>계정이 없으신가요? 
-                    <a href="#signup-company">기업 회원가입</a>
+                    <a href="/infl/insert">크리에이터 회원가입</a>
                 </p>
                 <p>비밀번호를 잊으셨나요? 
                     <a href="#reset-password">비밀번호 재설정</a>

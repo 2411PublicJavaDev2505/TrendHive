@@ -71,11 +71,6 @@
 	      </div>
 	
 	      <div class="form-group">
-	        <label for="detailed-address">상세주소</label>
-	        <input type="text" name="companyDetailAddress" placeholder="상세주소">
-	      </div>
-	
-	      <div class="form-group">
 	        <label for="contact">연락처</label>
 	        <input type="text" name="companyPhone" placeholder="연락처">
 	      </div>
