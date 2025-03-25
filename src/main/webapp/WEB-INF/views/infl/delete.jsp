@@ -23,14 +23,14 @@
             
             <div class="withdraw-form">
                 <h1>회원 탈퇴</h1>
-                <form class="withdraw-form" action="/member/#" method="post">
+                <form class="withdraw-form" action="/infl/delete" method="post">
                     <div class="form-group">
                         <label >아이디</label>
-                        <input type="text" name="memberId" placeholder="아이디">
+                        <input type="text" name="inflId" placeholder="아이디">
                     </div>
                     <div class="form-group">
                         <label >이메일 *</label>
-                        <input type="email" name="memberEmail" placeholder="이메일*">
+                        <input type="email" name="inflEmail" placeholder="이메일*">
                     </div>
                     <div class="form-group">
                         <label for="userType">사용자 유형</label>
