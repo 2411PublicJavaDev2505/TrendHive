@@ -1,15 +1,19 @@
-<%@ page language="java" dmContentsType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Document</title>
+	</head>
+	<link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="dm2.css">
 </head>
-<link rel="stylesheet" href="dm2.css">
 <body>
+    <jsp:include page="/WEB-INF/views/include/header.jsp" />
     <div class="DajangContainer">
         <header>
     
@@ -17,8 +21,9 @@
     
         <nav>
             <div Class="navContainer">
+            <div class="listContents" onclick="location.href='/dm/write'">
                 <button>DM</button>
-                <a href="dmWrite.do">DM</a> <!--쪽지보내기-->
+                <a href="dmWrite.do"></a> <!--쪽지보내기-->
             </div>
         </nav>
     
@@ -47,8 +52,8 @@
                     </div>    
                     <div class="action-group">
                         <span id="action">
-                            <button id="delete">X 삭제</button>
-                            <button id="reply">답장</button>
+                            <button id="delete">삭제</button>
+                            <button id="reply" onclick="location.href='/dm/reply'">답장</button>
                             <button id="block2Tag">차단</button> <!--차단 진행할 경우 선택진행-->
                         </span>
                     </div>
@@ -68,14 +73,14 @@
                                 </div>
                             </thead>
                             <tbody>
-                                <div class="listContents">
-                                    <c:forEach items="${lList }" var="list" varStatus="i">
+                                <div class="listContents" onclick="location.href='/dm/detail'">
+                                    <c:forEach items="${dmList }" var="msg" varStatus="i" >
                                         <tr>
                                             <td class="table listno">${(page.currentPage-1)*10 + i.index + 1}</td>
-                                            <td class="table sendler">${list.sendId }</td>
-                                            <td class="table contents">${list.dmContents }</td>
-                                            <td class="table date">${list.sendTime }</td>
-                                            <td class="table block">${list.차단 }</td> <!--차단 dm에 추가해야하지? ->해야함. 차단 진행할 경우 추가하고 선택진행-->
+                                            <td class="table sendler">${msg.sendId }</td>
+                                            <td class="table contents"><a href="/dm/detail?dmNo=${msg.dmNo }">${msg.dmContents }</a></td>
+                                            <td class="table date">${msg.sendTime }</td>
+<%--                                             <td class="table block">${list.차단 }</td> <!--차단 dm에 추가해야하지? ->해야함. 차단 진행할 경우 추가하고 선택진행--> --%>
                                         </tr>
                                     </c:forEach>
                                 </div>
@@ -94,9 +99,10 @@
                             <a href="/dm2/list?currentPage=${page.endNavi+1 }">&gt;</a>
                         </c:if>
                     </div>
-                    
-                </span>
-            </div>
-        </main>
-    </div>
-</body>
+	                    
+	                </span>
+	            </div>
+	        </main>
+	    </div>
+	</body>
+</html>

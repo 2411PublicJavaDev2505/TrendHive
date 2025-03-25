@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.hive.trend.dm2.model.service.Dm2Service;
 import com.hive.trend.dm2.model.store.Dm2Store;
+import com.hive.trend.dm2.model.vo.DmVO;
 import com.hive.trend.dm2.model.vo.TrendHive;
 @Service
 public class Dm2ServiceImpl implements Dm2Service{
@@ -17,13 +18,23 @@ public class Dm2ServiceImpl implements Dm2Service{
 	private SqlSession session;
 	
 	@Override
-	public List<TrendHive> getTrendHive(String userId) {
-		List<TrendHive> list = dStore.getTrendHive(session, userId);
+	public List<TrendHive> getDmList(String userId) {
+		List<TrendHive> list = dStore.getDmList(session, userId);
 		return list;
 	}
 	@Override
 	public void sendDm(String sendId, String receiverId, String dmContents) {
 		dStore.sendDm(session, sendId, receiverId, dmContents);
+	}
+	@Override
+	public int deleteDmList(int dmNo) {
+		int result = dStore.deleteDmList(session, dmNo);
+		return result;
+	}
+	@Override
+	public DmVO selectOneByNo(int dmNo) {
+		DmVO dm = dStore.selectOneByNo(session, dmNo);
+		return dm;
 	}
 
 }

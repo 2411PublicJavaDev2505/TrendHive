@@ -4,8 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
  <mapper namespace="Dm2Mapper">
- 	<resultMap type="TrendHive" id="TrendHiveDm">
-	 	<id property="dmNo" column="DM_NO" />
+ 	<resultMap type="Dm" id="dmResultmap">
+	 	<id 	property="dmNo" column="DM_NO" />
 	 	<result property="insertDmdate" column="INSERT_DMDATE" />
 	 	<result property="insertDmtime" column="INSERT_DMTIME" />
 	 	<result property="fileName" column="FILE_NAME" />
@@ -14,15 +14,26 @@
 	 	<result property="dmContents" column="DM_CONTENTS" />
 	 	<result property="userId" column="USER_ID" />
 	 	<result property="companyName" column="COMPANY_NAME" />
+	 	<result property="sendId" column="SEND_ID" />
+	 	<result property="receiveId" column="RECEIVE_ID" />
+	 	<result property="sendTime" column="SEND_TIME" />
+	 	<result property="dmSubject" column="DM_SUBJECT" />
+	 	<result property="receiveTime" column="RECEIVE_TIME" />
  	</resultMap>
  	<insert id="sendDm">
  		INSERT INTO TrendHive
  		VALUES(#{obj.sendId}, #{obj.receiverId}, #{obj.dmContents}})
  	</insert>
- 	<select id="getTrendHive" resultMap="TrendHiveDm2">
-	    SELECT * FROM DM_TBL 
+ 	<select id="getDmList" resultMap="dmResultmap">
+	    SELECT * FROM DM
 	    WHERE USER_ID = #{userId}
 	    ORDER BY INSERT_DMDATE DESC 
+	</select>
+ 	<insert id="deleteDmList">
+	    DELETE FROM DM WHERE DM_NO = #{dmNo}
+	</insert>
+	<select id="selectOneByNo" resultMap="dmResultmap">
+		SELECT * FROM DM WHERE DM_NO = #{dmNo}
 	</select>
  	
  </mapper>

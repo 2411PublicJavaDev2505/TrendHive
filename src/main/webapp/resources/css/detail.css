@@ -1,1 +1,15 @@
 @charset "UTF-8";
+
+.action-group button{
+    background-color: #eaf7ff;
+    border-radius: 3px;
+    width: 45px;
+    height: 30px;
+    font-weight: bold; 
+}
+
+.dmInfo {
+    border: 1px solid black;
+    width: 1205px;
+    height: 817px;
+}
