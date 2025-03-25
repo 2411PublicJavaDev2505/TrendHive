@@ -1,61 +1,102 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" dmContentsType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>DM메시지함</title>
-		<link rel="stylesheet" href="../resources/css/footer.css">
-    	<link rel="stylesheet" href="../resources/css/header.css">
-		<link rel="stylesheet" type="text/css" href="../resources/css/dm.css">
-	</head>
-	<body>
-		<h1>받은 쪽지함</h1>
-		<table border="1">
-			<thead>
-			<tr>
-				<th>보낸사람</th>
-				<th>내용</th>
-				<th>날짜</th>
-				<th>차단</th>
-			</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="dm" items="${dmList }">
-				<tr>
-					<td>${dm.sendId }</td>
-					<td>${dm.dmContents }</td>
-					<td>${dm.receiveId }</td>
-					<td>${dm.block }</td>
-				</tr>
-				</c:forEach>	
-			</tbody>
-		</table>
-
-		<div>
-			<button type="button" onclick="showModifyForm(${board.boardNo});">수정하기</button>
-			<button type="button" onclick="deleteConfirm(${board.boardNo})">삭제하기</button>
-			<button type="button" id="listBtn">목록으로</button>
-			<button type="button" onclick="goBack();">뒤로가기</button>
-		</div>
-		<script>
-			function showModifyForm(boardNo) {
-				location.href="/board/modify/"+boardNo;
-			}
-			function deleteConfirm(boardNo) {
-				var result = confirm("정말로 삭제하시겠습니까?");
-				if(result) {
-					location.href="/board/delete/"+boardNo;
-				}
-			}
-			document.querySelector("#listBtn")
-				.addEventListener("click", function() {
-				location.href = "/board/list";
-			});
-			function goBack() {
-				history.go(-1);
-			}
-		</script>
-		<a href="messageWrite.do">쪽지보내기</a>
-	</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="dm2.css">
+<body>
+    <div class="DajangContainer">
+        <header>
+    
+        </header>
+    
+        <nav>
+            <div Class="navContainer">
+                <button>DM</button>
+                <a href="dmWrite.do">DM</a> <!--쪽지보내기-->
+            </div>
+        </nav>
+    
+        <main>
+            <div class="mainContainer">
+                <h3>받은DM</h3>
+            
+                <span>  
+                    <div class="search-group">
+                        <form action="/dm2/search" method="get">
+                            <select name="totalDmSelect">
+                                <option value="totalDm">DM전체</option>
+                                <option value="sendDm">보낸DM</option>
+                                <option value="block1Tag">차단DM</option> <!--차단 진행할 경우 선택진행-->
+                            </select>
+                        </form>    
+                            <span id="inputBox">
+                                <input type="search" name="searchKeyword" placeholder="대화내용, 작성자 검색">
+                                <input type="submit" value="검색">
+                            </span>
+                            <span id= "buttonBox">
+                                <button type = "submit" id="magnifierBtn">
+                                    <img src="../resources/images/icons8-돋보기-30.png" alt="send">
+                                </button>
+                            </span>
+                    </div>    
+                    <div class="action-group">
+                        <span id="action">
+                            <button id="delete">X 삭제</button>
+                            <button id="reply">답장</button>
+                            <button id="block2Tag">차단</button> <!--차단 진행할 경우 선택진행-->
+                        </span>
+                    </div>
+    
+                    <div class="list-group">
+                        <table>
+                            <thead>
+                                <div class="listTitle">
+                                <tr>
+                                    <td><input type="checkbox" checked></td>
+                                    <th class="table listNo">No</th>
+                                    <th class="table sendler">보낸사람</th>
+                                    <th class="table contents">내용</th>
+                                    <th class="table date">날짜</th>
+                                    <th class="table block">차단</th> <!--차단 진행할 경우 선택진행-->
+                                </tr>
+                                </div>
+                            </thead>
+                            <tbody>
+                                <div class="listContents">
+                                    <c:forEach items="${lList }" var="list" varStatus="i">
+                                        <tr>
+                                            <td class="table listno">${(page.currentPage-1)*10 + i.index + 1}</td>
+                                            <td class="table sendler">${list.sendId }</td>
+                                            <td class="table contents">${list.dmContents }</td>
+                                            <td class="table date">${list.sendTime }</td>
+                                            <td class="table block">${list.차단 }</td> <!--차단 dm에 추가해야하지? ->해야함. 차단 진행할 경우 추가하고 선택진행-->
+                                        </tr>
+                                    </c:forEach>
+                                </div>
+                            </tbody>
+                        </table>
+                    </div>
+            
+                    <div class="pagination">
+                        <c:if test="page.startNavi ne 1">
+                            <a href="/dm2/list?currentPage=${page.startNavi-1 }">&lt;</a>
+                        </c:if>
+                        <c:forEach begin="${page.startNavi}" end="${page.endNavi }" var="i">
+                            <a href="/dm2/list?currentPage=${i }">${p }</a> 
+                        </c:forEach>
+                        <c:if test="${page.endNavi ne page.maxPage }">
+                            <a href="/dm2/list?currentPage=${page.endNavi+1 }">&gt;</a>
+                        </c:if>
+                    </div>
+                    
+                </span>
+            </div>
+        </main>
+    </div>
+</body>
