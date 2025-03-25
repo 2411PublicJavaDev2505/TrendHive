@@ -11,12 +11,12 @@
 	<!-- VO 만들어질 때마다 추가 -->
 	<typeAliases>
 		<typeAlias type="com.hive.trend.inflboard.model.vo.InflBoardVO" alias = "InflBoard"/>
-		<typeAlias type="com.hive.trend.dm.model.vo.TrendHive" alias = "TrendHive"/>
+		<typeAlias type="com.hive.trend.dm2.model.vo.DmVO" alias = "Dm"/>
 	</typeAliases>
 	
 	<!-- mapper.xml 만들어질 때마다 추가 -->
 	<mappers>
 		<mapper resource ="mappers/inflboard-mapper.xml"/>
-		<mapper resource ="mappers/dm-mapper.xml"/>
+		<mapper resource ="mappers/dm2-mapper.xml"/>
 	</mappers>
 </configuration>

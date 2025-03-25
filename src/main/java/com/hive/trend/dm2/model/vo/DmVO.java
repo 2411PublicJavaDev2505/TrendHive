@@ -3,7 +3,7 @@ package com.hive.trend.dm2.model.vo;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-public class TrendHive {
+public class DmVO {
 	
 	private int dmNo;
 	private Date insertDmdate;
@@ -20,9 +20,9 @@ public class TrendHive {
 	private String dmSubject;
 	private Date receiveTime; // 데이터에 추가한지 얼마안됐음. 여기랑 dto response, detail.jsp에 추가함.
 	
-	public TrendHive() {}
+	public DmVO() {}
 
-	public TrendHive(int dmNo, Date insertDmdate, Timestamp insertDmtime, String fileName, String fileRename,
+	public DmVO(int dmNo, Date insertDmdate, Timestamp insertDmtime, String fileName, String fileRename,
 			String filePath, String dmContents, String userId, String companyName, String sendId, String receiveId,
 			Date sendTime, String dmSubject, Date receiveTime) {
 		super();
