@@ -134,7 +134,7 @@ main {
 }
 
 #magnifierBtn{
-	height: 21px;
+	height: 38px;
 }
 
 #magnifierBtnIcon{
@@ -143,5 +143,84 @@ main {
 
 #serachInput{
 	height: 21px;
+}
+
+
+
+/* 아래 추가 */
+
+.listContents {
+	width: 100%;
+	padding: 15px;
+	font-size: 16px;
+}
+select {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #333;
+}
+.search-group {
+    display: flex;
+    align-items: center; 
+    gap: 15px;
+}
+
+#inputBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#buttonBox {
+    display: flex;
+    align-items: center;
+}
+
+
+input[type="search"] {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #eaf7ff;
+    color: #black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #eaf7ff;
+}
+
+#magnifierBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#magnifierBtn img {
+    width: 20px;
+    height: 20px;
+}
+#delete, #reply {
+    padding: 5px 10px;
+    background-color: #eaf7ff;
+    color: #black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 

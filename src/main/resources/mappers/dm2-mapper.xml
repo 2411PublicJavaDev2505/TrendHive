@@ -35,5 +35,15 @@
 	<select id="selectOneByNo" resultMap="dmResultmap">
 		SELECT * FROM DM WHERE DM_NO = #{dmNo}
 	</select>
+	<!-- <select id="selectTotalDm" resultType="dmResultmap">
+        SELECT * FROM DM 
+        WHERE SEND_ID = #{userId} OR receive_id = #{userId}
+        ORDER BY SEND_TIME DESC
+    </select>
+    <select id="selectReceivedDm" resultType="dmResultmap">
+        SELECT * FROM DM 
+        WHERE RECEIVE_ID = #{userId}
+        ORDER BY RECEIVE_TIME DESC
+    </select> -->
  	
  </mapper>

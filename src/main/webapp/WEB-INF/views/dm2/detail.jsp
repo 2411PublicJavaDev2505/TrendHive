@@ -24,7 +24,7 @@
     </div>
 
     <div class="dmInfo">
-        <c:forEach items="${Info }" var="Info" varStatus="i">
+        <c:forEach items="${dInfo }" var="Info" varStatus="i">
             <span id="infoRow">
             <tr>
                 <td class="table sendler">${Info.sendId}</td>

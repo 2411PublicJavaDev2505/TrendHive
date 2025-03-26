@@ -15,5 +15,9 @@ public interface Dm2Service {
 
 	DmVO selectOneByNo(int dmNo);
 
+//	List<DmVO> getTotalDmList(String userId);
+//
+//	List<DmVO> getReceivedDmList(String userId);
+
 
 }
