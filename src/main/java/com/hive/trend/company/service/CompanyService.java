@@ -2,6 +2,7 @@ package com.hive.trend.company.service;
 
 import com.hive.trend.company.controller.dto.CompanyLoginRequest;
 import com.hive.trend.company.controller.dto.CompanyModifyRequest;
+import com.hive.trend.company.controller.dto.CompanyPasswordRequest;
 import com.hive.trend.company.domain.CompanyVO;
 
 public interface CompanyService {
@@ -15,5 +16,7 @@ public interface CompanyService {
 	int updateCompany(CompanyModifyRequest company);
 
 	CompanyVO selectOneById(String companyId);
+
+	CompanyVO selectOneByEmail(CompanyPasswordRequest company);
 
 }

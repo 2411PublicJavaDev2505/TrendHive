@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.hive.trend.company.controller.dto.CompanyLoginRequest;
 import com.hive.trend.company.controller.dto.CompanyModifyRequest;
+import com.hive.trend.company.controller.dto.CompanyPasswordRequest;
 import com.hive.trend.company.domain.CompanyVO;
 import com.hive.trend.company.service.CompanyService;
 import com.hive.trend.company.store.CompanyStore;
@@ -46,6 +47,12 @@ public class CompanyServiceImpl implements CompanyService{
 	@Override
 	public CompanyVO selectOneById(String companyId) {
 		CompanyVO result = cStore.selectOneById(session, companyId);
+		return result;
+	}
+
+	@Override
+	public CompanyVO selectOneByEmail(CompanyPasswordRequest company) {
+		CompanyVO result = cStore.selectOneByEmail(session, company);
 		return result;
 	}
 

@@ -20,62 +20,62 @@
       		<h2>기업회원 정보수정</h2>
     	</div>
     
-	    <form class="form" action="/member/signupC" method="POST">
-	      <div class="form-group">
+	    <form class="form" action="/company/update" method="POST">
+	      <!-- <div class="form-group">
 	        <label for="id">아이디</label>
 	        <input type="text" name="companyId" placeholder="아이디">
-	      </div>
+	      </div> -->
 	
 	      <div class="form-group">
-	        <label for="business-number">사업자 번호 입력</label>
-	        <input type="text" name="companyTaxId" placeholder="사업자 번호 - 제외">
+	        <label for="business-number">사업자 번호 재설정</label>
+	        <input type="text" name="companyTax" value="${company.companyTax }" placeholder="사업자 번호 - 제외">
 	        <button type="button">조회하기</button>
 	      </div>
 	
-	      <div class="form-group">
+	      <!-- <div class="form-group">
 	        <label for="business-doc">사업자등록증 첨부</label>
 	        <input type="text" name="companyTaxIdDoc" placeholder="사업자등록증 첨부">
 	        <button type="button">첨부</button>
+	      </div> -->
+	
+	      <div class="form-group">
+	        <label for="company-name">회사명 변경</label>
+	        <input type="text" name="companyName" value="${company.companyName }" placeholder="회사명">
 	      </div>
 	
 	      <div class="form-group">
-	        <label for="company-name">회사명</label>
-	        <input type="text" name="companyName" placeholder="회사명">
-	      </div>
-	
-	      <div class="form-group">
-	        <label for="ceo-name">대표명</label>
-	        <input type="text" name="ceoName" placeholder="대표명">
+	        <label for="ceo-name">대표명 변경</label>
+	        <input type="text" name="ceoName" value="${company.ceoName }" placeholder="대표명">
 	      </div>
 	
 	      <div class="form-group">
 	        <label for="password">비밀번호 재설정</label>
-	        <input type="password" name="companyPw" placeholder="비밀번호 재설정">
+	        <input type="password" name="companyPw" value="${company.companyPassword }" placeholder="비밀번호 재설정">
 	      </div>
 	
-	      <div class="form-group">
+	      <!-- <div class="form-group">
 	        <label for="confirm-password">비밀번호 확인</label>
 	        <input type="password" name="companyPwCheck" placeholder="비밀번호 확인">
-	      </div>
+	      </div> -->
 	
 	      <div class="form-group">
 	        <label for="email">이메일</label>
-	        <input type="email" name="companyEmail" placeholder="이메일">
+	        <input type="email" name="companyEmail" value="${company.companyEmail }" placeholder="이메일">
 	        <button type="button">중복확인</button>
 	      </div>
 	
 	      <div class="form-group">
 	        <label for="company-address">회사주소</label>
-	        <input type="text" name="companyAddress" placeholder="회사주소">
+	        <input type="text" name="companyAddress" value="${company.companyAddress }"placeholder="회사주소">
 	        <button type="button">우편번호찾기</button>
 	      </div>
 	
 	      <div class="form-group">
 	        <label for="contact">연락처</label>
-	        <input type="text" name="companyPhone" placeholder="연락처">
+	        <input type="text" name="companyPhone" value="${company.companyPhone }" placeholder="연락처">
 	      </div>
 	
-	      <button type="submit" class="join-btn">Join</button>
+	      <button type="submit" class="join-btn">변경하기</button>
           <button type="submit" class="withdraw-btn">회원탈퇴</button>
 	    </form>
 	  </div>
