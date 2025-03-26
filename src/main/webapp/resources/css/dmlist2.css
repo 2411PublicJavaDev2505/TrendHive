@@ -29,6 +29,10 @@
     padding: 20px;
 }
 
+.mainContainer h3 {
+	padding-bottom: 30px;
+}
+
 main {
     flex: 1; /*  */
     padding: 10px;
@@ -77,6 +81,33 @@ main {
     text-align: center;
     
 }
+
+
+
+.table {
+        text-align: center;
+        padding: 8px;
+}
+
+.contents {
+    width: 50%;
+    word-break: break-all;
+}
+
+.reply, .delete {
+    width: 10%;
+    min-width: 80px;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.listNo, .sendler, .receiver {
+    width: 10%;
+}
+
+.dm-table td {
+	width: 5%;
+}
+
 
 .list .table {
 	padding: 10px;
@@ -135,10 +166,12 @@ main {
 
 #magnifierBtn{
 	height: 38px;
+	
 }
 
 #magnifierBtnIcon{
 	height: 21px;
+	
 }
 
 #serachInput{
@@ -168,6 +201,12 @@ select {
     gap: 15px;
 }
 
+#totalDmSelect {
+    height: 40px; 
+    font-size: 14px;
+	
+}
+
 #inputBox {
     display: flex;
     align-items: center;
@@ -179,12 +218,20 @@ select {
     align-items: center;
 }
 
+#dmForm {
+	display: flex;
+	width: 400px;
+}
+
 
 input[type="search"] {
     padding: 10px;
     font-size: 14px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    
+    height: 40px; 
+    font-size: 14px;
 }
 
 input[type="submit"] {
@@ -208,11 +255,13 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 40px; 
+    font-size: 14px;
 }
 
 #magnifierBtn img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 #delete, #reply {
     padding: 5px 10px;

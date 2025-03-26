@@ -1,7 +1,9 @@
 package com.hive.trend.dm2.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,7 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.hive.trend.common.FileUtil;
 import com.hive.trend.common.PageUtil;
@@ -21,9 +25,10 @@ import com.hive.trend.dm2.model.vo.TrendHive;
 import com.hive.trend.inflboard.model.service.InflBoardService;
 
 @Controller
-@RequestMapping("/dm")
+@RequestMapping("/dm2")
 public class Dm2Controller {
 
+	private static final String FILE_SAVE_PATH = null;
 	private Dm2Service dm2Service;
 	private FileUtil fileUtil;
 	private PageUtil pageUtil;
@@ -39,13 +44,36 @@ public class Dm2Controller {
 	
 	// 받은 메시지 리스트 조회 select
 	@GetMapping("/list")
-	public String dmList(Model model, HttpSession session) {
+	public String dmList(
+			@RequestParam(value="page", defaultValue="1") int currentPage
+			,HttpSession session 
+			, Model model) {
 //		String userId = (String)session.getAttribute("userId");
-		List<TrendHive> dm = dm2Service.getDmList("olauser1");
-		model.addAttribute("dmList", dm);
-		return "dm2/list";
-		
+		String id = (String)session.getAttribute("companyId");
+//		List<TrendHive> dm = dm2Service.getDmList(id);
+	try {	
+		List<TrendHive> dm = dm2Service.getDmList("olauser1", currentPage);
+		int totalCount = dm2Service.getTotalCount("olauser1");
+		Map<String, Integer> pageInfo = new PageUtil().generatePageInfo(totalCount, currentPage);
+
+		if(!dm.isEmpty()) {
+			model.addAttribute("maxPage", pageInfo.get("maxPage"));
+			model.addAttribute("startNavi", pageInfo.get("startNavi"));
+			model.addAttribute("endNavi", pageInfo.get("endNavi"));
+			model.addAttribute("dmList", dm);
+			return "dm2/list";
+		}else {
+			model.addAttribute("errorMessage", "데이터가 존재하지 않습니다.");
+			return "common/error";
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+		model.addAttribute("errorMessage", e.getMessage());
+		return "common/error";
 	}
+}
+		
+		
 	// 메시지 작성 페이지 이동 
 	@GetMapping("/write")
 	public String dmWrite() {
@@ -59,8 +87,31 @@ public class Dm2Controller {
 			HttpSession session) {
 		String sendId = (String)session.getAttribute("userId");
 		dm2Service.sendDm(sendId, receiverId, dmContents);
-		return "redirect:/message/list?userId=" + sendId; 
+		return "redirect:/dm2/list"; 
 			
+	}
+	
+	@PostMapping("/dmSend.do")
+	public String sendDM(@RequestParam("receiverId") String receiverId, 
+			@RequestParam("content") String content,
+			@RequestParam(value="file", required = false) MultipartFile file, Model model) {
+		
+		try {
+			String fileName = null;
+            if (file != null && !file.isEmpty()) {
+                fileName = file.getOriginalFilename();
+                File saveFile = new File(FILE_SAVE_PATH, fileName);
+                file.transferTo(saveFile);
+			}
+			dm2Service.sendDm(receiverId, content, file != null ? file.getOriginalFilename() : null);
+			
+			return "redirect:/dmList.do";
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("errorMessage", "파일 오류가 발생했습니다.");
+			return "error";
+			
+		}
 	}
 	
 	// 메시지 삭제
@@ -69,7 +120,7 @@ public class Dm2Controller {
 			@RequestParam("dmNo") int dmNo
 			, Model model) {
 			int result = dm2Service.deleteDmList(dmNo);
-			return "redirect:/dm/list";
+			return "redirect:/dm2/list";
 	}
 
 	
@@ -81,7 +132,7 @@ public class Dm2Controller {
 		try {
 			DmVO dm = dm2Service.selectOneByNo(dmNo);
 			model.addAttribute("dm", dm);
-			return "inflBoard/detail";
+			return "dm2/detail";
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -94,17 +145,33 @@ public class Dm2Controller {
 	//메시지 답장
 	@GetMapping("/reply")
 	public String replyDm(@RequestParam("dmNo") int dmNo, Model model) {
-	    try {
-	        DmVO dm = dm2Service.selectOneByNo(dmNo);  
-	        model.addAttribute("dm", dm);  
-	        return "dm2/reply";
-	        
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        model.addAttribute("errorMessage", e.getMessage());
-	        return "common/error";  
-	    }
+//	    try {
+//	        DmVO dm = dm2Service.selectOneByNo(dmNo);  
+//	        model.addAttribute("dm", dm);  
+//	        return "dm2/reply";
+//	        
+//	    } catch (Exception e) {
+//	        e.printStackTrace();
+//	        model.addAttribute("errorMessage", e.getMessage());
+//	        return "common/error";  
+//	    }
+		DmVO dmMessage = dm2Service.getDmMessageById(dmNo);
+		model.addAttribute("dm", dmMessage);
+		return "dm2/reply";
 	}
+	
+	//해당메서드 삭제
+//	@RequestMapping(value = "/reply", method = RequestMethod.GET)
+//	public String reply(@RequestParam(value = "dmNo", required = false, defaultValue = "0") int dmNo, Model model) {
+//	    if (dmNo == 0) {
+//	        return "redirect:/dmList.do"; // 값이 없으면 목록으로 이동
+//	    }
+//
+//	    DM dm = dm2Service.getDMById(dmNo);
+//	    model.addAttribute("dm", dm);
+//
+//	    return "dm/reply";
+//	}
 //	//메시지 조회/정렬
 //	 @GetMapping("/search")
 //	    public String searchDmList(@RequestParam("totalDmSelect") String filter, Model model, HttpSession session) {

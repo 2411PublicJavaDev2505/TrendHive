@@ -16,7 +16,7 @@
             <li><a href="/notice/adminNotice">Notice</a></li>
             <c:choose>
                 <c:when test="${sessionScope.loggedIn}">
-                    <li><a href="#direct-message">Direct Message</a></li>
+                    <li><a href="/dm2/list">Direct Message</a></li>
                     <li><a href="/company/logout">로그아웃</a></li>
                     <li><a href="/company/update" class="user-welcome">
                     Welcome, ${sessionScope.userName}</a></li>

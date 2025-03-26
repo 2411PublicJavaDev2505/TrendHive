@@ -128,6 +128,7 @@ public class CompanyController {
             
             if (company1 != null) {
                 // 로그인 성공 시 세션에 값 저장
+            	session.setAttribute("companyId", companyId);
                 session.setAttribute("loggedIn", true); // 로그인 상태 저장
                 session.setAttribute("userName", company1.getCompanyName()); // 사용자 이름 저장
                 return "redirect:/"; // 메인 페이지로 리다이렉트

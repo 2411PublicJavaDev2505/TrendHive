@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상세페이지 - DM 확인</title>
+<title>Insert title here</title>
 </head>
 <body>
-	
+
 </body>
 </html>

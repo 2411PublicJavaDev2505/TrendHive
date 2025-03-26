@@ -13,12 +13,6 @@ import com.hive.trend.dm2.model.vo.TrendHive;
 public class Dm2StoreLogic implements Dm2Store{
 
 	@Override
-	public List<TrendHive> getDmList(SqlSession session, String userId) {
-		List<TrendHive> result = session.selectList("Dm2Mapper.getDmList", userId);
-		return result;
-	}
-
-	@Override
 	public void sendDm(SqlSession session, String sendId, String receiverId, String dmContents) {
 		String[] obj = {sendId, receiverId, dmContents};
 		session.insert("Dm2Mapper.sendDm", obj);
@@ -35,6 +29,39 @@ public class Dm2StoreLogic implements Dm2Store{
 		DmVO dm = session.selectOne("Dm2Mapper.selectOneByNo", dmNo);
 		return dm;
 	}
+
+	@Override
+	public DmVO getDmMessageById(SqlSession session, int dmNo) {
+		DmVO dm = session.selectOne("Dm2Mapper.getDmMessageById", dmNo);
+		return dm;
+	}
+
+	@Override
+	public DmVO getDmMessageById(String string, int dmNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TrendHive> getDmList(SqlSession session, String userid, int currentPage) {
+		List<TrendHive> result = session.selectList("Dm2Mapper.getDmList", userid);
+		return result;
+	}
+
+	@Override
+	public int getTotalCount(SqlSession session, String string) {
+		int result = session.selectOne("Dm2Mapper.getTotalCount", string);
+		return result;
+	}
+
+//	@Override
+//	public DmVO insertReplyDm(String string, int dmNo) {
+//		session.insert("Dm2Mapper.insertReplyDm", dmNo);
+//		return selectOneByNo(session, dmNo);
+//	}
+
+
+
 
 //	@Override
 //	public List<DmVO> selectTotalDm(SqlSession session, String userId) {
