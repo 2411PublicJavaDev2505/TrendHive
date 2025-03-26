@@ -26,7 +26,7 @@
 
                 <div id="name-box">
                 	<%--${infl.inflNickname}--%>
-                    <input id="company-name" type="text" name="companyName" placeholder="크리에이터명 입력"> 
+                    <input id="company-name" type="text" name="inflNickname" placeholder="크리에이터명 입력"> 
                 </div>
                 
                 <div id="inflConcept">

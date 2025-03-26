@@ -86,7 +86,7 @@
                 <div id="inflIntro-detail">
                 	<span id="real-product-detail" name="inflIntro" rows="10" cols="50" >${inflBoard.inflIntro }</span>
                 </div>
-            		<button type = "submit" class="add-button">
+	           		<button type = "submit" class="add-button">
 						<a href = "/inflboard/add?inflPRNo=${inflBoard.inflPRNo }" 
 						class="btn" onclick="modifylist">수정하기</a></button>
 					<button type = "submit" class="add-button">

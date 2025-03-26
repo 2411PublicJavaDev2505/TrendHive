@@ -31,11 +31,44 @@
   		SELECT COUNT(*) FROM COMPANY_PR
   	</select>
   	
+  	<select id="selectSearchList" resultMap="CompanyBoardResultMap">
+		SELECT * FROM COMPANY_PR 
+		<where>
+			<if test="searchCondition == 'productName'">
+				PRODUCT_NAME LIKE '%'||#{searchKeyword}||'%'
+			</if>
+			<if test="searchCondition == 'productInfo'">
+				PRODUCT_INFO LIKE '%'||#{searchKeyword}||'%'
+			</if>
+			<if test="searchCondition == 'brandName'">
+				BRAND_NAME LIKE '%'||#{searchKeyword}||'%'
+			</if>
+		</where>
+	</select>
+  	
   	<insert id="addCompanyBoard">
 		INSERT INTO COMPANY_PR
-		VALUES(SEQ_INFL_PR_NO.NEXTVAL, #{productName}, #{productPrice}, #{brandName}, 
+		VALUES(SEQ_COMPANY_PR_NO.NEXTVAL, #{productName}, #{productPrice}, #{brandName}, 
 		#{companyUrl}, default, #{companyIntro}, #{companyPosting}, #{productInfo}
-		, #{forCreator}, #{companyEmail}, #{companyPhone}, #{fileName}, #{fileRename}, #{filePath}, #{companyId})
+		, #{forCreator}, #{companyEmail}, #{companyPhone}
+		, #{fileName}, #{fileRename}, #{filePath}, #{companyId})
 	</insert>
+	
+	<select id="selectOneByNo" resultMap = "CompanyBoardResultMap">
+		SELECT * FROM COMPANY_PR WHERE COMPANY_PR_NO = #{companyPRNo}
+	</select>
+	
+	<insert id="deleteCompanyBoard">
+		DELETE FROM COMPANY_PR WHERE COMPANY_PR_NO = #{companyPRNo}
+	</insert>
+	
+	<update id="updateBoard">
+		UPDATE COMPANY_PR SET 
+		PRODUCT_NAME=#{productName}, PRODUCT_PRICE=#{productPrice}, BRAND_NAME=#{brandName}, 
+		COMPANY_URL=#{companyUrl}, COMPANY_INTRO=#{companyIntro}, COMPANY_POSTING=#{companyPosting}
+		, PRODUCT_INFO=#{productInfo}, FOR_CREATOR=#{forCreator}, COMPANY_EMAIL=#{companyEmail}, COMPANY_PHONE=#{companyPhone}
+		, FILE_NAME=#{fileName}, FILE_RENAME=#{fileRename}, FILE_PATH = #{filePath}, INFL_ID=#{inflId}
+		WHERE COMPANY_PR_NO = #{companyPRNo}
+	</update>
 	
 </mapper>
