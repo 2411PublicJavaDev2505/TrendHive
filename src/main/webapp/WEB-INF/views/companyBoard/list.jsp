@@ -27,7 +27,7 @@
 	                </select>
 	                <input type="text" class="search-input" name="searchKeyword" placeholder="검색어를 입력하세요">
 	                <button  type = "submit" class="search-btn">🔍</button>
-	                <button  type = "submit" class="search-btn"><a href="/companyboard/add">등록하기</button>
+	                <button  type = "submit" class="search-btn"><a href="/companyboard/add">등록하기</a></button>
 	            </form>
             </div>
         </div>

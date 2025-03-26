@@ -6,19 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class mainController {
 
-    @GetMapping("/company/password")
-    public String showCompanyPasswordPage() {
-        return "company/password";
-    }
-    
     @GetMapping("/infl/password")
     public String showInflPasswordPage() {
         return "infl/password";
     }
-   
-    
-    
-    
     
     @GetMapping("/common/about")
     public String showAboutPage() {

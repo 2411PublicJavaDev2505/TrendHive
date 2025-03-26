@@ -1,5 +1,6 @@
 package com.hive.trend.dm2.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -48,7 +49,7 @@ public class Dm2Controller {
 	// 메시지 작성 페이지 이동 
 	@GetMapping("/write")
 	public String dmWrite() {
-		return "dm/write";
+		return "dm2/write";
 	}
 	
 	// 메시지 전송 insert
@@ -67,35 +68,64 @@ public class Dm2Controller {
 	public String deleteDm(
 			@RequestParam("dmNo") int dmNo
 			, Model model) {
-		try {
 			int result = dm2Service.deleteDmList(dmNo);
 			return "redirect:/dm/list";
-		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("errorMessage", e.getMessage());
-			return "common/error";
-		}
 	}
+
 	
 	// 메시지 상세페이지 detail
 	@GetMapping("/detail")
 	public String detailDm(
 			@RequestParam("dmNo") int dmNo
 			, Model model) {
-	try {
-		DmVO dm = dm2Service.selectOneByNo(dmNo);
-		model.addAttribute("dm2", dm);
-		return "inflBoard/detail";
-		
-	} catch (Exception e) {
-		// TODO: handle exception
-		e.printStackTrace();
-		model.addAttribute("errorMessage", e.getMessage());
-		return "common/error";
+		try {
+			DmVO dm = dm2Service.selectOneByNo(dmNo);
+			model.addAttribute("dm", dm);
+			return "inflBoard/detail";
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			model.addAttribute("errorMessage", e.getMessage());
+			return "common/error";
+		}
 	}
-}
-}
-
+	
+	//메시지 답장
+	@GetMapping("/reply")
+	public String replyDm(@RequestParam("dmNo") int dmNo, Model model) {
+	    try {
+	        DmVO dm = dm2Service.selectOneByNo(dmNo);  
+	        model.addAttribute("dm", dm);  
+	        return "dm2/reply";
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        model.addAttribute("errorMessage", e.getMessage());
+	        return "common/error";  
+	    }
+	}
+//	//메시지 조회/정렬
+//	 @GetMapping("/search")
+//	    public String searchDmList(@RequestParam("totalDmSelect") String filter, Model model, HttpSession session) {
+//	        String userId = (String) session.getAttribute("userId"); // 로그인한 유저 ID 가져오기
+//	        
+//	        List<DmVO> dmList;
+//	        if ("totalDm".equals(filter)) {
+//	            // 전체 DM (보낸DM + 받은DM)
+//	            dmList = dm2Service.getTotalDmList(userId);
+//	        } else if ("sendDm".equals(filter)) {
+//	            // 받은 DM만 조회
+//	            dmList = dm2Service.getReceivedDmList(userId);
+//	        } else {
+//	            dmList = new ArrayList<>(); // 예외 처리
+//	        }
+//
+//	        model.addAttribute("dmList", dmList);
+//	        return "views/dm2/list";
+//	 }
+	
 // 답장도 넣고
 // 차단도 넣고
-// pagenation 넣고 하자고,,.
+// 패이지내이션 넣고 하자고,,.
+}

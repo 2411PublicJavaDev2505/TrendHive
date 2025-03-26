@@ -17,5 +17,10 @@ public interface Dm2Store {
 
 	DmVO selectOneByNo(SqlSession session, int dmNo);
 
+//	List<DmVO> selectTotalDm(SqlSession session, String userId);
+//
+//	List<DmVO> selectReceivedDm(SqlSession session, String userId);
+
+
 	
 }

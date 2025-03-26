@@ -36,5 +36,15 @@ public class Dm2ServiceImpl implements Dm2Service{
 		DmVO dm = dStore.selectOneByNo(session, dmNo);
 		return dm;
 	}
+//	@Override
+//	public List<DmVO> getTotalDmList(String userId) {
+//		List<DmVO> totalList = dStore.selectTotalDm(session, userId);
+//		return totalList;
+//	}
+//	@Override
+//	public List<DmVO> getReceivedDmList(String userId) {
+//		List<DmVO> receiveList = dStore.selectReceivedDm(session,userId);
+//		return receiveList;
+//	}
 
 }

@@ -36,4 +36,16 @@ public class Dm2StoreLogic implements Dm2Store{
 		return dm;
 	}
 
+//	@Override
+//	public List<DmVO> selectTotalDm(SqlSession session, String userId) {
+//		List<DmVO> result = session.selectList("Dm2Mapper.selectList", userId);
+//		return result;
+//	}
+//
+//	@Override
+//	public List<DmVO> selectReceivedDm(SqlSession session, String userId) {
+//		List<DmVO> result = session.selectList("Dm2Mapper.selectList", userId);
+//		return result;
+//	}
+
 }
