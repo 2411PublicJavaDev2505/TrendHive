@@ -29,7 +29,17 @@
 		SELECT * FROM COMPANY WHERE COMPANY_ID = #{companyId} AND COMPANY_PW =#{companyPw}
 	</select>
 	
+	<select id="selectOneByEmail" resultMap="loginResultMap">
+		SELECT * FROM COMPANY WHERE COMPANY_ID = #{companyId} AND COMPANY_EMAIL =#{companyEmail}
+	</select>
+	
 	<select id="selectOneById" resultMap="companyResultMap">
 		SELECT * FROM COMPANY WHERE COMPANY_ID = #{companyId}
 	</select>
+	<update id="updateCompany">
+		UPDATE COMPANY SET COMPANY_TAX_ID=#{companyTax}, COMPANY_NAME=#{companyName}
+		, CEO_NAME=#{ceoName}, COMPANY_PW=#{companyPw}, COMPANY_EMAIL=#{companyEmail}, 
+		COMPANY_ADDRESS=#{companyAddress}, COMPANY_PHONE=#{companyPhone} 
+		WHERE COMPANY_ID=#{companyId}
+	</update>
 </mapper>

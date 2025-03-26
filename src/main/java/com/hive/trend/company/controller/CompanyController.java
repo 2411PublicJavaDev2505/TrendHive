@@ -17,6 +17,7 @@ import com.hive.trend.common.FileUtil;
 import com.hive.trend.common.PageUtil;
 import com.hive.trend.company.controller.dto.CompanyLoginRequest;
 import com.hive.trend.company.controller.dto.CompanyModifyRequest;
+import com.hive.trend.company.controller.dto.CompanyPasswordRequest;
 import com.hive.trend.company.domain.CompanyVO;
 import com.hive.trend.company.service.CompanyService;
 
@@ -34,6 +35,58 @@ public class CompanyController {
 		this.cService = cService;
 		this.fileUtil = fileUtil;
 		this.pageUtil = pageUtil;
+	}
+	// 비밀번호 변경 페이지 이동
+	@GetMapping("/password")
+	public String companyPasswordForm() {
+		return "company/password";
+	}
+	@PostMapping("/password")
+	public String companyPasswordFind(
+			@RequestParam("companyId") String companyId
+			,@RequestParam("companyEmail") String companyEmail
+			, HttpSession session, Model model) {
+		try {
+			CompanyPasswordRequest company = new CompanyPasswordRequest(companyId, companyEmail);
+			CompanyVO company1 = cService.selectOneByEmail(company);
+			if(company1 != null) {
+				session.setAttribute("companyId", company1.getCompanyId());
+				session.setAttribute("companyEmail", company1.getCompanyEmail());
+				return "redirect:/";
+			}else {
+				model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
+				return "common/error";
+			}
+		} catch (Exception e) {
+			model.addAttribute("errorMsg", e.getMessage());
+			return "common/error";
+		}
+		
+	}
+	//기업 회원 로그인
+	@PostMapping("/login")
+	public String companyLogin(
+			@RequestParam("companyId") String companyId
+			,@RequestParam("companyPw") String companyPw
+			,HttpSession session
+			,Model model) {
+		try {
+			CompanyLoginRequest company = new CompanyLoginRequest(companyId, companyPw);
+			CompanyVO company1 = cService.selectOneByLogin(company);
+			if(company1 != null) {
+				session.setAttribute("companyId", company1.getCompanyId());
+				session.setAttribute("companyName", company1.getCompanyName());
+				return "redirect:/";
+			}
+			else {
+				model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
+				return "common/error";
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			model.addAttribute("errorMsg", e.getMessage());
+			return "common/error";
+		}
 	}
 	// 로그인 페이지 이동
 	@GetMapping("/login")
@@ -55,31 +108,6 @@ public class CompanyController {
 		if(result > 0) {
 			return "redirect:/";
 		}else {
-			return "common/error";
-		}
-	}
-	//기업 회원 로그인
-	@PostMapping("/loginC")
-	public String companyLogin(
-			@RequestParam("companyId") String companyId
-			,@RequestParam("companyPw") String companyPw
-			,HttpSession session
-			,Model model) {
-		try {
-			CompanyLoginRequest company = new CompanyLoginRequest(companyId, companyPw);
-			CompanyVO company1 = cService.selectOneByLogin(company);
-			if(company1 != null) {
-				session.setAttribute("companyId", company1.getCompanyId());
-				session.setAttribute("companyName", company1.getCompanyName());
-				return "redirect:/";
-			}
-			else {
-				model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
-				return "common/error";
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			model.addAttribute("errorMsg", e.getMessage());
 			return "common/error";
 		}
 	}
@@ -133,7 +161,7 @@ public class CompanyController {
 		try {
 			int result = cService.updateCompany(company);
 			if(result >0) {
-				return "redirect:/company/detail";
+				return "redirect:/company/update";
 			}else {
 				model.addAttribute("errorMsg", "서비스가 완료되지 않았습니다.");
 				return "common/error";

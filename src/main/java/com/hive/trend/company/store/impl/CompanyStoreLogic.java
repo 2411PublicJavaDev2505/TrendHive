@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.hive.trend.company.controller.dto.CompanyLoginRequest;
 import com.hive.trend.company.controller.dto.CompanyModifyRequest;
+import com.hive.trend.company.controller.dto.CompanyPasswordRequest;
 import com.hive.trend.company.domain.CompanyVO;
 import com.hive.trend.company.store.CompanyStore;
 
@@ -38,6 +39,12 @@ public class CompanyStoreLogic implements CompanyStore{
 	@Override
 	public int deleteCompany(SqlSession session, String companyId) {
 		int result = session.delete("CompanyMapper.deleteCompany", companyId);
+		return result;
+	}
+
+	@Override
+	public CompanyVO selectOneByEmail(SqlSession session, CompanyPasswordRequest company) {
+		CompanyVO result = session.selectOne("CompanyMapper.selectOneByEmail", company);
 		return result;
 	}
 
