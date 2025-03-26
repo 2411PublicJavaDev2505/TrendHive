@@ -41,7 +41,7 @@
                     <a href="/infl/insert">크리에이터 회원가입</a>
                 </p>
                 <p>비밀번호를 잊으셨나요? 
-                    <a href="#reset-password">비밀번호 재설정</a>
+                    <a href="/infl/password"">비밀번호 재설정</a>
                 </p>
             </div>
         </div>

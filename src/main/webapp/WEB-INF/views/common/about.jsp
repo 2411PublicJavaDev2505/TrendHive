@@ -15,9 +15,9 @@
         <jsp:include page="/WEB-INF/views/include/header.jsp" />
     </header>
     <div class="container">
-        <div class="top">
+        <div class="about-top">
             <div class="logo">
-                <span class="logo-trend">TrendHive</span>
+                <span class="about-logo-trend">TrendHive</span>
             </div>
         </div>
     

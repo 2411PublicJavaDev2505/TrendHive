@@ -11,7 +11,7 @@ body {
     padding: 0;
 }
 
-.top {
+.about-top {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ body {
     margin: 0 auto;
 }
 
-.logo-trend {
+.about-logo-trend {
     font-family: 'Tenada';
     font-size: 70px;
     font-weight: bold;

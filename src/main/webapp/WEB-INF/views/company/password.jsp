@@ -31,8 +31,7 @@
                     <div class="form-group">
                         <label >이메일 *</label>
                         <input type="email" name="memberEmail" placeholder="이메일*">
-                    </div>
-                
+                    </div>                  
                     <button type="submit" class="password-btn">비밀번호 재설정 링크 보내기</button>
                 </form>
                 <p class="info-text">* 이메일 작성은 필수입니다.</p>

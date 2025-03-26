@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../resources/css/modal.css">
 </head>
 <body>
+	<c:if test="${not sessionScope.loggedIn}">
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -31,6 +32,7 @@
             </div>
         </div>
     </div>
+     </c:if>
     <jsp:include page="/WEB-INF/views/include/header.jsp" />
 	<main class="main-container">
 		
