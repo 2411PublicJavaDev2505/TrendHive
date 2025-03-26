@@ -38,12 +38,18 @@ public class CompanyServiceImpl implements CompanyService{
 		return result;
 	}
 
-	@Override
-	public int updateCompany(CompanyModifyRequest company) {
-		int result = cStore.updateCompany(session, company);
-		return result;
-	}
+//	@Override
+//	public int updateCompany(CompanyModifyRequest company) {
+//		int result = cStore.updateCompany(session, company);
+//		return result;
+//	}
 
+	@Override
+	public int updateCompany(CompanyVO company) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 	@Override
 	public CompanyVO selectOneById(String companyId) {
 		CompanyVO result = cStore.selectOneById(session, companyId);
@@ -55,5 +61,6 @@ public class CompanyServiceImpl implements CompanyService{
 		CompanyVO result = cStore.selectOneByEmail(session, company);
 		return result;
 	}
+
 
 }

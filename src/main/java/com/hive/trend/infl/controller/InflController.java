@@ -54,33 +54,34 @@ public class InflController {
 	}
 	// 크리에이터 회원 로그인
 	@PostMapping("/login")
-	public String inflLogin(@RequestParam("inflId") String inflId
-			,@RequestParam("inflPw") String inflPw
-			,HttpSession session
-			,Model model) {
+	public String inflLogin(
+			@RequestParam("inflId") String inflId,
+			@RequestParam("inflPw") String inflPw,
+			HttpSession session,
+			Model model) {
 		try {
 			InflLoginRequest infl = new InflLoginRequest(inflId, inflPw);
 			InflVO infl1 = iService.selectOneByLogin(infl);
 			if(infl1 != null) {
-				session.setAttribute("inflId", infl1.getInflId());
-				session.setAttribute("inflName", infl1.getInflName());
-				return "redirect:/";
-			}else {
-				model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
-				return "common/error";
-			}
-		} catch (Exception e) {
-			model.addAttribute("errorMsg", e.getMessage());
-			return "common/error";
-		}
-		
-	}
+				session.setAttribute("loggedIn", true); // 로그인 상태 저장
+                session.setAttribute("userName", infl1.getInflName()); // 사용자 이름 저장
+                return "redirect:/"; // 메인 페이지로 리다이렉트
+            } else {
+                model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
+                return "common/error";
+            }
+        } catch (Exception e) {
+            model.addAttribute("errorMsg", e.getMessage());
+            return "common/error";
+        }
+    }
+	
 	@GetMapping("/logout")
 	public String inflLogout(HttpSession session) {
 		if(session != null) {
 			session.invalidate();
 		}
-		return "redirect:/";
+		return "infl/logout";
 	}
 	//기업 마이페이지
 	@GetMapping("/detail")

@@ -13,7 +13,7 @@ public interface CompanyService {
 
 	int deleteCompany(String companyId);
 
-	int updateCompany(CompanyModifyRequest company);
+	int updateCompany(CompanyVO company);
 
 	CompanyVO selectOneById(String companyId);
 

@@ -14,10 +14,20 @@
             <li><a href="/companyboard/list">For Company</a></li>
             <li><a href="/inflboard/list">For Creator</a></li>
             <li><a href="/notice/adminNotice">Notice</a></li>
-            <li><a href="/company/login">기업 로그인</a></li>
-            <li><a href="/infl/login">크리에이터 로그인</a></li>
-            <li><a href="/company/insert">기업 회원가입</a></li>
-            <li><a href="/infl/insert">크리에이터 회원가입</a></li>
+            <c:choose>
+                <c:when test="${sessionScope.loggedIn}">
+                    <li><a href="#direct-message">Direct Message</a></li>
+                    <li><a href="/company/logout">로그아웃</a></li>
+                    <li><a href="/company/update" class="user-welcome">
+                    Welcome, ${sessionScope.userName}</a></li>
+                </c:when>
+                <c:otherwise>
+                    <li><a href="/company/login">기업 로그인</a></li>
+                    <li><a href="/infl/login">크리에이터 로그인</a></li>
+                    <li><a href="/company/insert">기업 회원가입</a></li>
+                    <li><a href="/infl/insert">크리에이터 회원가입</a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
 	</nav>
 </header>

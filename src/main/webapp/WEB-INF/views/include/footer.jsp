@@ -4,9 +4,9 @@
 <footer>
 	<nav class="footer-nav">
 		<ul>
-			<li><a href="/about">TrendHive 소개</a></li>
-            <li><a href="/terms">이용약관</a></li>
-            <li><a href="personalInfo">개인정보처리방침</a></li>
+			<li><a href="/common/about">TrendHive 소개</a></li>
+            <li><a href="/common/terms">이용약관</a></li>
+            <li><a href="/common/personalInfo">개인정보처리방침</a></li>
 		</ul>
 	</nav>
         <div class="footer-logo">
