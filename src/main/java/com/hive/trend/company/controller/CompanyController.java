@@ -93,6 +93,7 @@ public class CompanyController {
 	public String companyLoginForm() {
 		return "company/login";
 	}
+	
 	// 회원가입 페이지 이동
 	@GetMapping("/insert")
 	public String companyInsertForm() {
@@ -103,7 +104,8 @@ public class CompanyController {
 	@PostMapping("/insert")
 	public String companyInsert(
 			@ModelAttribute CompanyVO company
-			,HttpServletRequest request, HttpServletResponse response) {
+			,HttpServletRequest request
+			, HttpServletResponse response) {
 		int result = cService.insertCompany(company);
 		if(result > 0) {
 			return "redirect:/";
@@ -129,6 +131,7 @@ public class CompanyController {
             if (company1 != null) {
                 // 로그인 성공 시 세션에 값 저장
                 session.setAttribute("loggedIn", true); // 로그인 상태 저장
+                session.setAttribute("companyId", company1.getCompanyId()); // 사용자 아이디 저장
                 session.setAttribute("userName", company1.getCompanyName()); // 사용자 이름 저장
                 return "redirect:/"; // 메인 페이지로 리다이렉트
             } else {
@@ -178,10 +181,15 @@ public class CompanyController {
         // 회원 정보 가져오기
         String companyId = (String) session.getAttribute("companyId");
         CompanyVO company = cService.selectOneById(companyId);
-        model.addAttribute("company", company);
-
-        return "company/update";
-    }
+        if(company != null) {
+        	model.addAttribute("company", company);
+        	return "company/update";
+        } else {
+        	model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
+			return "common/error";
+		}
+	}
+        
 	//기업정보 수정
 //	@PostMapping("/update")
 //	public String companyUpdate(@ModelAttribute CompanyModifyRequest company
@@ -202,9 +210,10 @@ public class CompanyController {
 //	}
 	
 	@PostMapping("/update")
-    public String updateCompany(@RequestParam("companyId") String companyId,
-                                @RequestParam("companyPw") String newPassword,
-                                @RequestParam("companyPwCheck") String confirmPassword,
+    public String updateCompany(
+    		@RequestParam("companyId") String companyId,
+            @RequestParam("companyPw") String newPassword,
+    		@RequestParam("companyPwCheck") String confirmPassword,
                                 CompanyVO company,
                                 HttpSession session) {
         // 비밀번호 일치 여부 확인
@@ -214,28 +223,45 @@ public class CompanyController {
 
         // 회원 정보 업데이트
         company.setCompanyPw(newPassword); // 비밀번호 업데이트
-        cService.updateCompany(company);
+        int result = cService.updateCompany(company);
 
+        if (result > 0) {
         // 세션 업데이트
         session.setAttribute("companyName", company.getCompanyName());
 
-        return "redirect:/my-info"; // 내정보 페이지로 리다이렉트
+        return "redirect:/company/update-success"; // 내정보 페이지로 리다이렉트
+    } else {
+    	return "redirect:/company/update";
+    }
+}
+	@GetMapping("/update-success")
+    public String showUpdateSuccessPage() {
+        return "company/update-success";
     }
 	
 	@GetMapping("/delete")
 	public String companyDelete(HttpSession session, Model model) {
 		try {
 			String companyId = (String)session.getAttribute("companyId");
-			int result = cService.deleteCompany(companyId);
-			if(result > 0) {
-				return "redirect:/company/logout";
-			}else {
-				model.addAttribute("errorMsg", "서비스가 완료되지 않았습니다.");
-				return "common/error";
-			}
+//			int result = cService.deleteCompany(companyId);
+			return "company/delete";
+//			if(result > 0) {
+//			}else {
+//				model.addAttribute("errorMsg", "서비스가 완료되지 않았습니다.");
+//				return "common/error";
+//			}
 		} catch (Exception e) {
 			model.addAttribute("errorMsg", e.getMessage());
 			return "common/error";
 		}
 	}
+	
+	@PostMapping("/delete")
+    public String deleteCompany(HttpSession session) {
+
+        String companyId = (String) session.getAttribute("companyId");
+        session.invalidate();
+
+        return "redirect:/?logout=true";
+    }
 }

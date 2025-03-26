@@ -57,7 +57,9 @@
                     <a href="/companyboard/list?currentPage=${endNavi + 1 }" class="next">&gt;</a>
                 </c:if>
             </div>
+	</div>
     <footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>
+</body>
 </html>

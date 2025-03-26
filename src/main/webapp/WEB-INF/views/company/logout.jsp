@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="../resources/css/main.css">
     <link rel="stylesheet" href="../resources/css/header.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/logout.css">
+    <link rel="stylesheet" href="../resources/css/success.css">
 </head>
 <body>
     <jsp:include page="/WEB-INF/views/include/header.jsp" />
 
-    <main class="logout-container">
-        <div class="logout-message">
+    <main class="container">
+        <div class="message">
             <h1>로그아웃 되었습니다.</h1>
             <p><strong>TrendHive</strong>를 이용해 주셔서 감사합니다.</p>
             <p>다시 로그인하시려면 아래 버튼을 클릭해주세요.</p>

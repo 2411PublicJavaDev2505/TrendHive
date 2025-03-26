@@ -1,12 +1,10 @@
 package com.hive.trend.company.service.impl;
 
 import org.apache.ibatis.session.SqlSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hive.trend.company.controller.dto.CompanyLoginRequest;
-import com.hive.trend.company.controller.dto.CompanyModifyRequest;
 import com.hive.trend.company.controller.dto.CompanyPasswordRequest;
 import com.hive.trend.company.domain.CompanyVO;
 import com.hive.trend.company.service.CompanyService;
@@ -60,6 +58,12 @@ public class CompanyServiceImpl implements CompanyService{
 	public CompanyVO selectOneByEmail(CompanyPasswordRequest company) {
 		CompanyVO result = cStore.selectOneByEmail(session, company);
 		return result;
+	}
+
+	@Override
+	public CompanyVO selectOneByCompanyId(String companyId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

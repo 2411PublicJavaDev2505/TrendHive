@@ -10,6 +10,8 @@ public interface CompanyService {
 	int insertCompany(CompanyVO company);
 
 	CompanyVO selectOneByLogin(CompanyLoginRequest company);
+	
+	CompanyVO selectOneByCompanyId(String companyId);
 
 	int deleteCompany(String companyId);
 

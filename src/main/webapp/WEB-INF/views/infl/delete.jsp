@@ -33,7 +33,7 @@
                         <input type="email" name="inflEmail" placeholder="이메일*">
                     </div>
 
-                    <button type="submit" class="withdraw-btn">회원탈퇴 코드 보내기</button>
+                    <button type="button" class="withdraw-btn" onclick="confirmDelete()">회원탈퇴 코드 보내기</button>
                 </form>
                 <p class="info-text">* 이메일 작성은 필수입니다.</p>
             </div>
@@ -43,5 +43,12 @@
     <footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>
+    <script>
+        function confirmDelete() {
+            if (confirm("성공적으로 회원탈퇴 코드를 이메일로 발송하였습니다.")) {
+                window.location.href = "/";
+            }
+        }
+    </script>
 </body>
 </html>

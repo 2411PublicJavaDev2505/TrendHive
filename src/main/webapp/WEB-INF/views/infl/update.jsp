@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -21,31 +19,22 @@
 		    <div class="header">
 		      <h2>크리에이터 정보수정</h2>
 		    </div>
-		    
-		    <form class="form">
-		      <div class="form-group">
-		        <label for="id">아이디</label>
-		        <input type="text" name="inflId" placeholder="아이디">
-		      </div>
+			    
+			<form class="form" action="/ifnl/update" method="POST">
+				
+				<div class="form-group">
+        			<input type="text" name="ifnlId" value="${ifnl.ifnlId}" readonly>
+	      		</div>
+		      
+			    <div class="form-group">
+			        <label for="name">이름 변경</label>
+			        <input type="text" name="inflName" value="${ifnl.ifnlName}" readonly>
+			    </div>
 		
-		      <div class="form-group">
-		        <label for="business-number">생년월일</label>
-		        <input type="number" name="birth" placeholder="yyyymmdd">
-		      </div>
-		
-		      <div class="form-group">
-		        <label for="sex">성별</label>
-		        <select name="inflgender" name="sex">
-		          <option value="">선택하세요</option>
-		          <option value="male">남자</option>
-		          <option value="female">여자</option>
-		        </select>
-		      </div>
-		
-		      <div class="form-group">
-		        <label for="plaform-name">대표 채널명</label>
-		        <input type="text" name="inflplaform" placeholder="대표 채널명">
-		      </div>
+		      	<div class="form-group">
+		        	<label for="plaform-name">대표 채널명 변경</label>
+		        	<input type="text" name="inflplaform" value="${ifnl.inflplaform}" required>
+		      	</div>
 		
 		  <!--    <div class="form-group">
 		        <label for="plaform">플랫폼</label>
@@ -59,54 +48,52 @@
 		        </select>
 		      </div>
 		-->
-		      <div class="form-group">
-		        <label for="name">이름</label>
-		        <input type="text" name="inflName" placeholder="이름">
-		      </div>
 		
-		      <div class="form-group">
-		        <label for="creator-name">크리에이터명</label>
-		        <input type="text" name="inflNickName" placeholder="크리에이터명">
-		      </div>
+		      	<div class="form-group">
+		        	<label for="creator-name">크리에이터명 변경</label>
+		        	<input type="text" name="inflNickName" value="${ifnl.inflNickName}" required>
+		      	</div>
 		
-		      <div class="form-group">
-		        <label for="password">비밀번호 재설정</label>
-		        <input type="password" name="inflPw" placeholder="비밀번호 재설정">
-		      </div>
+		      	<div class="form-group">
+		        	<label for="password">비밀번호 재설정</label>
+		        	<input type="password" name="inflPw" value="${ifnl.inflPw}" required>
+		     	 </div>
 		
-		      <div class="form-group">
-		        <label for="confirm-password">비밀번호 확인</label>
-		        <input type="password" name="inflConfirmPw" placeholder="비밀번호 확인">
-		      </div>
+		      	<div class="form-group">
+		        	<label for="confirm-password">비밀번호 확인</label>
+		        	<input type="password" name="inflPwCheck" placeholder="비밀번호 확인" required>
+		      	</div>
 		
-		      <div class="form-group">
-		        <label for="email">이메일</label>
-		        <input type="email" name="inflEmail" placeholder="이메일">
-		        <button type="button">중복확인</button>
-		      </div>
+		      	<div class="form-group">
+		       	 	<label for="email">이메일 변경</label>
+		        	<input type="email" name="inflEmail" value="${ifnl.inflEmail}" required>
+		        	<button type="button">중복확인</button>
+		      	</div>
 		
-		      <div class="form-group">
-		        <label for="address">주소</label>
-		        <input type="text" name="inflAddress" placeholder="회사주소">
-		        <button type="button">우편번호찾기</button>
-		      </div>
+		      	<div class="form-group">
+		        	<label for="address">주소 변경</label>
+		        	<input type="text" name="inflAddress" value="${ifnl.inflAddress}" required>
+		        	<button type="button">우편번호찾기</button>
+		      	</div>
 		
-		      <div class="form-group">
-		        <label for="detailed-address">상세주소</label>
-		        <input type="text" name="inflDetailAddress" placeholder="상세주소">
-		      </div>
+		      	<div class="form-group">
+		        	<label for="contact">연락처 변경</label>
+		        	<input type="text" name="inflPhone" value="${ifnl.inflPhone}" required>
+		      	</div>
 		
-		      <div class="form-group">
-		        <label for="contact">연락처</label>
-		        <input type="text" name="inflPhone" placeholder="연락처">
-		      </div>
-		
-		      <button type="submit" class="join-btn">Join</button>
-              <button type="submit" class="withdraw-btn">회원탈퇴</button>
-		    </form>
-		  </div>
+		      	<button type="submit" class="update-btn"><a href="/ifnl/update-success" class="btn">정보 수정</a></button>
+          <button type="button" class="withdraw-btn" onclick="confirmDelete()">회원탈퇴</button>
+		    	</form>
+		  	</div>
 	<footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>
+    <script>
+        function confirmDelete() {
+            if (confirm("정말로 회원탈퇴하시겠습니까?")) {
+                window.location.href = "/ifnl/delete";
+            }
+        }
+    </script>
 	</body>
 </html>

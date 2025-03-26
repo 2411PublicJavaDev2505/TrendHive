@@ -26,8 +26,7 @@
 	      </div>
 	      <div class="form-group">
 	        <label for="business-number">사업자 번호 재설정</label>
-	        <input type="text" name="companyTax" value="${company.companyTax }" placeholder="사업자 번호 - 제외">
-	        <button type="button">조회하기</button>
+	        <input type="text" name="companyTax" value="${company.companyTax }" placeholder="사업자 번호 - 제외" required>
 	      </div>
 	
 	      <!-- <div class="form-group">
@@ -38,28 +37,23 @@
 	
 	      <div class="form-group">
 	        <label for="company-name">회사명 변경</label>
-	        <input type="text" name="companyName" value="${company.companyName }" placeholder="회사명">
+	        <input type="text" name="companyName" value="${company.companyName }" placeholder="회사명" required>
 	      </div>
 	
 	      <div class="form-group">
 	        <label for="ceo-name">대표명 변경</label>
-	        <input type="text" name="ceoName" value="${company.ceoName }" placeholder="대표명">
+	        <input type="text" name="ceoName" value="${company.ceoName }" placeholder="대표명" required>
 	      </div>
-	      <div class="form-group">
-	        <label for="company-name">회사명 변경</label>
-	        <input type="text" value="${company.companyName}" required>
-	      </div>
-	
 	
 	      <div class="form-group">
 	        <label for="password">비밀번호 재설정</label>
-	        <input type="password" name="companyPw" value="${company.companyPassword }" placeholder="비밀번호 재설정">
+	        <input type="password" name="companyPw" value="${company.companyPw }" placeholder="비밀번호 재설정" required>
 	      </div>
 	
-	      <!-- <div class="form-group">
+	      <div class="form-group">
 	        <label for="confirm-password">비밀번호 확인</label>
-	        <input type="password" name="companyPwCheck" placeholder="비밀번호 확인">
-	      </div> -->
+	        <input type="password" name="companyPwCheck" placeholder="비밀번호 확인" required>
+	      </div>
 	
 	      <div class="form-group">
 	        <label for="email">이메일</label>
@@ -78,12 +72,19 @@
 	        <input type="text" name="companyPhone" value="${company.companyPhone }" placeholder="연락처" required>
 	      </div>
 	
-	      <button type="submit" class="join-btn">정보 수정</button>
-          <button type="submit" class="withdraw-btn">회원탈퇴</button>
+	      <button type="submit" class="update-btn"><a href="/company/update-success" class="btn">정보 수정</a></button>
+          <button type="button" class="withdraw-btn" onclick="confirmDelete()">회원탈퇴</button>
 	    </form>
 	  </div>
 	<footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>
+     <script>
+        function confirmDelete() {
+            if (confirm("정말로 회원탈퇴하시겠습니까?")) {
+                window.location.href = "/company/delete";
+            }
+        }
+    </script>
 </body>
 </html>

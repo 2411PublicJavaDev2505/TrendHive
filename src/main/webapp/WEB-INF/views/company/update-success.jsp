@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그아웃</title>
-    <link rel="stylesheet" href="../resources/css/main.css">
+    <title>정보수정 완료</title>
     <link rel="stylesheet" href="../resources/css/header.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/success.css">
@@ -13,12 +12,11 @@
 <body>
     <jsp:include page="/WEB-INF/views/include/header.jsp" />
 
-    <main class="logout-container">
-        <div class="logout-message">
-            <h1>로그아웃 되었습니다.</h1>
-            <p><strong>TrendHive</strong>를 이용해 주셔서 감사합니다.</p>
-            <p>다시 로그인하시려면 아래 버튼을 클릭해주세요.</p>
-            <a href="/infl/login" class="btn">로그인 페이지로 이동</a>
+    <main class="container">
+        <div class="message">
+            <h1>정보수정이 완료되었습니다.</h1>
+            <p>변경된 정보가 성공적으로 저장되었습니다.</p>
+            <a href="/company/update" class="btn">내정보 확인</a>
             <a href="/" class="btn btn-secondary">메인 페이지로 이동</a>
         </div>
     </main>

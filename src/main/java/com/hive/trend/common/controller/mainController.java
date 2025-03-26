@@ -26,5 +26,10 @@ public class mainController {
         return "common/terms";
     }
     
+    @GetMapping("/admin/adminSearch")
+    public String showAdminSearchPage() {
+        return "admin/adminSearch";
+    }
+    
 }
 
