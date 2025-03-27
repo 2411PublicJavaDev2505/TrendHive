@@ -129,9 +129,8 @@ public class CompanyBoardController {
 		}
 	}	
 	
-	@GetMapping("/detail")
-	public String CompanyDetail(
-			@RequestParam("companyPRNo") int companyPRNo
+	@GetMapping("/detail/{companyPRNo}")
+	public String CompanyDetail(@PathVariable int companyPRNo
 			, Model model) {
 		try {
 			CompanyBoardVO companyBoard = cpService.selectOneByNo(companyPRNo);
@@ -181,10 +180,10 @@ public class CompanyBoardController {
 			, HttpSession session, Model model) {
 		try {
 			if(reloadFile != null && !reloadFile.getOriginalFilename().isBlank()) {
-				Map<String, String> fileInfo = fileUtil.saveFile(reloadFile, session, "board");
-				companyBoard.setFileName(fileInfo.get("Filename"));
-				companyBoard.setFileRename(fileInfo.get("FileRename"));
-				companyBoard.setFilePath(fileInfo.get("Filepath"));
+				Map<String, String> fileInfo = fileUtil.saveFile(reloadFile, session, "company");
+				companyBoard.setFileName(fileInfo.get("cFilename"));
+				companyBoard.setFileRename(fileInfo.get("cFileRename"));
+				companyBoard.setFilePath(fileInfo.get("cFilepath"));
 			}
 		 	int result = cpService.updateBoard(companyBoard);	
 			return "redirect:/companyboard/detail/"+companyBoard.getCompanyPRNo();

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
+<fmt:formatDate pattern = "yyyy/MM/dd" value="${v.wrDate}"/>
 <head>
 <meta charset="UTF-8">
 <title>인플루언서 홍보 게시판 - 등록</title>
@@ -16,7 +18,7 @@
 	<form action ="/inflboard/add" method="post" enctype="multipart/form-data">
 		<div id="img-side">
             <div id="img-box">
-			    <img id="preview" src="..${InflBoardVO.filePath }">
+			    <img id="preview" src="../..${InflBoardVO.filePath }">
                 첨부파일 : <span><a href="..${InflBoardVO.filePath }">${inflboard.fileName }</a></span>
 				<input type="file" name="uploadFile" onchange="readURL(this)">
             </div>
@@ -39,9 +41,9 @@
                 <div id="inflPlatform-detail">
                 	<%--${infl.inflPlatform}--%>
 	                <select id="inflPlatform-name" name = "inflPlatform">
-						<option value="instagram" selected>인스타</option>
-						<option value="youtube">유튜브</option>
-						<option value="blog">블로그</option>
+						<option value="인스타" selected>인스타</option>
+						<option value="유튜브">유튜브</option>
+						<option value="블로그">블로그</option>
 					</select>
 				</div>
                 

@@ -35,7 +35,7 @@
                 <c:forEach items="${searchList }" var="companyBoard">
                     <div class="list">
                         <div class="img" onclick="location.href='/detail-page'">
-                            <a href="/companyboard/detail?companyPRNo=${companyBoard.companyPRNo }">
+                            <a href="/companyboard/detail/${companyBoard.companyPRNo }">
 	                            <div class="product-img">
 	                            <img src="..${companyBoard.filePath }">${companyBoardVO.filePath }</div>
 <!-- 	                            회원정보 연결되면 ${company.companyName}으로 바꿀것 -->

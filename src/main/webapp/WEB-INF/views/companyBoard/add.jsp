@@ -82,6 +82,14 @@
                         <textarea id="real-product-detail" name="forCreator" rows="10" cols="50" placeholder="내용을 입력해주세요"></textarea>
                     </div>
                     
+                    		<input type="hidden" name="companyId" value="${companyBoard.companyId }">
+                    <!--                    로그인 후에 위를 살리고 아래를 지우면됨 -->
+<!--                     <div id="d1"> -->
+<!--                         아이디 -->
+<!--                     </div> -->
+<!--                     <div id="d2"> -->
+<!--                         <input type="text" id="" name="companyId" placeholder="내용을 입력해주세요"> -->
+<!--                     </div> -->
                     <div id="d1">
                         이메일
                     </div>

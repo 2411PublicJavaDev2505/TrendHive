@@ -22,7 +22,7 @@
             	<form action="/inflboard/search" method="get">
 	                <select class="filter-dropdown" name = "searchCondition">
 	                    <option value="inflPlatform"<c:if test="${searchCondition eq 'inflPlatform' }">selected</c:if>>플랫폼명</option>
-	                    <option value="inflConcept"<c:if test="${searchCondition eq 'inflConcept' }"></c:if>>활동주제</option>	                        
+	                    <option value="inflConcept"<c:if test="${searchCondition eq 'inflConcept' }"></c:if> selected>활동주제</option>	                        
 	                </select>
 	                <input type="text" class="search-input" name="searchKeyword" placeholder="검색어를 입력하세요">
 	                <button  type = "submit" class="search-btn">🔍</button>
@@ -34,7 +34,7 @@
                 <c:forEach items="${searchList }" var="inflBoard">
                     <div class="list">
                         <div class="img" onclick="location.href='/detail-page'">
-                            <a href="/inflboard/detail?inflPRNo=${inflBoard.inflPRNo }">
+                            <a href="/inflboard/detail/${inflBoard.inflPRNo }">
 	                            <div class="product-img">
 	                            <img src="..${inflBoard.filePath }">${InflBoardVO.filePath }</div>
 <!-- 	                            회원정보 연결되면 ${infl.inflNickname}으로 바꿀것 -->
@@ -46,14 +46,14 @@
             </div>  
         <div class="pagination">
             <c:if test="${startNavi ne 1 }">
-				<a href="/inflboard/list?currentPage=${startNavi -1}" class="prev">&lt;</a>
+				<a href="/inflboard/search?currentPage=${startNavi -1}" class="prev">&lt;</a>
 			</c:if>
 				<c:forEach begin="${startNavi }" end="${endNavi }" var="p" >
-				<a href="/inflboard/list?currentPage=${p }">${p }</a>
+				<a href="/inflboard/search?currentPage=${p }">${p }</a>
 				
 				</c:forEach>	
 			<c:if test="${endNavi ne maxPage}">
-				<a href="/inflboard/list?currentPage=${endNavi +1 }" class="next">&gt;</a>
+				<a href="/inflboard/search?currentPage=${endNavi +1 }" class="next">&gt;</a>
 			</c:if>
         </div>   
     </div>

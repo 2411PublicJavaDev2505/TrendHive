@@ -10,11 +10,14 @@ public class inflBoardAddRequest {
 	private String fileRename;//파일이름 중복방지
 	private String filePath;
 	private String inflId;//불러오는애도 함께?
+	private String inflNickname;
+	private String inflEmail;
 	
 	public inflBoardAddRequest() {}
 	
-	public inflBoardAddRequest(String inflConcept, String inflPlatform, String inflUrl, String inflFollower,
-			String inflIntro, String fileName, String fileRename, String filePath, String inflId) {
+public inflBoardAddRequest(String inflConcept, String inflPlatform, String inflUrl, String inflFollower,
+			String inflIntro, String fileName, String fileRename, String filePath, String inflId, String inflNickname,
+			String inflEmail) {
 		super();
 		this.inflConcept = inflConcept;
 		this.inflPlatform = inflPlatform;
@@ -25,11 +28,23 @@ public class inflBoardAddRequest {
 		this.fileRename = fileRename;
 		this.filePath = filePath;
 		this.inflId = inflId;
+		this.inflNickname = inflNickname;
+		this.inflEmail = inflEmail;
 	}
+
+
 //Model Attribute쓰려면 dto에 setter있어야 함
 
 	public String getInflConcept() {
 		return inflConcept;
+	}
+
+	public String getInflEmail() {
+		return inflEmail;
+	}
+
+	public void setInflEmail(String inflEmail) {
+		this.inflEmail = inflEmail;
 	}
 
 	public void setInflConcept(String inflConcept) {
@@ -100,12 +115,23 @@ public class inflBoardAddRequest {
 		return inflId;
 	}
 
+	public String getInflNickname() {
+		return inflNickname;
+	}
+
+
+	public void setInflNickname(String inflNickname) {
+		this.inflNickname = inflNickname;
+	}
+
 	@Override
 	public String toString() {
 		return "inflBoardAddRequest [inflConcept=" + inflConcept + ", inflPlatform=" + inflPlatform + ", inflUrl="
 				+ inflUrl + ", inflFollower=" + inflFollower + ", inflIntro=" + inflIntro + ", fileName=" + fileName
-				+ ", fileRename=" + fileRename + ", filePath=" + filePath + ", inflId=" + inflId + "]";
+				+ ", fileRename=" + fileRename + ", filePath=" + filePath + ", inflId=" + inflId + ", inflNickname="
+				+ inflNickname + ", inflEmail=" + inflEmail + "]";
 	}
-	
+
+
 	
 }

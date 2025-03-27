@@ -1,6 +1,6 @@
 main{
     border-top: 1px solid gray;
-    width:1500px;
+    width:1242px;
     height:1800px;
     margin:0 auto;
     margin-top: 50px;
@@ -32,18 +32,20 @@ img{
     width:200px;
     height: 300px;
     float:left;
-    --border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
+    border-bottom: 2px solid gray;
+    border-left: 2px solid gray;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+        text-align: center;
 }
 #inflIntro-detail{
     width:80%;
     height: 300px;
     float:left;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
-    
-
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+    border-radius: 10px;
 }
 #real-product-detail{
     width:793px;
@@ -56,16 +58,20 @@ img{
     width:20%;
     height: 50px;
     float:left;
-    border-left: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+    background-color: #f9f9f9;
+        border-radius: 10px;
+            text-align: center;
 }
 #d2{
     width:80%;
     height:50px;
     float:left;
-    border-left: 1px solid gray;
-    border-bottom: 1px solid gray;
-    border-right: 1px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+        border-radius: 10px;
 
 }
 #bottom-detail div{
@@ -96,10 +102,11 @@ main div{
 
 #img-side, #intro-side{
     border-bottom: 1px solid gray;
-    width:750px;
+    width:621px;
     height: 700px;
     float: left;
-
+    background-color: #f9f9f9;
+         
     
 }
 #img-side{
@@ -117,7 +124,7 @@ main div{
     border-radius: 10px;
 }
 #intro-box{
-    width:750px;
+    width:621px;
     height: 500px;
     margin-top:45px;
 }
@@ -226,8 +233,16 @@ main div{
 .add-button{
     margin-top: 30px;
     margin-right: 5px;
-    width:100px;
-    height:45px;
-    border-radius: 7px;
-	
+/*     width:100px; */
+/*     height:45px; */
+/*     border-radius: 7px; */
+	text-decoration: none;
+	padding: 10px 15px;
+    border-radius: 10px;
+    background-color:#fffbea;
+    color:#000;
+}
+
+.add-button:hover{
+	background-color: #4682B4;
 }

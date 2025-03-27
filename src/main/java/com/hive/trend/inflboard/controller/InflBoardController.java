@@ -130,9 +130,8 @@ public class InflBoardController {
 		}
 	}	
 	
-	@GetMapping("/detail")
-	public String BookDetail(
-			@RequestParam("inflPRNo") int inflPRNo
+	@GetMapping("/detail/{inflPRNo}")
+	public String BookDetail(@PathVariable int inflPRNo
 			, Model model) {
 		try {
 			InflBoardVO inflBoard = nService.selectOneByNo(inflPRNo);
@@ -191,10 +190,10 @@ public class InflBoardController {
 //				return "common/error";
 //			}
 			if(reloadFile != null && !reloadFile.getOriginalFilename().isBlank()) {
-				Map<String, String> fileInfo = fileUtil.saveFile(reloadFile, session, "board");
-				inflBoard.setFileName(fileInfo.get("Filename"));
-				inflBoard.setFileRename(fileInfo.get("FileRename"));
-				inflBoard.setFilePath(fileInfo.get("Filepath"));
+				Map<String, String> fileInfo = fileUtil.saveFile(reloadFile, session, "inflBoard");
+				inflBoard.setFileName(fileInfo.get("iFilename"));
+				inflBoard.setFileRename(fileInfo.get("iFileRename"));
+				inflBoard.setFilePath(fileInfo.get("iFilepath"));
 			}
 		 	int result = nService.updateBoard(inflBoard);	
 			return "redirect:/inflboard/detail/"+inflBoard.getInflPRNo();
