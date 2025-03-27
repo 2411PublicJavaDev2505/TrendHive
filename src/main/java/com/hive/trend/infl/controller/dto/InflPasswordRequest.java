@@ -6,32 +6,31 @@ public class InflPasswordRequest {
 	
 	public InflPasswordRequest() {}
 	
-	
-	
 	public InflPasswordRequest(String inflId, String inflEmail) {
 		super();
 		this.inflId = inflId;
 		this.inflEmail = inflEmail;
 	}
 
-	public String getCompanyId() {
+	public String getinflId() {
 		return inflId;
 	}
 
-	public void setCompanyId(String companyId) {
-		this.inflId = companyId;
+	public void setCompanyId(String inflId) {
+		this.inflId = inflId;
 	}
 
-	public String getCompanyEmail() {
+	public String getinflEmail() {
 		return inflEmail;
 	}
 
-	public void setCompanyEmail(String companyEmail) {
-		this.inflEmail = companyEmail;
+	public void setinflEmail(String inflEmail) {
+		this.inflEmail = inflEmail;
 	}
 
 	@Override
 	public String toString() {
 		return "CompanyPasswordRequest [inflId=" + inflId + ", inflEmail=" + inflEmail + "]";
 	}
+	
 }

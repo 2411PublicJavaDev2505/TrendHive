@@ -130,9 +130,10 @@ public class CompanyController {
             
             if (company1 != null) {
                 // 로그인 성공 시 세션에 값 저장
-                session.setAttribute("loggedIn", true); // 로그인 상태 저장
-                session.setAttribute("companyId", company1.getCompanyId()); // 사용자 아이디 저장
+            	session.setAttribute("loggedIn", true); // 로그인 상태 저장
+                session.setAttribute("companyId", company1.getCompanyId()); // 회사 ID 저장
                 session.setAttribute("userName", company1.getCompanyName()); // 사용자 이름 저장
+                session.setAttribute("userType", "C");
                 return "redirect:/"; // 메인 페이지로 리다이렉트
             } else {
                 model.addAttribute("errorMsg", "존재하지 않는 정보입니다.");
@@ -179,7 +180,7 @@ public class CompanyController {
         }
 
         // 회원 정보 가져오기
-        String companyId = (String) session.getAttribute("companyId");
+        String companyId = (String) session.getAttribute("companyId");					
         CompanyVO company = cService.selectOneById(companyId);
         if(company != null) {
         	model.addAttribute("company", company);

@@ -23,18 +23,31 @@
 			<form class="form" action="/ifnl/update" method="POST">
 				
 				<div class="form-group">
-        			<input type="text" name="ifnlId" value="${ifnl.ifnlId}" readonly>
-	      		</div>
+				  <label for="id">아이디</label>
+				  <input type="text" name="inflId" placeholder="아이디" value="${infl.inflId}" readonly>
+				</div>
 		      
 			    <div class="form-group">
 			        <label for="name">이름 변경</label>
 			        <input type="text" name="inflName" value="${ifnl.ifnlName}" readonly>
 			    </div>
-		
 		      	<div class="form-group">
 		        	<label for="plaform-name">대표 채널명 변경</label>
 		        	<input type="text" name="inflplaform" value="${ifnl.inflplaform}" required>
 		      	</div>
+<!-- 		      <div class="form-group"> 
+		        <label for="business-number">생년월일</label>
+		        <input type="number" name="birth" placeholder="yyyymmdd" value="${infl.inflId}">
+		      </div>-->
+		
+<!-- 		      <div class="form-group">
+		        <label for="sex">성별</label>
+		        <select name="inflgender" name="sex">
+		          <option value="">선택하세요</option>
+		          <option value="male">남자</option>
+		          <option value="female">여자</option>
+		        </select>
+		      </div>-->
 		
 		  <!--    <div class="form-group">
 		        <label for="plaform">플랫폼</label>
@@ -48,7 +61,6 @@
 		        </select>
 		      </div>
 		-->
-		
 		      	<div class="form-group">
 		        	<label for="creator-name">크리에이터명 변경</label>
 		        	<input type="text" name="inflNickName" value="${ifnl.inflNickName}" required>
@@ -80,11 +92,19 @@
 		        	<label for="contact">연락처 변경</label>
 		        	<input type="text" name="inflPhone" value="${ifnl.inflPhone}" required>
 		      	</div>
+
+<!-- 		      <div class="form-group">
+		        <label for="detailed-address">상세주소</label>
+		        <input type="text" name="inflDetailAddress" value="${infl.inflDetailAddress}" placeholder="상세주소">
+		      </div> -->
 		
-		      	<button type="submit" class="update-btn"><a href="/ifnl/update-success" class="btn">정보 수정</a></button>
-          <button type="button" class="withdraw-btn" onclick="confirmDelete()">회원탈퇴</button>
-		    	</form>
-		  	</div>
+		      <div class="form-group">
+		        <label for="contact">연락처</label>
+		        <input type="text" name="inflPhone" value="${infl.inflPhone}" placeholder="연락처">
+		      </div>
+		
+		    <button type="submit" class="update-btn"><a href="/ifnl/update-success" class="btn">정보 수정</a></button>
+          	<button type="button" class="withdraw-btn" onclick="confirmDelete()">회원탈퇴</button>
 	<footer>
         <jsp:include page="/WEB-INF/views/include/footer.jsp" />
     </footer>

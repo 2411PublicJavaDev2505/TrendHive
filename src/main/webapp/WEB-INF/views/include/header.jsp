@@ -22,9 +22,12 @@
                         <c:when test="${sessionScope.companyId eq 'admin'}">
                             <li><a href="/admin/adminSearch" class="user-welcome">Welcome, ${sessionScope.userName}</a></li>
                         </c:when>
-                        <c:otherwise>
+                        <c:when test="${sessionScope.userType eq 'C'}">
                             <li><a href="/company/update" class="user-welcome">Welcome, ${sessionScope.userName}</a></li>
-                        </c:otherwise>
+                        </c:when>
+                        <c:when test="${sessionScope.userType eq 'I'}">
+                            <li><a href="/infl/update" class="user-welcome">Welcome, ${sessionScope.userName}</a></li>
+                        </c:when>
                     </c:choose>
                 </c:when>
                 <c:otherwise>
