@@ -68,6 +68,4 @@ public class CompanyModifyRequest {
 	public void setCompanyPhone(String companyPhone) {
 		this.companyPhone = companyPhone;
 	}
-	
-	
 }

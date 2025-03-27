@@ -53,17 +53,25 @@ body {
     text-decoration: underline;
 }
 
+.write-btn-container{
+	width:1200px;
+	height:50px;
+}
 .pagination-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
 
 
 .pagination {
-    display: flex;
+	justify-content: center;
     gap: 5px;
+}
+.pagination a{
+	float: left;
+	margin: 3px;
 }
 
 .pagination button {
@@ -71,6 +79,7 @@ body {
     border-radius: 5px;
     border: none;
     background-color: #f9f9f9;
+    float:left;
 }
 
 .pagination button:hover {
@@ -78,6 +87,7 @@ body {
 }
 
 .write-btn {
+	float:left;
 	text-decoration: none;
 	padding: 10px 15px;
     border-radius: 10px;
@@ -89,7 +99,6 @@ body {
     background-color: #4682B4;
 }
 .write-btn-container {
-    margin-left: auto;
 }
 
 .search-filter {
