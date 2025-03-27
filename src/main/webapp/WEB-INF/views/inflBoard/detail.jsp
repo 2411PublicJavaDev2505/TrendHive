@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>인플루언서 홍보 게시판 - 상세페이지</title>
-	<link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/header.css">
-    <link rel="stylesheet" href="../resources/css/inflBoardAdd.css">
+	<link rel="stylesheet" href="../../resources/css/footer.css">
+    <link rel="stylesheet" href="../../resources/css/header.css">
+    <link rel="stylesheet" href="../../resources/css/inflBoardAdd.css">
 </head>
 <body>
 <jsp:include page = "/WEB-INF/views/include/header.jsp"></jsp:include>
@@ -20,7 +21,7 @@
                      <div class="img" onclick="location.href='/detail-page'">
                         <a href="/inflboard/detail?inflPRNo=${inflBoard.inflPRNo }">
                             <div class="product-img">
-                            <img src="..${inflBoard.filePath }">${InflBoardVO.filePath }</div>
+                            <img src="../..${inflBoard.filePath }">${InflBoardVO.filePath }</div>
                             <div class="img-text">${inflBoard.inflId }</div>
                         </a>
                     </div>
@@ -34,7 +35,7 @@
 
                 <div id="name-box">
                 	<%--${infl.inflNickname}--%>
-                	<span id="infl-name" name="inflNickname">${inflBoard.inflId } </span>
+                	<span id="infl-name" name="inflNickname"><h3>${inflBoard.inflNickname } </h3></span>
                 </div>
                 
                 <div id="inflConcept">
@@ -77,7 +78,15 @@
                     등록일자
                 </div>
                 <div id="d2">
-                	<span id="" name="insertDate"> ${inflBoard.insertDate }</span>
+                	<span id="" name="insertDate"><fmt:formatDate pattern = "yyyy/MM/dd" value="${inflBoard.insertDate}"/>
+                	</span>
+                </div>
+				<div id="d1">
+                    이메일
+                </div>
+                <div id="d2">
+                	<span id="" name="inflEmail" value="${inflBoard.inflEmail}">
+                	</span>
                 </div>
 
                 <div id="inflIntro">
@@ -87,13 +96,13 @@
                 	<span id="real-product-detail" name="inflIntro" rows="10" cols="50" >${inflBoard.inflIntro }</span>
                 </div>
 	           		<button type = "submit" class="add-button">
-						<a href = "/inflboard/add?inflPRNo=${inflBoard.inflPRNo }" 
+						<a style='text-decoration:none;' href = "/inflboard/modify/${inflBoard.inflPRNo }" 
 						class="btn" onclick="modifylist">수정하기</a></button>
 					<button type = "submit" class="add-button">
-						<a href = "/inflboard/delete?inflPRNo=${inflBoard.inflPRNo }"=${inflBoard.inflPRNo }" 
+						<a style='text-decoration:none;' href = "/inflboard/delete?inflPRNo=${inflBoard.inflPRNo }"=${inflBoard.inflPRNo }" 
 						class="btn" onclick="deletelist">삭제하기</a></button>
 					<button type = "submit" class="add-button">
-						<a href = "/inflboard/list" class="btn">목록</a></button>
+						<a style='text-decoration:none;' href = "/inflboard/list" class="btn">목록</a></button>
             	</div>         
         	</div>								
 		</main>

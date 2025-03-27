@@ -67,7 +67,8 @@
 		PRODUCT_NAME=#{productName}, PRODUCT_PRICE=#{productPrice}, BRAND_NAME=#{brandName}, 
 		COMPANY_URL=#{companyUrl}, COMPANY_INTRO=#{companyIntro}, COMPANY_POSTING=#{companyPosting}
 		, PRODUCT_INFO=#{productInfo}, FOR_CREATOR=#{forCreator}, COMPANY_EMAIL=#{companyEmail}, COMPANY_PHONE=#{companyPhone}
-		, FILE_NAME=#{fileName}, FILE_RENAME=#{fileRename}, FILE_PATH = #{filePath}, INFL_ID=#{inflId}
+		, FILE_NAME=#{fileName}, FILE_RENAME=#{fileRename}, FILE_PATH = #{filePath}
+<!-- 		, COMPANY_ID=#{companyId} -->
 		WHERE COMPANY_PR_NO = #{companyPRNo}
 	</update>
 	

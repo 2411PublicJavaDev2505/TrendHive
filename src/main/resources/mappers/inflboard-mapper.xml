@@ -16,6 +16,9 @@
 		<result property = "fileRename" column = "FILE_RENAME"/>
 		<result property = "filePath" column = "FILE_PATH"/>
 		<result property = "inflId" column = "INFL_ID"/>
+		<result property = "inflNickname" column = "INFL_NICKNAME"/>
+		<result property = "inflEmail" column = "INFL_EMAIL"/>
+		
 	</resultMap>
 	
 	<select id="selectList" resultMap="InflBoardResultMap">

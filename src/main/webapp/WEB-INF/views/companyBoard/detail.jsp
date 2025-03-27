@@ -1,29 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>인플루언서 홍보 게시판 - 상세페이지</title>
-	<link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/header.css">
-    <link rel="stylesheet" href="../resources/css/inflBoardAdd.css">
+	<link rel="stylesheet" href="../../resources/css/footer.css">
+    <link rel="stylesheet" href="../../resources/css/header.css">
+    <link rel="stylesheet" href="../../resources/css/inflBoardAdd.css">
 </head>
 <body>
 <jsp:include page = "/WEB-INF/views/include/header.jsp"></jsp:include>
 <div id="container">
 	<main>
+	<!-- <form action="/companyBoard/companylist"></form> -->
 		<div id="img-side">
             <div id="img-box">
             <!-- 이미지가 나오려면 9줄 다필요!!  -->
                 <div class="list">	
                      <div class="img" onclick="location.href='/detail-page'">
-                        <a href="/companyboard/detail?companyPRNo=${companyBoard.companyPRNo }">
-	                            <div class="product-img">
-	                            <img src="..${companyBoard.filePath }">${companyBoardVO.filePath }</div>
+                        <a style='text-decoration:none;' href="/companyboard/detail?companyPRNo=${companyBoard.companyPRNo }">
+                            <div class="product-img">
+                            <img src="../..${companyBoard.filePath }">${companyBoardVO.filePath }</div>
 <!-- 	                            회원정보 연결되면 ${company.companyName}으로 바꿀것 -->
-	                            <div class="img-text">${companyBoard.brandName }</div>
-                            </a>
+                            <div class="img-text">
+<%--                             ${companyBoard.brandName } --%>
+                            </div>
+                        </a>
                     </div>
                 </div>
             <!-- 여기까지 써줘야 한다 -->
@@ -55,6 +59,7 @@
                 <div id="inflUrl-detail">
                 	<span id="inflUrl-name" name="companyUrl" > ${companyBoard.companyUrl } </span>
                 </div>
+
                 <div id="inflUrl">
                     이메일
                 </div>
@@ -79,7 +84,8 @@
                     등록일자
                 </div>
                 <div id="d2">
-                	<span id="" name="insertDate"> ${companyBoard.insertDate }</span>
+					
+                	<span id="" name="insertDate"><fmt:formatDate pattern = "yyyy/MM/dd" value="${companyBoard.insertDate}"/></span>
                 </div>
 				<div id="d1">
                     회사 소개
@@ -108,13 +114,13 @@
                 </div>        
             	
 	                <button type = "submit" class="add-button">
-						<a href = "/companyboard/modify/${companyBoard.companyPRNo }" 
+						<a style='text-decoration:none;' href = "/companyboard/modify/${companyBoard.companyPRNo }" 
 						class="btn" onclick="modifylist">수정하기</a></button>
 					<button type = "submit" class="add-button">
-						<a href = "/companyboard/delete?companyPRNo=${companyBoard.companyPRNo }"=${companyBoard.companyPRNo }" 
+						<a style='text-decoration:none;' href = "/companyboard/delete?companyPRNo=${companyBoard.companyPRNo }"=${companyBoard.companyPRNo }" 
 						class="btn" onclick="deletelist">삭제하기</a></button>
 					<button type = "submit" class="add-button">
-						<a href = "/companyboard/list" class="btn">목록</a></button>
+						<a style='text-decoration:none;' href = "/companyboard/list" class="btn">목록</a></button>
 				</div>
         	</div>								
 		</main>

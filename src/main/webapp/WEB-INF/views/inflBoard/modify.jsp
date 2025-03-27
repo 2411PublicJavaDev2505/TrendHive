@@ -5,19 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>인플루언서 홍보 게시판 - 수정</title>
-    <link rel="stylesheet" href="../resources/css/footer.css">
-    <link rel="stylesheet" href="../resources/css/header.css">
-    <link rel="stylesheet" href="../resources/css/inflBoardAdd.css">
+    <link rel="stylesheet" href="../../resources/css/footer.css">
+    <link rel="stylesheet" href="../../resources/css/header.css">
+    <link rel="stylesheet" href="../../resources/css/inflBoardAdd.css">
 </head>
 <body>
 <jsp:include page = "/WEB-INF/views/include/header.jsp"></jsp:include>
 
 	<main>
-		<form action ="/inflboard/modify method="post" enctype="multipart/form-data">
+		<form action ="/inflboard/modify" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="inflPRNo" value="${inflBoard.inflPRNo }">
 		<div id="img-side">
             <div id="img-box">
-			    <img id="preview" src="..${InflBoardVO.filePath }">
-                첨부파일 : <span><a href="..${InflBoardVO.filePath }">${inflboard.fileName }</a></span>
+			    <img id="preview" src="../..${inflBoard.filePath }">
+                첨부파일 : <span><a href="..${inflBoard.filePath }">${inflBoard.fileName }</a></span>
 				<input type="file" name="reloadFile" onchange="readURL(this)">
             </div>
         </div>
@@ -26,11 +27,11 @@
 
                 <div id="name-box">
                 	<%--${infl.inflNickname}--%>
-                    <input id="company-name" type="text" name="inflNickname" placeholder="크리에이터명 입력"> 
+                    <input id="company-name" type="text" name="inflNickname" value="${inflBoard.inflNickname}"> 
                 </div>
                 
                 <div id="inflConcept">
-                    <input id="inflConcept-name" type="text" name="inflConcept" placeholder="활동주제 입력">
+                    <input id="inflConcept-name" type="text" name="inflConcept" value="${inflBoard.inflConcept}">
                 </div><br><br><br>
                 
                 <div id="inflPlatform">
@@ -38,8 +39,8 @@
                 </div>
                 <div id="inflPlatform-detail">
                 	<%--${infl.inflPlatform}--%>
-	                <select id="inflPlatform-name" name = "inflPlatform">
-						<option value="instagram" selected>인스타</option>
+	                <select id="inflPlatform-name" name = "inflPlatform" value="${inflBoard.inflPlatform}">
+						<option value="instagram">인스타</option>
 						<option value="youtube">유튜브</option>
 						<option value="blog">블로그</option>
 					</select>
@@ -49,7 +50,7 @@
                     개인채널
                 </div>
                 <div id="inflUrl-detail">
-                    <input type="text" id="inflUrl-name" name="inflUrl" placeholder=" url 입력">
+                    <input type="text" id="inflUrl-name" name="inflUrl"  value="${inflBoard.inflUrl}"  >
                 </div>
                 
                 <div id="follower">
@@ -57,7 +58,7 @@
                 </div>
                 <div id="follower-detail">
                 	<%--<input text="${infl.inflFollower}"--%>
-                    <input type="text" id="follower-name" name="inflFollower" placeholder="팔로워수 입력">
+                    <input type="text" id="follower-name" name="inflFollower"  value="${inflBoard.inflFollower}" >
                 </div>
             </div>
         </div>
@@ -72,16 +73,15 @@
                     <div id="d1">
                         이메일
                     </div>
-                    <%--<input text="${infl.inflEmail}"--%>
                     <div id="d2">
-                        <input type="text" id="" name="inflEmail" placeholder="이메일">
+                        <input type="text" id="" name="inflEmail" value="${inflBoard.inflEmail}" >
                     </div>
 
                     <div id="inflIntro">
                         자기 소개
                     </div>
                     <div id="inflIntro-detail">
-                        <textarea id="real-product-detail" name="inflIntro" rows="10" cols="50" placeholder="자기소개 입력란"></textarea>
+                        <textarea id="real-product-detail" name="inflIntro" rows="10" cols="50"  value="" >${inflBoard.inflIntro}</textarea>
                     </div>
                    
             	<button type="submit" class="add-button">수정하기</button>

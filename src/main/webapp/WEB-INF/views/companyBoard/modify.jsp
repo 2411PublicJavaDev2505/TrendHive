@@ -14,10 +14,10 @@
 <div id="contrainer">
 	<main>
 	<form action ="/companyboard/modify" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="companyId" value="${companyBoard.companyId }">
+		<input type="hidden" name="companyPRNo" value="${companyBoard.companyPRNo }">
 		<div id="img-side">
             <div id="img-box">
-			    <img id="preview" src="..${companyBoard.filePath }">
+			    <img id="preview" src="../..${companyBoard.filePath }">
                 제품이미지 파일 : <span><a href="..${companyBoard.filePath }">${companyBoard.fileName }</a></span>
 				<input type="file" name="reloadFile" onchange="readURL(this)">
             </div>
@@ -83,6 +83,15 @@
                         <textarea id="real-product-detail" name="forCreator" rows="10" cols="50" >${companyBoard.forCreator}</textarea>
                     </div>
                     
+                    		<input type="hidden" name="companyId" value="${companyBoard.companyId }">
+                    		<input type="hidden" name="companyPRNo" value="${companyBoard.companyPRNo }">
+                    <!--                    로그인 후에 위를 살리고 아래를 지우면됨 -->
+<!--                     <div id="d1"> -->
+<!--                         아이디 -->
+<!--                     </div> -->
+<!--                     <div id="d2"> -->
+<!--                         <input type="text" id="" name="companyId" placeholder="내용을 입력해주세요"> -->
+<!--                     </div> -->
                     <div id="d1">
                         이메일
                     </div>

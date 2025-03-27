@@ -11,7 +11,26 @@ public class InflBoardModifyRequest {
 	private String fileRename;
 	private String filePath;
 	private String inflId;
+	private String inflNickname;
+	private String inflEmail;
 	
+	
+	public String getInflEmail() {
+		return inflEmail;
+	}
+
+	public void setInflEmail(String inflEmail) {
+		this.inflEmail = inflEmail;
+	}
+
+	public String getInflNickname() {
+		return inflNickname;
+	}
+
+	public void setInflNickname(String inflNickname) {
+		this.inflNickname = inflNickname;
+	}
+
 	public String getInflId() {
 		return inflId;
 	}
@@ -97,7 +116,10 @@ public class InflBoardModifyRequest {
 		return "InflBoardModifyRequest [inflPRNo=" + inflPRNo + ", inflConcept=" + inflConcept + ", inflPlatform="
 				+ inflPlatform + ", inflUrl=" + inflUrl + ", inflFollower=" + inflFollower + ", inflIntro=" + inflIntro
 				+ ", fileName=" + fileName + ", fileRename=" + fileRename + ", filePath=" + filePath + ", inflId="
-				+ inflId + "]";
+				+ inflId + ", inflNickname=" + inflNickname + ", inflEmail=" + inflEmail + "]";
 	}
+
+
+
 
 }

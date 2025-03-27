@@ -14,6 +14,8 @@ public class InflBoardVO {
 	private String fileRename;
 	private String filePath;
 	private String inflId;
+	private String inflNickname;
+	private String inflEmail;
 	
 	public int getInflPRNo() {
 		return inflPRNo;
@@ -59,13 +61,25 @@ public class InflBoardVO {
 		return inflId;
 	}
 
+	public String getInflNickname() {
+		return inflNickname;
+	}
+
+	public String getInflEmail() {
+		return inflEmail;
+	}
+
 	@Override
 	public String toString() {
-		return "InflPRVO [inflPRNo=" + inflPRNo + ", inflConcept=" + inflConcept + ", inflPlatform=" + inflPlatform
-				+ ", inflUrl=" + inflUrl + ", inflFollower=" + inflFollower 
-				+ ", inflIntro=" + inflIntro + ", insertDate=" + insertDate + ", fileName=" + fileName + ", fileRename="
-				+ fileRename + ", filePath=" + filePath + ", inflId=" + inflId + "]";
+		return "InflBoardVO [inflPRNo=" + inflPRNo + ", inflConcept=" + inflConcept + ", inflPlatform=" + inflPlatform
+				+ ", inflUrl=" + inflUrl + ", inflFollower=" + inflFollower + ", inflIntro=" + inflIntro
+				+ ", insertDate=" + insertDate + ", fileName=" + fileName + ", fileRename=" + fileRename + ", filePath="
+				+ filePath + ", inflId=" + inflId + ", inflNickname=" + inflNickname + ", inflEmail=" + inflEmail + "]";
 	}
+
+
+
+
 	
 	
 

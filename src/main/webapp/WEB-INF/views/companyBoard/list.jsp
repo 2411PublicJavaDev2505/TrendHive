@@ -23,11 +23,11 @@
 	                <select class="filter-dropdown"  name = "searchCondition">
 	                    <option value="productName">제품명</option>
 	                    <option value="productInfo">제품 상세</option>	                        
-	                    <option value="brandName">브랜드명</option>	                        
+	                    <option value="brandName" selected>브랜드명</option>	                        
 	                </select>
 	                <input type="text" class="search-input" name="searchKeyword" placeholder="검색어를 입력하세요">
 	                <button  type = "submit" class="search-btn">🔍</button>
-	                <button  type = "submit" class="search-btn"><a href="/companyboard/add">등록하기</a></button>
+	                <button  type = "submit" class="search-btn"><a style='text-decoration:none;' href="/companyboard/add">등록하기</a></button>
 	            </form>
             </div>
         </div>
@@ -35,11 +35,11 @@
                 <c:forEach items="${cpList }" var="companyBoard">
                     <div class="list">
                         <div class="img" onclick="location.href='/detail-page'">
-                            <a href="/companyboard/detail?companyPRNo=${companyBoard.companyPRNo }">
+                            <a style='text-decoration:none;' href="/companyboard/detail/${companyBoard.companyPRNo }">
 	                            <div class="product-img">
 	                            <img src="..${companyBoard.filePath }">${companyBoardVO.filePath }</div>
 <!-- 	                            회원정보 연결되면 ${company.companyName}으로 바꿀것 -->
-	                            <div class="img-text">${companyBoard.brandName }</div>
+	                            <div class="img-text"><h3>${companyBoard.brandName }</h3></div>
                             </a>
                         </div>
                     </div>
@@ -47,14 +47,15 @@
             </div>                    
 
             <div class="pagination">
+<!--             @RequestParam(value="page"이부분과 쿼리문 맞춰줘야함 -->
                 <c:if test="${startNavi ne 1 }">
-                    <a href="/companyboard/list?currentPage=${startNavi - 1 }" class="prev">&lt;</a>
+                    <a style='text-decoration:none;' href="/companyboard/list?page=${startNavi - 1 }" class="prev">&lt;</a>
                 </c:if>
                 <c:forEach begin="${startNavi }" end="${endNavi }" var="p">
-                    <a href="/companyboard/list?currentPage=${p }">${p }</a>
+                    <a style='text-decoration:none;' href="/companyboard/list?page=${p }">${p }</a>
                 </c:forEach>
                 <c:if test="${endNavi ne maxPage }">
-                    <a href="/companyboard/list?currentPage=${endNavi + 1 }" class="next">&gt;</a>
+                    <a style='text-decoration:none;' href="/companyboard/list?page=${endNavi + 1 }" class="next">&gt;</a>
                 </c:if>
             </div>
 	</div>
