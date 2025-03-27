@@ -92,6 +92,16 @@ public class CompanyVO {
 				+ ", companyEmail=" + companyEmail + ", companyPhone=" + companyPhone + ", type=" + type + "]";
 	}
 
+	public void setInflPw(String newPassword) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getInflName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	

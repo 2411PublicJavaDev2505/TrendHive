@@ -25,26 +25,26 @@
 		    <form class="form">
 		      <div class="form-group">
 		        <label for="id">아이디</label>
-		        <input type="text" name="inflId" placeholder="아이디">
+		        <input type="text" name="inflId" placeholder="아이디" value="${infl.inflId}" readonly>
 		      </div>
 		
-		      <div class="form-group">
+<!-- 		      <div class="form-group"> 
 		        <label for="business-number">생년월일</label>
-		        <input type="number" name="birth" placeholder="yyyymmdd">
-		      </div>
+		        <input type="number" name="birth" placeholder="yyyymmdd" value="${infl.inflId}">
+		      </div>-->
 		
-		      <div class="form-group">
+<!-- 		      <div class="form-group">
 		        <label for="sex">성별</label>
 		        <select name="inflgender" name="sex">
 		          <option value="">선택하세요</option>
 		          <option value="male">남자</option>
 		          <option value="female">여자</option>
 		        </select>
-		      </div>
+		      </div>-->
 		
 		      <div class="form-group">
 		        <label for="plaform-name">대표 채널명</label>
-		        <input type="text" name="inflplaform" placeholder="대표 채널명">
+		        <input type="text" name="inflplaform" placeholder="대표 채널명"  value="${infl.inflplaform}" required>
 		      </div>
 		
 		  <!--    <div class="form-group">
@@ -61,17 +61,17 @@
 		-->
 		      <div class="form-group">
 		        <label for="name">이름</label>
-		        <input type="text" name="inflName" placeholder="이름">
+		        <input type="text" name="inflName" value="${infl.inflName}" placeholder="이름">
 		      </div>
 		
 		      <div class="form-group">
 		        <label for="creator-name">크리에이터명</label>
-		        <input type="text" name="inflNickName" placeholder="크리에이터명">
+		        <input type="text" name="inflNickName" value="${infl.inflNickName}" placeholder="크리에이터명">
 		      </div>
 		
 		      <div class="form-group">
 		        <label for="password">비밀번호 재설정</label>
-		        <input type="password" name="inflPw" placeholder="비밀번호 재설정">
+		        <input type="password" name="inflPw" value="${infl.inflPw}" placeholder="비밀번호 재설정">
 		      </div>
 		
 		      <div class="form-group">
@@ -81,24 +81,24 @@
 		
 		      <div class="form-group">
 		        <label for="email">이메일</label>
-		        <input type="email" name="inflEmail" placeholder="이메일">
+		        <input type="email" name="inflEmail" value="${infl.inflEmail}" placeholder="이메일">
 		        <button type="button">중복확인</button>
 		      </div>
 		
 		      <div class="form-group">
 		        <label for="address">주소</label>
-		        <input type="text" name="inflAddress" placeholder="회사주소">
+		        <input type="text" name="inflAddress" value="${infl.inflAddress}" placeholder="회사주소">
 		        <button type="button">우편번호찾기</button>
 		      </div>
 		
-		      <div class="form-group">
+<!-- 		      <div class="form-group">
 		        <label for="detailed-address">상세주소</label>
-		        <input type="text" name="inflDetailAddress" placeholder="상세주소">
-		      </div>
+		        <input type="text" name="inflDetailAddress" value="${infl.inflDetailAddress}" placeholder="상세주소">
+		      </div> -->
 		
 		      <div class="form-group">
 		        <label for="contact">연락처</label>
-		        <input type="text" name="inflPhone" placeholder="연락처">
+		        <input type="text" name="inflPhone" value="${infl.inflPhone}" placeholder="연락처">
 		      </div>
 		
 		      <button type="submit" class="join-btn">Join</button>

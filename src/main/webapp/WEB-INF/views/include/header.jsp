@@ -18,8 +18,14 @@
                 <c:when test="${sessionScope.loggedIn}">
                     <li><a href="#direct-message">Direct Message</a></li>
                     <li><a href="/company/logout">로그아웃</a></li>
-                    <li><a href="/company/update" class="user-welcome">
-                    Welcome, ${sessionScope.userName}</a></li>
+                    <c:choose>
+                        <c:when test="${sessionScope.userType eq 'C'}">
+                            <li><a href="/company/update" class="user-welcome">Welcome, ${sessionScope.userName}</a></li>
+                        </c:when>
+                        <c:when test="${sessionScope.userType eq 'I'}">
+                            <li><a href="/infl/update" class="user-welcome">Welcome, ${sessionScope.userName}</a></li>
+                        </c:when>
+                    </c:choose>
                 </c:when>
                 <c:otherwise>
                     <li><a href="/company/login">기업 로그인</a></li>

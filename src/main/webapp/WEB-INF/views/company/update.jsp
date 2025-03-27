@@ -53,7 +53,7 @@
 	
 	      <div class="form-group">
 	        <label for="password">비밀번호 재설정</label>
-	        <input type="password" name="companyPw" value="${company.companyPassword }" placeholder="비밀번호 재설정">
+	        <input type="password" name="companyPw" value="${company.companyPw }" placeholder="비밀번호 재설정">
 	      </div>
 	
 	      <!-- <div class="form-group">
