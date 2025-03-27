@@ -124,10 +124,8 @@ public class CompanyController {
         try {
             // 로그인 요청 객체 생성
             CompanyLoginRequest company = new CompanyLoginRequest(companyId, companyPw);
-            
             // 로그인 서비스 호출
             CompanyVO company1 = cService.selectOneByLogin(company);
-            
             if (company1 != null) {
                 // 로그인 성공 시 세션에 값 저장
             	session.setAttribute("loggedIn", true); // 로그인 상태 저장

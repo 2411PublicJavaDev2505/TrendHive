@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>error</title>
 </head>
 <body>
-	
+	<h1>에러</h1>
+	<h2>${errorMsg }</h2>
 </body>
 </html>
