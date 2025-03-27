@@ -18,11 +18,6 @@ public class Dm2ServiceImpl implements Dm2Service{
 	private SqlSession session;
 	
 	@Override
-	public List<TrendHive> getDmList(String userId) {
-		List<TrendHive> list = dStore.getDmList(session, userId);
-		return list;
-	}
-	@Override
 	public void sendDm(String sendId, String receiverId, String dmContents) {
 		dStore.sendDm(session, sendId, receiverId, dmContents);
 	}
@@ -45,6 +40,29 @@ public class Dm2ServiceImpl implements Dm2Service{
 //	public List<DmVO> getReceivedDmList(String userId) {
 //		List<DmVO> receiveList = dStore.selectReceivedDm(session,userId);
 //		return receiveList;
+//	}
+	@Override
+	public DmVO getDmMessageById(int dmNo) {
+		DmVO dm = dStore.getDmMessageById(session, dmNo);
+		return dm;
+	}
+	@Override
+	public List<TrendHive> getDmList(String id, int currentPage) {
+		List<TrendHive> list = dStore.getDmList(session, id, currentPage);
+		return list;
+	}
+	@Override
+	public int getTotalCount(String string) {
+		int result = dStore.getTotalCount(session, string);
+		return 0;
+	}
+
+	
+	
+//	@Override
+//	public DmVO getDMById(int dmNo) {
+//		DmVO dm = dStore.selectOneByNo(session, dmNo);
+//		return dm;
 //	}
 
 }

@@ -19,21 +19,45 @@
 	 	<result property="sendTime" column="SEND_TIME" />
 	 	<result property="dmSubject" column="DM_SUBJECT" />
 	 	<result property="receiveTime" column="RECEIVE_TIME" />
+	 	<result property="deleteDm" column="DELETE_DM" />
+	 	<result property="replyDm" column="REPLY_DM" />
+	 	
  	</resultMap>
  	<insert id="sendDm">
- 		INSERT INTO TrendHive
+ 		INSERT INTO DmVO (SEND_ID, RECEIVE_ID, DM_CONTENTS)
  		VALUES(#{obj.sendId}, #{obj.receiverId}, #{obj.dmContents}})
  	</insert>
- 	<select id="getDmList" resultMap="dmResultmap">
+ 	<!-- <select id="getDmList" resultMap="dmResultmap">
 	    SELECT * FROM DM
 	    WHERE USER_ID = #{userId}
 	    ORDER BY INSERT_DMDATE DESC 
-	</select>
+	</select> -->
  	<insert id="deleteDmList">
 	    DELETE FROM DM WHERE DM_NO = #{dmNo}
 	</insert>
 	<select id="selectOneByNo" resultMap="dmResultmap">
 		SELECT * FROM DM WHERE DM_NO = #{dmNo}
+	</select>
+	<insert id="insertReplyDm">
+	    INSERT INTO DmVO (SEND_ID, RECEIVE_ID, DM_CONTENTS)
+ 		VALUES(#{sendId}, #{receiverId}, #{dmContents}})
+	</insert>
+	<select id="getDmMessageById" resultMap="dmResultmap">
+    SELECT DM_NO, SEND_ID, RECEIVE_ID, DM_CONTENTS, SEND_TIME
+    FROM DM
+    WHERE DM_NO = #{dmNo}
+	</select>
+	<select id="getDmList" resultMap="dmResultmap">
+    SELECT * 
+    FROM DM
+    WHERE RECEIVE_ID = #{userId} OR SEND_ID = #{userId}
+    ORDER BY SEND_TIME DESC
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+	    SELECT COUNT(*) 
+	    FROM DM
+	    WHERE RECEIVE_ID = #{userId}
 	</select>
 	<!-- <select id="selectTotalDm" resultType="dmResultmap">
         SELECT * FROM DM 
