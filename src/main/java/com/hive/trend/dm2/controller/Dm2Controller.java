@@ -45,8 +45,9 @@ public class Dm2Controller {
 	// 받은 메시지 리스트 조회 select
 	@GetMapping("/list")
 	public String dmList(
-			@RequestParam(value="page", defaultValue="1") int currentPage
-			,HttpSession session 
+			@RequestParam(value="page", defaultValue="1") int currentPage,
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword
+			, HttpSession session 
 			, Model model) {
 //		String userId = (String)session.getAttribute("userId");
 		String id = (String)session.getAttribute("companyId");
@@ -74,39 +75,94 @@ public class Dm2Controller {
 }
 		
 		
-	// 메시지 작성 페이지 이동 
+	// 메시지 작성 페이지 이동 (최초 DM 보내기)
 	@GetMapping("/write")
 	public String dmWrite() {
-		return "dm2/write";
+		return "dm2/write"; // 최초 DM 보내는 페이지
 	}
 	
-	// 메시지 전송 insert
+	// 메시지 전송 insert (DM 답장 보내기)
 	@PostMapping("/send")
-	public String sendDm(@RequestParam("receiverId") String receiverId,
+	public String sendDm(@RequestParam("receiveId") String receiveId,
 			@RequestParam("dmContents") String dmContents,
-			HttpSession session) {
+			HttpSession session, Model model) {
 		String sendId = (String)session.getAttribute("userId");
-		dm2Service.sendDm(sendId, receiverId, dmContents);
-		return "redirect:/dm2/list"; 
+		try {
+			dm2Service.sendDm(sendId, receiveId, dmContents);
+			return "redirect:/dm2/list"; 
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+            model.addAttribute("errorMessage", "DM 보내기 실패");
+            return "common/error";
+		}
 			
 	}
 	
+	// 메시지 답장 페이지 이동
+    @GetMapping("/send")
+    public String replyDm(@RequestParam("dmNo") int dmNo, Model model) {
+        try {
+            DmVO dmMessage = dm2Service.getDmMessageById(dmNo);  // DM 내용 가져오기
+            model.addAttribute("dm", dmMessage);
+            return "dm2/send";  // 답장 페이지로 이동
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("errorMessage", "답장 조회 실패");
+            return "common/error";
+        }
+    }
+	
+// // 답장 보내기
+//    @PostMapping("/send")
+//    public String replyDmSend(@RequestParam("dmNo") int dmNo,
+//                               @RequestParam("dmContents") String dmContents,
+//                               HttpSession session,
+//                               Model model) {
+//        String sendId = (String) session.getAttribute("userId");
+//        try {
+//            DmVO dmMessage = dm2Service.getDmMessageById(dmNo);
+//            String receiveId = dmMessage.getSendId();  // 원래 보내는 사람의 ID
+//            dm2Service.sendDm(sendId, receivId, dmContents);  // 답장 전송
+//            return "redirect:/dm2/list";  // DM 목록 페이지로 리다이렉트
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            model.addAttribute("errorMessage", "답장 전송 실패");
+//            return "common/error";
+//        }
+//    }
+
+    
 	@PostMapping("/dmSend.do")
-	public String sendDM(@RequestParam("receiverId") String receiverId, 
+	public String sendDM(@RequestParam("receiveId") String receiveId, 
 			@RequestParam("content") String content,
 			@RequestParam(value="file", required = false) MultipartFile file, Model model) {
 		
+//		// receiveIds가 콤마로 구분된 여러 명의 아이디일 경우, split()을 통해 배열로 나눈다.
+//		String[] receivers = receiveIds.split(",");
+//		
+//		for(String receiver : receivers) {
+//			DmMessage dm = new DmMessage();
+//			dm.setreceiveId(receiver.trim());
+//		}
+		
 		try {
 			String fileName = null;
+			// 파일이 존재하면 저장
             if (file != null && !file.isEmpty()) {
                 fileName = file.getOriginalFilename();
-                File saveFile = new File(FILE_SAVE_PATH, fileName);
+                File saveFile = new File("/resources/bUploadFiles", fileName);
                 file.transferTo(saveFile);
 			}
-			dm2Service.sendDm(receiverId, content, file != null ? file.getOriginalFilename() : null);
-			
+         // 여러 명에게 메시지를 보내기 위한 반복문
+            String[] receivers = receiveId.split(",");
+            for (String receiver : receivers) {
+                receiver = receiver.trim();  // 아이디 앞뒤 공백 제거
+                // DM 메시지 전송 서비스 호출
+                dm2Service.sendDm(receiver, content, fileName);
+            }
 			return "redirect:/dmList.do";
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("errorMessage", "파일 오류가 발생했습니다.");
 			return "error";
@@ -142,23 +198,6 @@ public class Dm2Controller {
 		}
 	}
 	
-	//메시지 답장
-	@GetMapping("/reply")
-	public String replyDm(@RequestParam("dmNo") int dmNo, Model model) {
-//	    try {
-//	        DmVO dm = dm2Service.selectOneByNo(dmNo);  
-//	        model.addAttribute("dm", dm);  
-//	        return "dm2/reply";
-//	        
-//	    } catch (Exception e) {
-//	        e.printStackTrace();
-//	        model.addAttribute("errorMessage", e.getMessage());
-//	        return "common/error";  
-//	    }
-		DmVO dmMessage = dm2Service.getDmMessageById(dmNo);
-		model.addAttribute("dm", dmMessage);
-		return "dm2/reply";
-	}
 	
 	//해당메서드 삭제
 //	@RequestMapping(value = "/reply", method = RequestMethod.GET)
@@ -192,7 +231,6 @@ public class Dm2Controller {
 //	        return "views/dm2/list";
 //	 }
 	
-// 답장도 넣고
 // 차단도 넣고
 // 패이지내이션 넣고 하자고,,.
 }

@@ -17,24 +17,24 @@
 	</div>
 	<div class="sendler2">
 		<form action="/dm2/send" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="DmNo" value="${dm.DmNo }">
+			<input type="hidden" name="dmNo" value="${dm.dmNo }">
 			받는사람 : <span>${dm.receiveId }</span><br>
-			<input type="hidden" name="receiveId" value="${dm.receiverId }"><br>
+			<input type="hidden" name="receiveId" value="${dm.receiveId }"><br>
 			제목 : <input type="text" name="dmSubject" placeholder="제목을 입력하세요"> <br>
-			내용 : <textarea rows="5" cols="60" name="dmContent" placeholder="내용을 입력하세요"></textarea> <br>
+			내용 : <textarea rows="5" cols="60" name="dmContentss" placeholder="내용을 입력하세요"></textarea> <br>
 			첨부파일 :	<span><a href="..${dm.filePath }">${dm.fileName }</a></span> 
 			<input type="file" name="dUploadFiles" onchange="readURL(this)"> <br>
 			
-			<button type="button" onclick="document.getElementById('dmForm').submit();">전송</button>
+			<button type="submit" onclick="document.getElementById('dmForm').submit();">전송</button>
 			<form id="dmForm" action="receiveId" value="${dm.receiveId }"></form>
 			<input type="text" name="dmSubject">
-			<textarea name="dmContent"></textarea>
+			<textarea name="dmContentss"></textarea>
 			
 			<button type="submit">수정</button>
 		</form>
 	<br>
 	<div>
-		<button type="button">목록으로</button>
+		<button type="button" onclick="location.href='/dm2/list';">목록으로</button>
 	</div>
 	</body>
 </html>

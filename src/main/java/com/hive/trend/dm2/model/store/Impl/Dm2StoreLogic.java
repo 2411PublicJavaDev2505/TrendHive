@@ -54,6 +54,7 @@ public class Dm2StoreLogic implements Dm2Store{
 		return result;
 	}
 
+
 //	@Override
 //	public DmVO insertReplyDm(String string, int dmNo) {
 //		session.insert("Dm2Mapper.insertReplyDm", dmNo);
