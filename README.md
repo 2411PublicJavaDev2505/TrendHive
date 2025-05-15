@@ -8,14 +8,38 @@
 ![담당역할](https://github.com/user-attachments/assets/f069b82a-277e-4f3b-9e17-d9ba029dd861)
 
 # 차별성
+![차별성](https://github.com/user-attachments/assets/328925fb-2e6d-418e-ab38-495303d6cba2)
 
 # 프로젝트 개발환경
++ DB : Oracle 23 xe 버전 이용
++ sts-3.9.18 버전 사용
 
 # 프로젝트 실행 환경 구축(로컬)
+1. 오라클 23 설치 후 로컬에 db 계정 생성
+2. 계정 생성 후 권한 부여 및 테이블 생성
+
++ 테이블, 시퀀스 생성 및 데이터 삽입 스크립트
++ [컴백현_SQL 프로젝트 테이블.txt](https://github.com/user-attachments/files/20219996/_SQL.txt)
+
+3. sts에 및 root-context.xml 파일을 이용해 db와 연결
+```
+# Oracle Connection Setting
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username
+spring.datasource.password
+```
+
+---
 
 **1. 기술스택**
 
 **2. 브랜치 전략**
++ 팀원 각자의 브랜치를 만들어 개발 진행
++ 기능 구현이 완료되면 Main 브랜치에 병합
+  
+![github_flow](https://github.com/user-attachments/assets/40a24663-eb69-4a5d-aad2-5cccab61a7a8)
+
 
 **3. 프로젝트 구조**
 
@@ -108,11 +132,10 @@
 
 # 프로젝트 산출문서
 + 기획보고서
-+
-+
-+
-+
-+
-+
-+
-+
++ 요구사항정의서
++ 와이어프레임
++ DB설계
++ 시퀀스 다이어그램
++ 최종보고서
++ 프로젝트 소스 DB
++ 시연영상
