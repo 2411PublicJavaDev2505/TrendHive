@@ -11,7 +11,7 @@
 ![차별성](https://github.com/user-attachments/assets/328925fb-2e6d-418e-ab38-495303d6cba2)
 
 # 프로젝트 개발환경
-+ DB : Oracle 23 xe 버전 이용
++ DB : Oracle 18c 버전 이용
 + sts-3.9.18 버전 사용
 
 # 프로젝트 실행 환경 구축(로컬)
@@ -42,7 +42,7 @@ spring.datasource.password
 ![GitHub](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Oracle](https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 <br>
-![image](https://github.com/user-attachments/assets/fc0a895a-837e-472e-8bbe-3ef207ea5be3)
+![Adobe Express - file](https://github.com/user-attachments/assets/96f9b19a-0747-43a2-985b-e24c0649bb07)
 ![Java](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white)
 ![Canvas](https://img.shields.io/badge/canvas-E72429?style=for-the-badge&logo=canvas&logoColor=white)
 
@@ -177,11 +177,18 @@ spring.datasource.password
 ---
 
 # 프로젝트 산출문서
-+ 기획보고서
++ 제작과정/협업
+![image](https://github.com/user-attachments/assets/b33f78f4-e86a-4dc0-9b8d-7d6fb1dbe999)
 + 요구사항정의서
+![image](https://github.com/user-attachments/assets/e49885d4-b3d7-416c-a07f-87aa1838c867)
 + 와이어프레임
-+ DB설계
+![image](https://github.com/user-attachments/assets/80384bda-b517-4e75-9335-085ba4aa6bfa)
++ DB설계(ERD)
+![image](https://github.com/user-attachments/assets/16d44a8f-9dbb-4326-849e-a6ff184b07c2)
 + 시퀀스 다이어그램
-+ 최종보고서
-+ 프로젝트 소스 DB
-+ 시연영상
+![image](https://github.com/user-attachments/assets/bcad66ab-a7fb-43dc-b938-4ebbaf7b8d24)
++ 프로젝트 소스 DB<br>
+[Uploading 컴백현_SQL 프로젝트 테이블.txt…]()
++ 시연영상<br>
+[컴백현 시연영상 통합.zip](https://github.com/user-attachments/files/20224950/default.zip)
+
