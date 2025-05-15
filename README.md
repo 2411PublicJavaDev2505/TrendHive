@@ -34,11 +34,16 @@ spring.datasource.password
 
 ## 1. 기술스택 ##
 
-![Java](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white)
-![Oracle](https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
-![HTML](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![image](https://github.com/user-attachments/assets/120c6945-3016-4285-b142-cff944f7c4a6)
+![image](https://github.com/user-attachments/assets/5c12c85a-35f1-4fe3-9dc7-97677737a5bb)
+![image](https://github.com/user-attachments/assets/fc0a895a-837e-472e-8bbe-3ef207ea5be3)<br>
+![image](https://github.com/user-attachments/assets/f697ee6c-befd-4757-a6ff-56ddad552064)
+![image](https://github.com/user-attachments/assets/eb10123b-41a2-4e02-83a8-6c0d9a085aaa)
+![image](https://github.com/user-attachments/assets/d60765c1-4809-4dcf-8ee9-d1d3c68ffab4)<br>
+![image](https://github.com/user-attachments/assets/6ad7a832-46aa-4c0b-976d-31d54a45952d)
+![image](https://github.com/user-attachments/assets/04937fb3-7e29-49eb-af40-2b1aa2ff4b69)
+![image](https://github.com/user-attachments/assets/b4edc604-321f-4b0d-9eb8-326ab7252b64)
+
 
 
 ## 2. 브랜치 전략 ## 
