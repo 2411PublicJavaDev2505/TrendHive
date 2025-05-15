@@ -105,6 +105,9 @@ spring.datasource.password
 ![image](https://github.com/user-attachments/assets/93a7c045-4d93-40d8-91d9-74d6eea4acbf)
 ![image](https://github.com/user-attachments/assets/a98eef62-0313-4fe6-b5ae-19c1d1b0c188)
 ![image](https://github.com/user-attachments/assets/13bb5a0e-4345-43d9-88bb-058278135f4c)
+![image](https://github.com/user-attachments/assets/7feaf23f-fcaa-43ee-92a9-a364de1ad99b)
+![image](https://github.com/user-attachments/assets/c8f3e8bb-9a4f-4cb2-be2e-f0a4d35a29eb)
+![image](https://github.com/user-attachments/assets/b586c677-8584-4496-8e2e-b46dfc4e007f)
 
 ---
 
@@ -118,24 +121,29 @@ spring.datasource.password
 ---
 
 #### 공지사항/회원관리 화면: 박현서
-![image](https://github.com/user-attachments/assets/7feaf23f-fcaa-43ee-92a9-a364de1ad99b)
-![image](https://github.com/user-attachments/assets/c8f3e8bb-9a4f-4cb2-be2e-f0a4d35a29eb)
+
 ![image](https://github.com/user-attachments/assets/be7cd2e4-8be9-405d-aa40-490b7363bc6c)
 ![image](https://github.com/user-attachments/assets/2c62468f-edd6-4c29-b934-0f6757ef4261)
+![image](https://github.com/user-attachments/assets/978bef72-d1b0-4e0a-b1d8-6b4e44158233)
+![image](https://github.com/user-attachments/assets/87297f37-06b4-4b22-bd10-98be11939459)
+![image](https://github.com/user-attachments/assets/82b86a3d-47bf-4113-9a7e-1148c27335b6)
+![image](https://github.com/user-attachments/assets/5d5e59b5-80e4-4320-84d3-937248460bb6)
 
 ---
 
 #### 협업기능 DM 화면 : 채소형
 > + ###### DM 보낸사람/받은사람/내용/답장/삭제 확인 가능
-> ![image](https://github.com/user-attachments/assets/a0233e27-c446-489c-9d02-22cbd4509d8b)
+> ![image](https://github.com/user-attachments/assets/77312b3d-be0a-4ec7-8ce4-f0b789a2e09d)
 > + ###### 받은DM의 내용을 클릭하면 상세확인이 가능하다.
->![image](https://github.com/user-attachments/assets/44b1dd9e-1937-4668-a9dd-cd65cbd18374)
+![image](https://github.com/user-attachments/assets/e04902fe-a92d-4f90-8546-1e127db9a903)
 > + ###### 받은 메시지 삭제 버튼을 누르면 alert modal 창이 뜬다.
->![image](https://github.com/user-attachments/assets/97bee91e-3a92-4f98-b9b4-d7bc3c0234c4)
+![image](https://github.com/user-attachments/assets/d6c79061-fc9e-45db-b127-53ca5edbae1f)
+![image](https://github.com/user-attachments/assets/453e176c-b230-440e-96cb-089a8157c77a)
 > + ###### 왼쪽 상단의 DM 버튼을 누르면 메시지 전송(답장x) 기능이 가능하다.
->![image](https://github.com/user-attachments/assets/2ee400c8-c576-463d-a0da-4288472c72cf)
+>![image](https://github.com/user-attachments/assets/f424969c-acf7-4cec-89fc-5184fe186d36)
+>![image](https://github.com/user-attachments/assets/7f2705b7-9c4c-43b5-aed3-1a8fb96423f9)
 > + ###### 파일선택을 누르면 파일첨부가 가능하다.
-> ![image](https://github.com/user-attachments/assets/9f763937-7a0d-44cd-9b01-a03e187950fa)
+> ![image](https://github.com/user-attachments/assets/af869a58-1baf-4bf5-b809-3d6e0e3410e8)
 > ![image](https://github.com/user-attachments/assets/794dc777-5a58-4154-a688-3e0936663fc5)
 > + ###### 다수에게 메시지 전송이 가능하다.
 > ![image](https://github.com/user-attachments/assets/b3bc2a5c-45b6-4b1b-aed8-6707957c1bd7)
