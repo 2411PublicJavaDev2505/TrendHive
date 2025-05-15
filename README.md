@@ -18,7 +18,7 @@
 1. 오라클 23 설치 후 로컬에 db 계정 생성
 2. 계정 생성 후 권한 부여 및 테이블 생성
 
-+ 테이블, 시퀀스 생성 및 데이터 삽입 스크립트
++ 테이블, 시퀀스 생성 및 데이터 삽입 스크립트<br>
 + [컴백현_SQL 프로젝트 테이블.txt](https://github.com/user-attachments/files/20219996/_SQL.txt)
 
 3. sts에 및 root-context.xml 파일을 이용해 db와 연결
@@ -32,18 +32,25 @@ spring.datasource.password
 
 ---
 
-**1. 기술스택**
+## 1. 기술스택 ##
 
-**2. 브랜치 전략**
+![Java](https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white)
+![Oracle](https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![HTML](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+
+## 2. 브랜치 전략 ## 
 + 팀원 각자의 브랜치를 만들어 개발 진행
 + 기능 구현이 완료되면 Main 브랜치에 병합
   
 ![github_flow](https://github.com/user-attachments/assets/40a24663-eb69-4a5d-aad2-5cccab61a7a8)
 
 
-**3. 프로젝트 구조**
+## 3. 프로젝트 구조 ## 
 
-**4. 주요기능**
+## 4. 주요기능 ## 
 
 | **기능명**             	| **상세**                                                                                                                                              	|
 |------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -83,10 +90,10 @@ spring.datasource.password
 |    받은 메시지 삭제    	| 메시지를 체크박스로 클릭해 삭제할 수 있다. 체크박스 전체 클릭도 가능하다. 받은 메시지는 삭제할 수 있으나, 발송된 메시지는 수정하거나 삭제할 수 없다.  	|
 |       메시지 차단      	| 메시지를 체크박스로 클릭해 차단할 수 있다. 광고성, 거짓정보 등의 위반 사항이 포함되는 경우 기업회원과 크리에이터는 서로의 메시지를 제한할 수 있다.    	|
 
-**6. 개발일정**
+## 6. 개발일정 ## 
 ![개발일정](https://github.com/user-attachments/assets/9c1d1302-9b92-4c61-b7cc-72614d7784bf)
 
-**7. 화면구현**
+## 7. 화면구현 ## 
 #### DM 화면
 > + ###### DM 보낸사람/받은사람/내용/답장/삭제 확인 가능
 > ![image](https://github.com/user-attachments/assets/a0233e27-c446-489c-9d02-22cbd4509d8b)
@@ -102,7 +109,7 @@ spring.datasource.password
 > + ###### 다수에게 메시지 전송이 가능하다.
 > ![image](https://github.com/user-attachments/assets/b3bc2a5c-45b6-4b1b-aed8-6707957c1bd7)
 
-**8. 프로젝트 후기**
+## 8. 프로젝트 후기 ## 
 + 신호철:
  그냥 할수 있는거만 알고 있는거만 팀원들에게 피해가 가지 않게 하자고 시작한 세미프로젝트.
 생각보다 많은걸 할수 있었고 생각보다 더 할수 있는게 많은 시간이었다.
