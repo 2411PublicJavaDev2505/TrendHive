@@ -54,6 +54,7 @@ spring.datasource.password
 
 
 ## 3. 프로젝트 구조 ## 
+[TrendHive 프로젝트구조.pdf](https://github.com/user-attachments/files/20273475/TrendHive.pdf)
 
 ## 4. 주요기능 ## 
 
