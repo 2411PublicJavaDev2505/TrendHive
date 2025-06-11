@@ -134,20 +134,17 @@ spring.datasource.password
 
 #### 협업기능 DM 화면 : 채소형
 > + ###### DM 보낸사람/받은사람/내용/답장/삭제 확인 가능
-> ![DM list](https://github.com/user-attachments/assets/2608e002-5350-4584-9deb-43559bd41daa)
-> + ###### 받은DM의 내용을 클릭하면 상세확인이 가능하다.
->![image](https://github.com/user-attachments/assets/e04902fe-a92d-4f90-8546-1e127db9a903)
-> + ###### 받은 메시지 삭제 버튼을 누르면 alert modal 창이 뜬다.
->![image](https://github.com/user-attachments/assets/d6c79061-fc9e-45db-b127-53ca5edbae1f)
->![삭제 모달](https://github.com/user-attachments/assets/ce672874-1320-430d-9d03-f390531f7c55)
-> + ###### 왼쪽 상단의 DM 버튼을 누르면 메시지 전송(답장x) 기능이 가능하다.
->![최초DM보내기](https://github.com/user-attachments/assets/f8aa128e-06a8-4445-bc10-54919a6f64dc)
->![image](https://github.com/user-attachments/assets/7f2705b7-9c4c-43b5-aed3-1a8fb96423f9)
+> ![DM list 와 최초 DM보내기 화면 합침  수정](https://github.com/user-attachments/assets/feca3ffb-5cdb-476c-9ba2-dcbf998b3d2a)
 > + ###### 파일선택을 누르면 파일첨부가 가능하다.
 > ![image](https://github.com/user-attachments/assets/af869a58-1baf-4bf5-b809-3d6e0e3410e8)
 > ![image](https://github.com/user-attachments/assets/794dc777-5a58-4154-a688-3e0936663fc5)
 > + ###### 다수에게 메시지 전송이 가능하다.
 > ![image](https://github.com/user-attachments/assets/b3bc2a5c-45b6-4b1b-aed8-6707957c1bd7)
+> + ###### 받은DM의 내용을 클릭하면 상세확인이 가능하다.
+>![image](https://github.com/user-attachments/assets/e04902fe-a92d-4f90-8546-1e127db9a903)
+> + ###### 받은 메시지 삭제 버튼을 누르면 alert modal 창이 뜬다.
+>![image](https://github.com/user-attachments/assets/d6c79061-fc9e-45db-b127-53ca5edbae1f)
+>![삭제 모달](https://github.com/user-attachments/assets/ce672874-1320-430d-9d03-f390531f7c55)
 
 ## 8. 프로젝트 후기 ## 
 + 신호철:
