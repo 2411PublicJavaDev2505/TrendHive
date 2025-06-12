@@ -134,7 +134,7 @@ spring.datasource.password
 
 ## 협업기능 DM 화면 : 채소형
 > + ###### DM 보낸사람/받은날짜/내용/답장/삭제 확인 가능
-> ![DM list](https://github.com/user-attachments/assets/e12bc59c-a310-43c1-9284-4a1bbedf1ad8)
+> ![DM list](https://github.com/user-attachments/assets/8b735d19-ecd3-4c57-b853-686dfadc7a1f)
 > + ###### 다수에게 메시지 전송이 가능하다.
 > ![dm 여러명 보내기](https://github.com/user-attachments/assets/b7271706-fb80-4548-98b6-2570d90a4aef)
 > + ###### 파일선택을 누르면 파일첨부가 가능하다.
