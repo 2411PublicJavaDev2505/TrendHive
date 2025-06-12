@@ -100,7 +100,7 @@ spring.datasource.password
 ![개발일정](https://github.com/user-attachments/assets/9c1d1302-9b92-4c61-b7cc-72614d7784bf)
 
 ## 7. 화면구현 ## 
-#### 메인/회원관리 화면: 신호철
+## 메인/회원관리 화면: 신호철
 
 ![image](https://github.com/user-attachments/assets/3ed892ba-d1e9-4ab8-808d-85a6525111c6)
 ![image](https://github.com/user-attachments/assets/93a7c045-4d93-40d8-91d9-74d6eea4acbf)
@@ -112,7 +112,7 @@ spring.datasource.password
 
 ---
 
-#### 크리에이터/기업 홍보 게시판: 이하나
+## 크리에이터/기업 홍보 게시판: 이하나
 ![image](https://github.com/user-attachments/assets/cdf69908-7c1c-4ee2-8bd4-526249370549)
 ![image](https://github.com/user-attachments/assets/f10fc170-ad86-4764-8ffc-285b42323251)
 ![image](https://github.com/user-attachments/assets/d918ca54-81a3-4f79-b8a6-546fe55403c2)
@@ -121,7 +121,7 @@ spring.datasource.password
 
 ---
 
-#### 공지사항/회원관리 화면: 박현서
+## 공지사항/회원관리 화면: 박현서
 
 ![image](https://github.com/user-attachments/assets/be7cd2e4-8be9-405d-aa40-490b7363bc6c)
 ![image](https://github.com/user-attachments/assets/2c62468f-edd6-4c29-b934-0f6757ef4261)
@@ -132,19 +132,19 @@ spring.datasource.password
 
 ---
 
-#### 협업기능 DM 화면 : 채소형
+## 협업기능 DM 화면 : 채소형
 > + ###### DM 보낸사람/받은사람/내용/답장/삭제 확인 가능
 > ![DM list 와 최초 DM보내기 화면 합침  수정](https://github.com/user-attachments/assets/feca3ffb-5cdb-476c-9ba2-dcbf998b3d2a)
-> + ###### 파일선택을 누르면 파일첨부가 가능하다.
-> ![image](https://github.com/user-attachments/assets/af869a58-1baf-4bf5-b809-3d6e0e3410e8)
-> ![image](https://github.com/user-attachments/assets/794dc777-5a58-4154-a688-3e0936663fc5)
 > + ###### 다수에게 메시지 전송이 가능하다.
-> ![image](https://github.com/user-attachments/assets/b3bc2a5c-45b6-4b1b-aed8-6707957c1bd7)
+> ![dm 여러명 보내기](https://github.com/user-attachments/assets/fb47d858-20dd-4693-9096-a5b0d097ca89)
+> + ###### 파일선택을 누르면 파일첨부가 가능하다.
+> ![파일첨부](https://github.com/user-attachments/assets/d2b27d32-a9e1-4d15-b764-94d956b6ec39)
+> ![파일첨부됨](https://github.com/user-attachments/assets/948b800f-d981-4071-804b-631da8d478d6)
 > + ###### 받은DM의 내용을 클릭하면 상세확인이 가능하다.
 >![image](https://github.com/user-attachments/assets/e04902fe-a92d-4f90-8546-1e127db9a903)
 > + ###### 받은 메시지 삭제 버튼을 누르면 alert modal 창이 뜬다.
 >![image](https://github.com/user-attachments/assets/d6c79061-fc9e-45db-b127-53ca5edbae1f)
->![삭제 모달](https://github.com/user-attachments/assets/ce672874-1320-430d-9d03-f390531f7c55)
+>![삭제모달2](https://github.com/user-attachments/assets/945c50fc-d5d1-43ed-824a-f1a4ae0d7edc)
 
 ## 8. 프로젝트 후기 ## 
 + 신호철:
