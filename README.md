@@ -102,33 +102,33 @@ spring.datasource.password
 ## 7. 화면구현 ## 
 ## 메인/회원관리 화면: 신호철
 
-![image](https://github.com/user-attachments/assets/3ed892ba-d1e9-4ab8-808d-85a6525111c6)
-![image](https://github.com/user-attachments/assets/93a7c045-4d93-40d8-91d9-74d6eea4acbf)
-![image](https://github.com/user-attachments/assets/a98eef62-0313-4fe6-b5ae-19c1d1b0c188)
-![image](https://github.com/user-attachments/assets/13bb5a0e-4345-43d9-88bb-058278135f4c)
-![image](https://github.com/user-attachments/assets/7feaf23f-fcaa-43ee-92a9-a364de1ad99b)
-![image](https://github.com/user-attachments/assets/c8f3e8bb-9a4f-4cb2-be2e-f0a4d35a29eb)
-![image](https://github.com/user-attachments/assets/b586c677-8584-4496-8e2e-b46dfc4e007f)
+>![image](https://github.com/user-attachments/assets/3ed892ba-d1e9-4ab8-808d-85a6525111c6)
+>![image](https://github.com/user-attachments/assets/93a7c045-4d93-40d8-91d9-74d6eea4acbf)
+>![image](https://github.com/user-attachments/assets/a98eef62-0313-4fe6-b5ae-19c1d1b0c188)
+>![image](https://github.com/user-attachments/assets/13bb5a0e-4345-43d9-88bb-058278135f4c)
+>![image](https://github.com/user-attachments/assets/7feaf23f-fcaa-43ee-92a9-a364de1ad99b)
+>![image](https://github.com/user-attachments/assets/c8f3e8bb-9a4f-4cb2-be2e-f0a4d35a29eb)
+>![image](https://github.com/user-attachments/assets/b586c677-8584-4496-8e2e-b46dfc4e007f)
 
 ---
 
 ## 크리에이터/기업 홍보 게시판: 이하나
-![image](https://github.com/user-attachments/assets/cdf69908-7c1c-4ee2-8bd4-526249370549)
-![image](https://github.com/user-attachments/assets/f10fc170-ad86-4764-8ffc-285b42323251)
-![image](https://github.com/user-attachments/assets/d918ca54-81a3-4f79-b8a6-546fe55403c2)
-![image](https://github.com/user-attachments/assets/e8f6b802-4ac7-41a2-9a62-053b744f7e48)
-![image](https://github.com/user-attachments/assets/02878da4-4292-4692-bc24-e8eb2c672562)
+>![image](https://github.com/user-attachments/assets/cdf69908-7c1c-4ee2-8bd4-526249370549)
+>![image](https://github.com/user-attachments/assets/f10fc170-ad86-4764-8ffc-285b42323251)
+>![image](https://github.com/user-attachments/assets/d918ca54-81a3-4f79-b8a6-546fe55403c2)
+>![image](https://github.com/user-attachments/assets/e8f6b802-4ac7-41a2-9a62-053b744f7e48)
+>![image](https://github.com/user-attachments/assets/02878da4-4292-4692-bc24-e8eb2c672562)
 
 ---
 
 ## 공지사항/회원관리 화면: 박현서
 
-![image](https://github.com/user-attachments/assets/be7cd2e4-8be9-405d-aa40-490b7363bc6c)
-![image](https://github.com/user-attachments/assets/2c62468f-edd6-4c29-b934-0f6757ef4261)
-![image](https://github.com/user-attachments/assets/978bef72-d1b0-4e0a-b1d8-6b4e44158233)
-![image](https://github.com/user-attachments/assets/87297f37-06b4-4b22-bd10-98be11939459)
-![image](https://github.com/user-attachments/assets/82b86a3d-47bf-4113-9a7e-1148c27335b6)
-![image](https://github.com/user-attachments/assets/5d5e59b5-80e4-4320-84d3-937248460bb6)
+>![image](https://github.com/user-attachments/assets/be7cd2e4-8be9-405d-aa40-490b7363bc6c)
+>![image](https://github.com/user-attachments/assets/2c62468f-edd6-4c29-b934-0f6757ef4261)
+>![image](https://github.com/user-attachments/assets/978bef72-d1b0-4e0a-b1d8-6b4e44158233)
+>![image](https://github.com/user-attachments/assets/87297f37-06b4-4b22-bd10-98be11939459)
+>![image](https://github.com/user-attachments/assets/82b86a3d-47bf-4113-9a7e-1148c27335b6)
+>![image](https://github.com/user-attachments/assets/5d5e59b5-80e4-4320-84d3-937248460bb6)
 
 ---
 
