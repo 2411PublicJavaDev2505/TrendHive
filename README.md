@@ -133,10 +133,10 @@ spring.datasource.password
 ---
 
 ## 협업기능 DM 화면 : 채소형
-> + ###### DM 보낸사람/받은사람/내용/답장/삭제 확인 가능
-> ![DM list 와 최초 DM보내기 화면 합침  수정](https://github.com/user-attachments/assets/feca3ffb-5cdb-476c-9ba2-dcbf998b3d2a)
+> + ###### DM 보낸사람/받은날짜/내용/답장/삭제 확인 가능
+> ![DM list](https://github.com/user-attachments/assets/e12bc59c-a310-43c1-9284-4a1bbedf1ad8)
 > + ###### 다수에게 메시지 전송이 가능하다.
-> ![dm 여러명 보내기](https://github.com/user-attachments/assets/fb47d858-20dd-4693-9096-a5b0d097ca89)
+> ![dm 여러명 보내기](https://github.com/user-attachments/assets/b7271706-fb80-4548-98b6-2570d90a4aef)
 > + ###### 파일선택을 누르면 파일첨부가 가능하다.
 > ![파일첨부](https://github.com/user-attachments/assets/d2b27d32-a9e1-4d15-b764-94d956b6ec39)
 > ![파일첨부됨](https://github.com/user-attachments/assets/948b800f-d981-4071-804b-631da8d478d6)
@@ -144,7 +144,8 @@ spring.datasource.password
 >![image](https://github.com/user-attachments/assets/e04902fe-a92d-4f90-8546-1e127db9a903)
 > + ###### 받은 메시지 삭제 버튼을 누르면 alert modal 창이 뜬다.
 >![image](https://github.com/user-attachments/assets/d6c79061-fc9e-45db-b127-53ca5edbae1f)
->![삭제모달2](https://github.com/user-attachments/assets/945c50fc-d5d1-43ed-824a-f1a4ae0d7edc)
+> ![삭제모달2](https://github.com/user-attachments/assets/b8a39c99-b7d6-4251-971d-10b977e2072c)
+
 
 ## 8. 프로젝트 후기 ## 
 + 신호철:
