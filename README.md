@@ -183,7 +183,7 @@ spring.datasource.password
 + 와이어프레임
 ![image](https://github.com/user-attachments/assets/80384bda-b517-4e75-9335-085ba4aa6bfa)
 + DB설계(ERD)
-![image](https://github.com/user-attachments/assets/16d44a8f-9dbb-4326-849e-a6ff184b07c2)
+![ERD](https://github.com/user-attachments/assets/3b4586b5-e118-4d01-a67b-6fba8f7e53d0)
 + 시퀀스 다이어그램
 ![image](https://github.com/user-attachments/assets/bcad66ab-a7fb-43dc-b938-4ebbaf7b8d24)
 + 프로젝트 소스 DB<br>
